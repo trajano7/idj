@@ -52,6 +52,8 @@ Game::Game(string title, int width, int height) {
         exit(EXIT_FAILURE);
     }
 
+    state = new State();
+
 }
 
 Game& Game::GetInstance() {
@@ -64,3 +66,47 @@ Game& Game::GetInstance() {
     return *instance;
 
 }
+
+Game::~Game() {
+
+    free(state);
+
+    Mix_CloseAudio();
+    Mix_Quit();
+    IMG_Quit();
+
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+
+    SDL_Quit();
+
+}
+
+State& Game::GetState() {
+
+    return *state;
+
+}
+
+SDL_Renderer* Game::GetRenderer() {
+    
+    return renderer;
+
+}
+
+void Game::Run() {
+
+    while (!state->QuitRequested()) {
+
+        state->Update(1.0);
+        state->Render();
+
+        SDL_RenderPresent(renderer);
+
+        SDL_Delay(33);
+
+    }
+
+
+}
+

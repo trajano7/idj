@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include <string>
+#include "State.h"
 
 #define INCLUDE_SDL 
 #include "SDL_include.h"
@@ -16,13 +17,15 @@ class Game {
         static Game* instance;
         SDL_Window* window;
         SDL_Renderer* renderer;
-        //State* state;
+        State* state;
 
     public: 
 
+        ~Game();
         SDL_Renderer* GetRenderer();
         static Game& GetInstance();
-        //State& GetState();
+        State& GetState();
+        void Run();
 
 };
 
