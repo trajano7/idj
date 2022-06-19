@@ -116,7 +116,9 @@ dep/Main.d bin/Main.o: src/Main.cpp /usr/include/stdc-predef.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/c++/5/bits/functional_hash.h \
  /usr/include/c++/5/bits/hash_bytes.h \
- /usr/include/c++/5/bits/basic_string.tcc include/SDL_include.h
+ /usr/include/c++/5/bits/basic_string.tcc include/SDL_include.h \
+ include/State.h include/Sprite.h include/Music.h \
+ /usr/include/SDL2/SDL_mixer.h
 
 /usr/include/stdc-predef.h:
 
@@ -469,3 +471,11 @@ include/Game.h:
 /usr/include/c++/5/bits/basic_string.tcc:
 
 include/SDL_include.h:
+
+include/State.h:
+
+include/Sprite.h:
+
+include/Music.h:
+
+/usr/include/SDL2/SDL_mixer.h:

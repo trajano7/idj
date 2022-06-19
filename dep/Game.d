@@ -98,13 +98,13 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/bits/locale_facets.tcc \
  /usr/include/c++/5/bits/basic_ios.tcc \
  /usr/include/c++/5/bits/ostream.tcc /usr/include/c++/5/istream \
- /usr/include/c++/5/bits/istream.tcc include/Game.h include/State.h \
- include/SDL_include.h /usr/include/SDL2/SDL.h \
- /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
- /usr/include/SDL2/SDL_config.h /usr/include/SDL2/SDL_platform.h \
- /usr/include/SDL2/begin_code.h /usr/include/SDL2/close_code.h \
- /usr/include/string.h /usr/include/strings.h /usr/include/inttypes.h \
- /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ /usr/include/c++/5/bits/istream.tcc include/Game.h include/SDL_include.h \
+ /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
+ /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
+ /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
+ /usr/include/SDL2/close_code.h /usr/include/string.h \
+ /usr/include/strings.h /usr/include/inttypes.h /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/huge_val.h \
  /usr/include/x86_64-linux-gnu/bits/huge_valf.h \
@@ -136,7 +136,8 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_system.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_image.h /usr/include/SDL2/SDL.h \
- /usr/include/SDL2/SDL_mixer.h
+ /usr/include/SDL2/SDL_mixer.h include/State.h include/Sprite.h \
+ include/Music.h
 
 /usr/include/stdc-predef.h:
 
@@ -406,8 +407,6 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
 
 include/Game.h:
 
-include/State.h:
-
 include/SDL_include.h:
 
 /usr/include/SDL2/SDL.h:
@@ -537,3 +536,9 @@ include/SDL_include.h:
 /usr/include/SDL2/SDL.h:
 
 /usr/include/SDL2/SDL_mixer.h:
+
+include/State.h:
+
+include/Sprite.h:
+
+include/Music.h:

@@ -10,12 +10,14 @@ Game::Game(string title, int width, int height) {
 
     int bitmask;
 
+    //Check if already have an instance of Game
     if (instance != nullptr) {
         exit(EXIT_FAILURE);
     }
 
     instance = this;
 
+    //Initialize SDL libs
     if ((SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER) != 0)) {
         SDL_Log("SDL initialization failed: %s", SDL_GetError());
         exit(EXIT_FAILURE);
@@ -40,6 +42,7 @@ Game::Game(string title, int width, int height) {
 
     Mix_AllocateChannels(32);
 
+    //Create SDL window and renderer
     window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, 0);
     if (window == nullptr) {
         SDL_Log("Window creation failed: %s", SDL_GetError());
@@ -58,9 +61,8 @@ Game::Game(string title, int width, int height) {
 
 Game& Game::GetInstance() {
 
-
     if (instance == nullptr) {
-        new Game("Jogo", 800, 600);
+        new Game("Matheus_170152227", 1024, 600);
     }
 
     return *instance;

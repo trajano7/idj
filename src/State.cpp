@@ -1,8 +1,9 @@
 #include "State.h"
 
-State::State() : bg() {
+State::State() : bg("Recursos/img/ocean.jpg"), music("Recursos/audio/stageState.ogg") {
 
     quitRequested = false;
+    music.Play(-1);
 
 }
 
@@ -21,6 +22,8 @@ void State::Update(float dt) {
 }
 
 void State::Render() {
+
+    bg.Render(0,0);
 
     return;
 
