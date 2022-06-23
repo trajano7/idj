@@ -10,12 +10,13 @@
 
 using namespace std;
 
+//Game class intializate SDL resources and run the main game loop
 class Game {
     private:
 
         Game(string title, int width, int height);
 
-        //Use singleton pattern
+        //Using singleton pattern
         static Game* instance;
         SDL_Window* window;
         SDL_Renderer* renderer;
@@ -24,9 +25,12 @@ class Game {
     public: 
 
         ~Game();
+
         SDL_Renderer* GetRenderer();
+        //Static method that guarantee the singleton pattern
         static Game& GetInstance();
         State& GetState();
+        //Method that keeps the main game loop
         void Run();
 
 };

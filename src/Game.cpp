@@ -73,12 +73,12 @@ Game::~Game() {
 
     free(state);
 
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+
     Mix_CloseAudio();
     Mix_Quit();
     IMG_Quit();
-
-    SDL_DestroyRenderer(renderer);
-    SDL_DestroyWindow(window);
 
     SDL_Quit();
 
@@ -98,6 +98,7 @@ SDL_Renderer* Game::GetRenderer() {
 
 void Game::Run() {
 
+    //Runs until the current active state change the quit flag
     while (!state->QuitRequested()) {
 
         state->Update(1.0);
@@ -105,6 +106,7 @@ void Game::Run() {
 
         SDL_RenderPresent(renderer);
 
+        //33 ms delay, mantain about 30 FPS
         SDL_Delay(33);
 
     }

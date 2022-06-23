@@ -56,6 +56,7 @@ void Sprite::SetClip(int x, int y, int w, int h) {
 
 void Sprite::Render(int x, int y) {
 
+    //dstrect indicates the render position of the sprite
     SDL_Rect dstrect;
 
     dstrect.x = x;
