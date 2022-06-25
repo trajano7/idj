@@ -118,7 +118,25 @@ dep/Main.d bin/Main.o: src/Main.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/bits/hash_bytes.h \
  /usr/include/c++/5/bits/basic_string.tcc include/SDL_include.h \
  include/State.h include/Sprite.h include/Music.h \
- /usr/include/SDL2/SDL_mixer.h
+ /usr/include/SDL2/SDL_mixer.h include/Vec2.h include/Rect.h \
+ include/Vec2.h /usr/include/c++/5/iostream /usr/include/c++/5/ostream \
+ /usr/include/c++/5/ios /usr/include/c++/5/bits/ios_base.h \
+ /usr/include/c++/5/bits/locale_classes.h \
+ /usr/include/c++/5/bits/locale_classes.tcc \
+ /usr/include/c++/5/system_error \
+ /usr/include/x86_64-linux-gnu/c++/5/bits/error_constants.h \
+ /usr/include/c++/5/stdexcept /usr/include/c++/5/streambuf \
+ /usr/include/c++/5/bits/streambuf.tcc \
+ /usr/include/c++/5/bits/basic_ios.h \
+ /usr/include/c++/5/bits/locale_facets.h /usr/include/c++/5/cwctype \
+ /usr/include/wctype.h \
+ /usr/include/x86_64-linux-gnu/c++/5/bits/ctype_base.h \
+ /usr/include/c++/5/bits/streambuf_iterator.h \
+ /usr/include/x86_64-linux-gnu/c++/5/bits/ctype_inline.h \
+ /usr/include/c++/5/bits/locale_facets.tcc \
+ /usr/include/c++/5/bits/basic_ios.tcc \
+ /usr/include/c++/5/bits/ostream.tcc /usr/include/c++/5/istream \
+ /usr/include/c++/5/bits/istream.tcc
 
 /usr/include/stdc-predef.h:
 
@@ -479,3 +497,55 @@ include/Sprite.h:
 include/Music.h:
 
 /usr/include/SDL2/SDL_mixer.h:
+
+include/Vec2.h:
+
+include/Rect.h:
+
+include/Vec2.h:
+
+/usr/include/c++/5/iostream:
+
+/usr/include/c++/5/ostream:
+
+/usr/include/c++/5/ios:
+
+/usr/include/c++/5/bits/ios_base.h:
+
+/usr/include/c++/5/bits/locale_classes.h:
+
+/usr/include/c++/5/bits/locale_classes.tcc:
+
+/usr/include/c++/5/system_error:
+
+/usr/include/x86_64-linux-gnu/c++/5/bits/error_constants.h:
+
+/usr/include/c++/5/stdexcept:
+
+/usr/include/c++/5/streambuf:
+
+/usr/include/c++/5/bits/streambuf.tcc:
+
+/usr/include/c++/5/bits/basic_ios.h:
+
+/usr/include/c++/5/bits/locale_facets.h:
+
+/usr/include/c++/5/cwctype:
+
+/usr/include/wctype.h:
+
+/usr/include/x86_64-linux-gnu/c++/5/bits/ctype_base.h:
+
+/usr/include/c++/5/bits/streambuf_iterator.h:
+
+/usr/include/x86_64-linux-gnu/c++/5/bits/ctype_inline.h:
+
+/usr/include/c++/5/bits/locale_facets.tcc:
+
+/usr/include/c++/5/bits/basic_ios.tcc:
+
+/usr/include/c++/5/bits/ostream.tcc:
+
+/usr/include/c++/5/istream:
+
+/usr/include/c++/5/bits/istream.tcc:

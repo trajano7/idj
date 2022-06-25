@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Fri Jun 17 23:01:24 2022
+# Make data base, printed on Fri Jun 24 22:31:44 2022
 
 # Variables
 
@@ -78,13 +77,11 @@ MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-r6rOvFN4bg
+DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-f3Shl0DrrD
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
 LC_CTYPE = pt_BR.UTF-8
-# makefile (from 'makefile', line 28)
-BIN_PATH = bin
 # environment
 CLUTTER_IM_MODULE = xim
 # environment
@@ -102,23 +99,21 @@ OBJ_FILES = $(addprefix $(BIN_PATH)/,$(notdir $(CPP_FILES:.cpp=.o)))
 # environment
 PATH = /home/trajano/bin:/home/trajano/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # environment
-SESSION_MANAGER = local/trajano:@/tmp/.ICE-unix/1632,unix/trajano:/tmp/.ICE-unix/1632
+GPG_AGENT_INFO = /home/trajano/.gnupg/S.gpg-agent:0:1
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # makefile (from 'makefile', line 27)
 SRC_PATH = src
 # environment
-WINDOWID = 85983242
-# environment
-XDG_MENU_PREFIX = gnome-
+WINDOWID = 54525962
+# makefile (from 'makefile', line 28)
+BIN_PATH = bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
-# environment
-SESSION = ubuntu
 # environment
 XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/trajano
 # environment
@@ -186,10 +181,10 @@ GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 # environment
 XDG_VTNR = 7
 # makefile (from 'makefile', line 33)
+ 
 INC_FILES = $(wildcard $(INC_PATH)/*.h)
 # environment
 LC_TIME = pt_BR.UTF-8
- 
 # makefile (from 'makefile', line 34)
 FILE_NAMES = $(sort $(notdir $(CPP_FILES:.cpp=)) $(notdir $(INC_FILES:.h=)))
 # default
@@ -203,7 +198,7 @@ RMDIR = rm -rdf
 # environment
 SHLVL = 1
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-8104cb55-14ed-46ea-a30f-4b1d2b2d9018.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-130e9024-4436-458a-8f85-6c83d07e6d66.sock
 # environment
 COMPIZ_CONFIG_PROFILE = ubuntu
 # makefile (from 'makefile', line 39)
@@ -260,14 +255,12 @@ GTK2_MODULES = overlay-scrollbar
 QT_ACCESSIBILITY = 1
 # environment
 DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
-# environment
-NO_AT_BRIDGE = 1
 # makefile (from 'makefile', line 6)
 COMPILER = g++
 # default
 MAKEFILES := 
 # environment
-UPSTART_SESSION = unix:abstract=/com/ubuntu/upstart-session/1000/1345
+UPSTART_SESSION = unix:abstract=/com/ubuntu/upstart-session/1000/2327
 # environment
 LC_NUMERIC = pt_BR.UTF-8
 # automatic
@@ -305,9 +298,9 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 17877
+VSCODE_PID = 17831
 # variable set hash-table stats:
-# Load=147/1024=14%, Rehash=0, Collisions=23/208=11%
+# Load=144/1024=14%, Rehash=0, Collisions=18/205=9%
 
 # Pattern-specific Variable Values
 
@@ -315,13 +308,12 @@ VSCODE_PID = 17877
 
 # Directories
 
-# include (device 2050, inode 26477742): 4 files, no impossibilities.
-# . (device 2050, inode 26476798): 11 files, no impossibilities.
- 
-# dep (device 2050, inode 26477831): No files, no impossibilities so far.
-# src (device 2050, inode 26477741): 4 files, no impossibilities.
+# include (device 2050, inode 26477742): 9 files, no impossibilities.
+# . (device 2050, inode 26476798): 12 files, no impossibilities.
+# dep (device 2050, inode 29098106): No files, no impossibilities so far.
+# src (device 2050, inode 26477741): 9 files, no impossibilities.
 
-# 19 files, no impossibilities in 4 directories.
+# 30 files, no impossibilities in 4 directories.
 
 # Implicit Rules
 
@@ -347,6 +339,13 @@ $:
 #  File does not exist.
 #  File has not been updated.
 
+# Not a target:
+dep/State.d:
+#  Precious file (prerequisite of .PRECIOUS).
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 all: compiled_prog
 #  Command line target.
 #  Implicit rule search has been done.
@@ -356,12 +355,38 @@ all: compiled_prog
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/7=0%
 
+# Not a target:
+dep/Rect.d:
+#  Precious file (prerequisite of .PRECIOUS).
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 .PHONY: release debug cppcheck valgrind clean folders help
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-.PRECIOUS: dep/Game.d dep/Main.d dep/SDL_include.d
+# Not a target:
+bin/State.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.PRECIOUS: dep/Game.d dep/Main.d dep/Music.d dep/Rect.d dep/SDL_include.d dep/Sprite.d dep/State.d dep/Vec2.d
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+bin/Rect.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+dep/Sprite.d:
+#  Precious file (prerequisite of .PRECIOUS).
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -402,6 +427,12 @@ folders:
 	@mkdir -p $(DEP_PATH) $(BIN_PATH) $(INC_PATH) $(SRC_PATH)
 
 # Not a target:
+bin/Sprite.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 .SUFFIXES:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -420,7 +451,6 @@ debug: compiled_prog
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
- 
 #  Last modified 2022-06-17 22:56:09.689088423
 #  File has been updated.
 #  Successfully updated.
@@ -435,15 +465,16 @@ dep/SDL_include.d:
 # Not a target:
 src/Game.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 22:55:37.141326102
+#  Last modified 2022-06-23 21:09:42.62297735
 #  File has been updated.
 #  Successfully updated.
 
+ 
 dep/Game.d: src/Game.cpp | folders
 #  Precious file (prerequisite of .PRECIOUS).
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'Game'
-#  Last modified 2022-06-17 22:55:39.481309024
+#  Last modified 2022-06-24 17:51:26.467661667
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -474,7 +505,7 @@ help:
 bin/Game.o: dep/Game.d | folders
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'Game'
-#  Last modified 2022-06-17 22:55:39.749307068
+#  Last modified 2022-06-24 17:51:27.127657545
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -482,9 +513,9 @@ bin/Game.o: dep/Game.d | folders
 #  recipe to execute (from 'makefile', line 94):
 	$(COMPILER) $(INC_PATHS) $(addprefix $(SRC_PATH)/,$(notdir $(<:.d=.cpp))) -c $(FLAGS) -o $@
 
-compiled_prog: bin/Game.o bin/Main.o
+compiled_prog: bin/Game.o bin/State.o bin/Sprite.o bin/Main.o bin/Rect.o bin/Music.o bin/Vec2.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-17 22:56:13.689059193
+#  Last modified 2022-06-24 22:15:08.244870854
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -515,9 +546,15 @@ clean:
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 101):
 	-$(RMDIR) $(DEP_PATH)
- 
 	-$(RMDIR) $(BIN_PATH)
 	-$(RM) $(EXEC)
+
+# Not a target:
+dep/Music.d:
+#  Precious file (prerequisite of .PRECIOUS).
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 dep/Main.d:
@@ -527,7 +564,26 @@ dep/Main.d:
 #  File has not been updated.
 
 # Not a target:
+bin/Music.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 bin/Main.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+dep/Vec2.d:
+#  Precious file (prerequisite of .PRECIOUS).
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+bin/Vec2.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -549,19 +605,19 @@ cppcheck:
 	cppcheck --enable=all . -I./include --suppress=missingIncludeSystem
 
 # files hash-table stats:
-# Load=23/1024=2%, Rehash=0, Collisions=0/74=0%
+# Load=33/1024=3%, Rehash=0, Collisions=0/94=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 43 / storage = 379 B / avg = 8 B
-# current buf: size = 8162 B / used = 379 B / count = 43 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 64 / storage = 594 B / avg = 9 B
+# current buf: size = 8162 B / used = 594 B / count = 64 / avg = 9 B
 
-# strcache performance: lookups = 93 / hit rate = 53%
+# strcache performance: lookups = 114 / hit rate = 43%
 # hash-table stats:
-# Load=43/8192=1%, Rehash=0, Collisions=3/93=3%
-# Finished Make data base on Fri Jun 17 23:01:24 2022
+# Load=64/8192=1%, Rehash=0, Collisions=6/114=5%
+# Finished Make data base on Fri Jun 24 22:31:44 2022
 
  
