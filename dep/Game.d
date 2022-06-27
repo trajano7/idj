@@ -137,6 +137,11 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_image.h /usr/include/SDL2/SDL.h \
  /usr/include/SDL2/SDL_mixer.h include/State.h include/Sprite.h \
+ include/Component.h include/GameObject.h include/Rect.h include/Vec2.h \
+ /usr/include/c++/5/vector /usr/include/c++/5/bits/stl_construct.h \
+ /usr/include/c++/5/bits/stl_uninitialized.h \
+ /usr/include/c++/5/bits/stl_vector.h \
+ /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc \
  include/Music.h
 
 /usr/include/stdc-predef.h:
@@ -540,5 +545,25 @@ include/SDL_include.h:
 include/State.h:
 
 include/Sprite.h:
+
+include/Component.h:
+
+include/GameObject.h:
+
+include/Rect.h:
+
+include/Vec2.h:
+
+/usr/include/c++/5/vector:
+
+/usr/include/c++/5/bits/stl_construct.h:
+
+/usr/include/c++/5/bits/stl_uninitialized.h:
+
+/usr/include/c++/5/bits/stl_vector.h:
+
+/usr/include/c++/5/bits/stl_bvector.h:
+
+/usr/include/c++/5/bits/vector.tcc:
 
 include/Music.h:

@@ -3,13 +3,13 @@
 #include "Sprite.h"
 #include "Game.h"
 
-Sprite::Sprite() {
+Sprite::Sprite(GameObject &associated) : Component(associated) {
 
     texture = nullptr;
 
 }
 
-Sprite::Sprite(string file) {
+Sprite::Sprite(string file, GameObject &associated) : Component(associated) {
 
     texture = nullptr;
     Open(file);
@@ -54,13 +54,13 @@ void Sprite::SetClip(int x, int y, int w, int h) {
 
 }
 
-void Sprite::Render(int x, int y) {
+void Sprite::Render() {
 
     //dstrect indicates the render position of the sprite
     SDL_Rect dstrect;
 
-    dstrect.x = x;
-    dstrect.y = y;
+    dstrect.x = associated.box.x; //Incomplete -> need to be fixed
+    dstrect.y = Sprite::associated.y; //
     dstrect.w = clipRect.w;
     dstrect.h = clipRect.h;
 

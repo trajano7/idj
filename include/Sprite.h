@@ -1,6 +1,8 @@
 #ifndef SPRITE_H
 #define SPRITE_H
 
+#include "Component.h"
+
 #include <string>
 
 using namespace std;
@@ -9,7 +11,7 @@ using namespace std;
 #include "SDL_include.h"
 
 //Music class has one SDL_Texture (a image) and the methods to the methods to manipulate it
-class Sprite {
+class Sprite : public Component {
 
     private:
 
@@ -20,21 +22,23 @@ class Sprite {
         
     public: 
 
-        Sprite();
-        Sprite(string file);
+        Sprite(GameObject &associated);
+        Sprite(string file, GameObject &associated);
         ~Sprite();
 
         //Open the image
         void Open(string file);
         //Delimits the texture area that will render
         void SetClip(int x, int y, int w, int h);
-        //Adds the texture to the game renderer
-        void Render(int x, int y);
         int GetWidth();
         int GetHeight();
         //Check if the texture has some image loaded
         bool IsOpen();
 
+        //Adds the texture to the game renderer
+        void Render();
+        void Update(float dt);
+        bool Is(string type);
 };
 
 #endif

@@ -13,8 +13,12 @@ g++ -Iinclude  src/Rect.cpp -M -MT dep/Rect.d -MT bin/Rect.o -MP -MF dep/Rect.d 
 g++ -Iinclude  src/Rect.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Rect.o
 g++ -Iinclude  src/Music.cpp -M -MT dep/Music.d -MT bin/Music.o -MP -MF dep/Music.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Music.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Music.o
+g++ -Iinclude  src/Component.cpp -M -MT dep/Component.d -MT bin/Component.o -MP -MF dep/Component.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -Iinclude  src/Component.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Component.o
+g++ -Iinclude  src/GameObject.cpp -M -MT dep/GameObject.d -MT bin/GameObject.o -MP -MF dep/GameObject.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -Iinclude  src/GameObject.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/GameObject.o
 g++ -Iinclude  src/Vec2.cpp -M -MT dep/Vec2.d -MT bin/Vec2.o -MP -MF dep/Vec2.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Vec2.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Vec2.o
-g++ -o compiled_prog bin/Game.o bin/State.o bin/Sprite.o bin/Main.o bin/Rect.o bin/Music.o bin/Vec2.o  -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lm -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -o compiled_prog bin/Game.o bin/State.o bin/Sprite.o bin/Main.o bin/Rect.o bin/Music.o bin/Component.o bin/GameObject.o bin/Vec2.o  -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lm -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 make: Leaving directory '/home/trajano/Documents/idj/idj'
  
