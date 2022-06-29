@@ -3,6 +3,8 @@
 #include "Sprite.h"
 #include "Game.h"
 
+#include <typeinfo>
+
 Sprite::Sprite(GameObject &associated) : Component(associated) {
 
     texture = nullptr;
@@ -13,6 +15,8 @@ Sprite::Sprite(string file, GameObject &associated) : Component(associated) {
 
     texture = nullptr;
     Open(file);
+    associated.box.w = GetWidth();
+    associated.box.h = GetHeight();
 
 }
 
@@ -60,7 +64,7 @@ void Sprite::Render() {
     SDL_Rect dstrect;
 
     dstrect.x = associated.box.x; //Incomplete -> need to be fixed
-    dstrect.y = Sprite::associated.y; //
+    dstrect.y = associated.box.y; //
     dstrect.w = clipRect.w;
     dstrect.h = clipRect.h;
 
@@ -87,5 +91,21 @@ bool Sprite::IsOpen() {
     }
 
     return true;
+
+}
+
+void Sprite::Update(float dt) {
+
+    return;
+
+}
+
+bool Sprite::Is(string type) {
+
+    if("Sprite" == type) {
+        return true;
+    }
+
+    return false;
 
 }

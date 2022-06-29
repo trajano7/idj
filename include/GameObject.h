@@ -1,11 +1,13 @@
 #ifndef GAME_OBJECT_H
 #define GAME_OBJECT_H
 
-#include "Component.h"
 #include "Rect.h"
 #include <vector>
+#include <string>
 
 using namespace std;
+
+class Component;
 
 class GameObject {
 

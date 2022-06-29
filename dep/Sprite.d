@@ -1,5 +1,5 @@
 dep/Sprite.d bin/Sprite.o: src/Sprite.cpp /usr/include/stdc-predef.h \
- include/Sprite.h /usr/include/c++/5/string \
+ include/Sprite.h include/Component.h /usr/include/c++/5/string \
  /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -83,13 +83,18 @@ dep/Sprite.d bin/Sprite.o: src/Sprite.cpp /usr/include/stdc-predef.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/c++/5/bits/functional_hash.h \
  /usr/include/c++/5/bits/hash_bytes.h \
- /usr/include/c++/5/bits/basic_string.tcc include/SDL_include.h \
- /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
- /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
- /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
- /usr/include/SDL2/close_code.h /usr/include/string.h \
- /usr/include/strings.h /usr/include/inttypes.h /usr/include/math.h \
- /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ /usr/include/c++/5/bits/basic_string.tcc include/GameObject.h \
+ include/Rect.h include/Vec2.h /usr/include/c++/5/vector \
+ /usr/include/c++/5/bits/stl_construct.h \
+ /usr/include/c++/5/bits/stl_uninitialized.h \
+ /usr/include/c++/5/bits/stl_vector.h \
+ /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc \
+ include/SDL_include.h /usr/include/SDL2/SDL.h \
+ /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
+ /usr/include/SDL2/SDL_config.h /usr/include/SDL2/SDL_platform.h \
+ /usr/include/SDL2/begin_code.h /usr/include/SDL2/close_code.h \
+ /usr/include/string.h /usr/include/strings.h /usr/include/inttypes.h \
+ /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/huge_val.h \
  /usr/include/x86_64-linux-gnu/bits/huge_valf.h \
@@ -122,11 +127,13 @@ dep/Sprite.d bin/Sprite.o: src/Sprite.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_image.h /usr/include/SDL2/SDL.h include/Game.h \
  include/State.h include/Sprite.h include/Music.h \
- /usr/include/SDL2/SDL_mixer.h
+ /usr/include/SDL2/SDL_mixer.h /usr/include/c++/5/typeinfo
 
 /usr/include/stdc-predef.h:
 
 include/Sprite.h:
+
+include/Component.h:
 
 /usr/include/c++/5/string:
 
@@ -346,6 +353,24 @@ include/Sprite.h:
 
 /usr/include/c++/5/bits/basic_string.tcc:
 
+include/GameObject.h:
+
+include/Rect.h:
+
+include/Vec2.h:
+
+/usr/include/c++/5/vector:
+
+/usr/include/c++/5/bits/stl_construct.h:
+
+/usr/include/c++/5/bits/stl_uninitialized.h:
+
+/usr/include/c++/5/bits/stl_vector.h:
+
+/usr/include/c++/5/bits/stl_bvector.h:
+
+/usr/include/c++/5/bits/vector.tcc:
+
 include/SDL_include.h:
 
 /usr/include/SDL2/SDL.h:
@@ -483,3 +508,5 @@ include/Sprite.h:
 include/Music.h:
 
 /usr/include/SDL2/SDL_mixer.h:
+
+/usr/include/c++/5/typeinfo:

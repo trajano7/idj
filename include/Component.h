@@ -3,9 +3,9 @@
 
 #include <string>
 
-using namespace std;
+#include "GameObject.h"
 
-class GameObject;
+using namespace std;
 
 class Component {
 

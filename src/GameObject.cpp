@@ -1,5 +1,7 @@
 #include "GameObject.h"
 
+#include "Component.h"
+
 #include <algorithm>
 #include <typeinfo>
 

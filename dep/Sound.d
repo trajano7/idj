@@ -1,11 +1,50 @@
-dep/Component.d bin/Component.o: src/Component.cpp \
- /usr/include/stdc-predef.h include/Component.h /usr/include/c++/5/string \
- /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h \
- /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h \
+dep/Sound.d bin/Sound.o: src/Sound.cpp /usr/include/stdc-predef.h \
+ include/Sound.h include/SDL_include.h /usr/include/SDL2/SDL_mixer.h \
+ /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
+ /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
+ /usr/include/SDL2/close_code.h /usr/include/x86_64-linux-gnu/sys/types.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/time.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/xlocale.h \
+ /usr/include/alloca.h /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/string.h /usr/include/strings.h /usr/include/inttypes.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h /usr/include/ctype.h \
+ /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+ /usr/include/x86_64-linux-gnu/bits/huge_val.h \
+ /usr/include/x86_64-linux-gnu/bits/huge_valf.h \
+ /usr/include/x86_64-linux-gnu/bits/huge_vall.h \
+ /usr/include/x86_64-linux-gnu/bits/inf.h \
+ /usr/include/x86_64-linux-gnu/bits/nan.h \
+ /usr/include/x86_64-linux-gnu/bits/mathdef.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls.h /usr/include/iconv.h \
+ /usr/include/SDL2/SDL_rwops.h /usr/include/SDL2/SDL_error.h \
+ /usr/include/SDL2/SDL_audio.h /usr/include/SDL2/SDL_endian.h \
+ /usr/include/SDL2/SDL_mutex.h /usr/include/SDL2/SDL_thread.h \
+ /usr/include/SDL2/SDL_atomic.h /usr/include/SDL2/SDL_version.h \
+ include/Component.h /usr/include/c++/5/string \
+ /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/cpu_defines.h \
  /usr/include/c++/5/bits/stringfwd.h /usr/include/c++/5/bits/memoryfwd.h \
  /usr/include/c++/5/bits/char_traits.h \
@@ -23,13 +62,7 @@ dep/Component.d bin/Component.o: src/Component.cpp \
  /usr/include/c++/5/bits/ptr_traits.h \
  /usr/include/c++/5/bits/predefined_ops.h \
  /usr/include/c++/5/bits/postypes.h /usr/include/c++/5/cwchar \
- /usr/include/wchar.h /usr/include/stdio.h \
- /usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h \
- /usr/include/x86_64-linux-gnu/bits/wchar.h \
- /usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h /usr/include/xlocale.h \
- /usr/include/c++/5/cstdint \
- /usr/lib/gcc/x86_64-linux-gnu/5/include/stdint.h /usr/include/stdint.h \
- /usr/include/c++/5/bits/allocator.h \
+ /usr/include/c++/5/cstdint /usr/include/c++/5/bits/allocator.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/c++allocator.h \
  /usr/include/c++/5/ext/new_allocator.h /usr/include/c++/5/new \
  /usr/include/c++/5/exception \
@@ -40,13 +73,7 @@ dep/Component.d bin/Component.o: src/Component.cpp \
  /usr/include/x86_64-linux-gnu/c++/5/bits/c++locale.h \
  /usr/include/c++/5/clocale /usr/include/locale.h \
  /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/5/iosfwd \
- /usr/include/c++/5/cctype /usr/include/ctype.h \
- /usr/include/x86_64-linux-gnu/bits/types.h \
- /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/endian.h \
- /usr/include/x86_64-linux-gnu/bits/endian.h \
- /usr/include/x86_64-linux-gnu/bits/byteswap.h \
- /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
- /usr/include/c++/5/bits/ostream_insert.h \
+ /usr/include/c++/5/cctype /usr/include/c++/5/bits/ostream_insert.h \
  /usr/include/c++/5/bits/cxxabi_forced.h \
  /usr/include/c++/5/bits/stl_function.h \
  /usr/include/c++/5/backward/binders.h \
@@ -56,28 +83,15 @@ dep/Component.d bin/Component.o: src/Component.cpp \
  /usr/include/c++/5/ext/atomicity.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/gthr.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/gthr-default.h \
- /usr/include/pthread.h /usr/include/sched.h /usr/include/time.h \
+ /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
- /usr/include/x86_64-linux-gnu/bits/time.h \
  /usr/include/x86_64-linux-gnu/bits/timex.h \
- /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/atomic_word.h \
  /usr/include/c++/5/ext/alloc_traits.h \
  /usr/include/c++/5/bits/alloc_traits.h \
  /usr/include/c++/5/ext/string_conversions.h /usr/include/c++/5/cstdlib \
- /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
- /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
- /usr/include/x86_64-linux-gnu/sys/types.h \
- /usr/include/x86_64-linux-gnu/sys/select.h \
- /usr/include/x86_64-linux-gnu/bits/select.h \
- /usr/include/x86_64-linux-gnu/bits/sigset.h \
- /usr/include/x86_64-linux-gnu/sys/sysmacros.h /usr/include/alloca.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/c++/5/cstdio /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
- /usr/include/c++/5/cerrno /usr/include/errno.h \
+ /usr/include/c++/5/cstdio /usr/include/c++/5/cerrno /usr/include/errno.h \
  /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
  /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
@@ -92,13 +106,23 @@ dep/Component.d bin/Component.o: src/Component.cpp \
 
 /usr/include/stdc-predef.h:
 
-include/Component.h:
+include/Sound.h:
 
-/usr/include/c++/5/string:
+include/SDL_include.h:
 
-/usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:
+/usr/include/SDL2/SDL_mixer.h:
 
-/usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h:
+/usr/include/SDL2/SDL_stdinc.h:
+
+/usr/include/SDL2/SDL_config.h:
+
+/usr/include/SDL2/SDL_platform.h:
+
+/usr/include/SDL2/begin_code.h:
+
+/usr/include/SDL2/close_code.h:
+
+/usr/include/x86_64-linux-gnu/sys/types.h:
 
 /usr/include/features.h:
 
@@ -109,6 +133,120 @@ include/Component.h:
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/usr/include/time.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h:
+
+/usr/include/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap-16.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigset.h:
+
+/usr/include/x86_64-linux-gnu/bits/time.h:
+
+/usr/include/x86_64-linux-gnu/sys/sysmacros.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
+
+/usr/include/stdio.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/sys_errlist.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/alloca.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/string.h:
+
+/usr/include/strings.h:
+
+/usr/include/inttypes.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
+
+/usr/include/ctype.h:
+
+/usr/include/math.h:
+
+/usr/include/x86_64-linux-gnu/bits/math-vector.h:
+
+/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
+
+/usr/include/x86_64-linux-gnu/bits/huge_val.h:
+
+/usr/include/x86_64-linux-gnu/bits/huge_valf.h:
+
+/usr/include/x86_64-linux-gnu/bits/huge_vall.h:
+
+/usr/include/x86_64-linux-gnu/bits/inf.h:
+
+/usr/include/x86_64-linux-gnu/bits/nan.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathdef.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
+/usr/include/iconv.h:
+
+/usr/include/SDL2/SDL_rwops.h:
+
+/usr/include/SDL2/SDL_error.h:
+
+/usr/include/SDL2/SDL_audio.h:
+
+/usr/include/SDL2/SDL_endian.h:
+
+/usr/include/SDL2/SDL_mutex.h:
+
+/usr/include/SDL2/SDL_thread.h:
+
+/usr/include/SDL2/SDL_atomic.h:
+
+/usr/include/SDL2/SDL_version.h:
+
+include/Component.h:
+
+/usr/include/c++/5/string:
+
+/usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:
+
+/usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h:
 
 /usr/include/x86_64-linux-gnu/c++/5/bits/cpu_defines.h:
 
@@ -154,23 +292,7 @@ include/Component.h:
 
 /usr/include/c++/5/cwchar:
 
-/usr/include/wchar.h:
-
-/usr/include/stdio.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h:
-
-/usr/include/x86_64-linux-gnu/bits/wchar.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h:
-
-/usr/include/xlocale.h:
-
 /usr/include/c++/5/cstdint:
-
-/usr/lib/gcc/x86_64-linux-gnu/5/include/stdint.h:
-
-/usr/include/stdint.h:
 
 /usr/include/c++/5/bits/allocator.h:
 
@@ -202,20 +324,6 @@ include/Component.h:
 
 /usr/include/c++/5/cctype:
 
-/usr/include/ctype.h:
-
-/usr/include/x86_64-linux-gnu/bits/types.h:
-
-/usr/include/x86_64-linux-gnu/bits/typesizes.h:
-
-/usr/include/endian.h:
-
-/usr/include/x86_64-linux-gnu/bits/endian.h:
-
-/usr/include/x86_64-linux-gnu/bits/byteswap.h:
-
-/usr/include/x86_64-linux-gnu/bits/byteswap-16.h:
-
 /usr/include/c++/5/bits/ostream_insert.h:
 
 /usr/include/c++/5/bits/cxxabi_forced.h:
@@ -240,15 +348,9 @@ include/Component.h:
 
 /usr/include/sched.h:
 
-/usr/include/time.h:
-
 /usr/include/x86_64-linux-gnu/bits/sched.h:
 
-/usr/include/x86_64-linux-gnu/bits/time.h:
-
 /usr/include/x86_64-linux-gnu/bits/timex.h:
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
@@ -262,35 +364,7 @@ include/Component.h:
 
 /usr/include/c++/5/cstdlib:
 
-/usr/include/stdlib.h:
-
-/usr/include/x86_64-linux-gnu/bits/waitflags.h:
-
-/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
-
-/usr/include/x86_64-linux-gnu/sys/types.h:
-
-/usr/include/x86_64-linux-gnu/sys/select.h:
-
-/usr/include/x86_64-linux-gnu/bits/select.h:
-
-/usr/include/x86_64-linux-gnu/bits/sigset.h:
-
-/usr/include/x86_64-linux-gnu/sys/sysmacros.h:
-
-/usr/include/alloca.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
-
 /usr/include/c++/5/cstdio:
-
-/usr/include/libio.h:
-
-/usr/include/_G_config.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
-
-/usr/include/x86_64-linux-gnu/bits/sys_errlist.h:
 
 /usr/include/c++/5/cerrno:
 

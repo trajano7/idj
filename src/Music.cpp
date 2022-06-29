@@ -28,7 +28,7 @@ void Music::Open(string file) {
 Music::~Music() {
 
     Stop(1500);
-    Mix_FreeMusic(music);
+    if (music != nullptr) Mix_FreeMusic(music);
 
 }
 
