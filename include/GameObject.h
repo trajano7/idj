@@ -4,11 +4,13 @@
 #include "Rect.h"
 #include <vector>
 #include <string>
+#include <memory>
 
 using namespace std;
 
 class Component;
 
+//Class GameObject groups some logics implemented on the components, so it function in the state dependeds of its components
 class GameObject {
 
     public:
@@ -28,7 +30,8 @@ class GameObject {
 
     private:
 
-        vector <Component*> components;
+        //There are several types of componentes, each component assign a certain behavior to a GameObject
+        vector <unique_ptr<Component>> components;
         bool isDead;
 
 };

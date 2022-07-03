@@ -117,16 +117,35 @@ dep/Main.d bin/Main.o: src/Main.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/bits/functional_hash.h \
  /usr/include/c++/5/bits/hash_bytes.h \
  /usr/include/c++/5/bits/basic_string.tcc include/SDL_include.h \
- include/State.h include/Sprite.h include/Music.h \
- /usr/include/SDL2/SDL_mixer.h include/Vec2.h include/Rect.h \
- include/Vec2.h /usr/include/c++/5/iostream /usr/include/c++/5/ostream \
- /usr/include/c++/5/ios /usr/include/c++/5/bits/ios_base.h \
+ include/State.h /usr/include/c++/5/memory \
+ /usr/include/c++/5/bits/stl_construct.h \
+ /usr/include/c++/5/bits/stl_uninitialized.h \
+ /usr/include/c++/5/bits/stl_tempbuf.h \
+ /usr/include/c++/5/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/5/typeinfo /usr/include/c++/5/ext/concurrence.h \
+ /usr/include/c++/5/bits/uses_allocator.h /usr/include/c++/5/functional \
+ /usr/include/c++/5/tuple /usr/include/c++/5/utility \
+ /usr/include/c++/5/bits/stl_relops.h /usr/include/c++/5/array \
+ /usr/include/c++/5/stdexcept /usr/include/c++/5/bits/unique_ptr.h \
+ /usr/include/c++/5/bits/shared_ptr.h \
+ /usr/include/c++/5/bits/shared_ptr_base.h \
+ /usr/include/c++/5/bits/allocated_ptr.h \
+ /usr/include/c++/5/ext/aligned_buffer.h \
+ /usr/include/c++/5/bits/shared_ptr_atomic.h \
+ /usr/include/c++/5/bits/atomic_base.h \
+ /usr/include/c++/5/backward/auto_ptr.h /usr/include/c++/5/vector \
+ /usr/include/c++/5/bits/stl_vector.h \
+ /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc \
+ include/Sprite.h include/Component.h include/GameObject.h include/Rect.h \
+ include/Vec2.h include/Music.h /usr/include/SDL2/SDL_mixer.h \
+ include/Vec2.h include/Rect.h /usr/include/c++/5/iostream \
+ /usr/include/c++/5/ostream /usr/include/c++/5/ios \
+ /usr/include/c++/5/bits/ios_base.h \
  /usr/include/c++/5/bits/locale_classes.h \
  /usr/include/c++/5/bits/locale_classes.tcc \
  /usr/include/c++/5/system_error \
  /usr/include/x86_64-linux-gnu/c++/5/bits/error_constants.h \
- /usr/include/c++/5/stdexcept /usr/include/c++/5/streambuf \
- /usr/include/c++/5/bits/streambuf.tcc \
+ /usr/include/c++/5/streambuf /usr/include/c++/5/bits/streambuf.tcc \
  /usr/include/c++/5/bits/basic_ios.h \
  /usr/include/c++/5/bits/locale_facets.h /usr/include/c++/5/cwctype \
  /usr/include/wctype.h \
@@ -492,7 +511,67 @@ include/SDL_include.h:
 
 include/State.h:
 
+/usr/include/c++/5/memory:
+
+/usr/include/c++/5/bits/stl_construct.h:
+
+/usr/include/c++/5/bits/stl_uninitialized.h:
+
+/usr/include/c++/5/bits/stl_tempbuf.h:
+
+/usr/include/c++/5/bits/stl_raw_storage_iter.h:
+
+/usr/include/c++/5/typeinfo:
+
+/usr/include/c++/5/ext/concurrence.h:
+
+/usr/include/c++/5/bits/uses_allocator.h:
+
+/usr/include/c++/5/functional:
+
+/usr/include/c++/5/tuple:
+
+/usr/include/c++/5/utility:
+
+/usr/include/c++/5/bits/stl_relops.h:
+
+/usr/include/c++/5/array:
+
+/usr/include/c++/5/stdexcept:
+
+/usr/include/c++/5/bits/unique_ptr.h:
+
+/usr/include/c++/5/bits/shared_ptr.h:
+
+/usr/include/c++/5/bits/shared_ptr_base.h:
+
+/usr/include/c++/5/bits/allocated_ptr.h:
+
+/usr/include/c++/5/ext/aligned_buffer.h:
+
+/usr/include/c++/5/bits/shared_ptr_atomic.h:
+
+/usr/include/c++/5/bits/atomic_base.h:
+
+/usr/include/c++/5/backward/auto_ptr.h:
+
+/usr/include/c++/5/vector:
+
+/usr/include/c++/5/bits/stl_vector.h:
+
+/usr/include/c++/5/bits/stl_bvector.h:
+
+/usr/include/c++/5/bits/vector.tcc:
+
 include/Sprite.h:
+
+include/Component.h:
+
+include/GameObject.h:
+
+include/Rect.h:
+
+include/Vec2.h:
 
 include/Music.h:
 
@@ -501,8 +580,6 @@ include/Music.h:
 include/Vec2.h:
 
 include/Rect.h:
-
-include/Vec2.h:
 
 /usr/include/c++/5/iostream:
 
@@ -519,8 +596,6 @@ include/Vec2.h:
 /usr/include/c++/5/system_error:
 
 /usr/include/x86_64-linux-gnu/c++/5/bits/error_constants.h:
-
-/usr/include/c++/5/stdexcept:
 
 /usr/include/c++/5/streambuf:
 

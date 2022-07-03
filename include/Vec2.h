@@ -1,6 +1,7 @@
 #ifndef VEC2_H
 #define VEC2_H
 
+//Class that store and manipulate a 2d vector
 class Vec2 {
 
     public:
@@ -10,7 +11,8 @@ class Vec2 {
 
         Vec2();
         Vec2(float x, float y);
-
+        
+        //Definition of methods to three c++ operators
         Vec2 operator + (Vec2 vetor) {
 
             Vec2 sum;
@@ -40,14 +42,21 @@ class Vec2 {
 
            return;
 
-        }
+        }   
 
+        //Multiplies the vector by a scalar
         Vec2 MultScaVec2(float scalar);
+        //Returns the vector absolute value
         float ModVec2();
+        //Returns a unit vector based on the Vec2 stored
         Vec2 UnitVec2();
+        //Calculate the distance between two vectors
         float DistVec2(Vec2 vetor);
+        //Return the degree of the vector
         float DegVec2();
+        //Return the degree of the slope between two points )
         float DegPntsVec2(Vec2 vetor);
+        //Rotate the vector in a given degree
         Vec2 RotateVec2(float degree);
 
 };

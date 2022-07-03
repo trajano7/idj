@@ -55,7 +55,7 @@ float Rect::RectCenterDist(Rect rect) {
 bool Rect::PointInRect(Vec2 point) {
 
     if (point.x >= this->x && point.x <= this->x + this->w) {
-        if (point.y <= this->y && point.y >= this->y - this->h) {
+        if (point.y >= this->y && point.y <= this->y + this->h) {
             return true;
         }
     }

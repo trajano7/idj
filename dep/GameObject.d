@@ -38,8 +38,8 @@ dep/GameObject.d bin/GameObject.o: src/GameObject.cpp \
  /usr/include/c++/5/bits/functional_hash.h \
  /usr/include/c++/5/bits/hash_bytes.h \
  /usr/include/c++/5/bits/range_access.h \
- /usr/include/c++/5/bits/vector.tcc include/Component.h \
- /usr/include/c++/5/string /usr/include/c++/5/bits/stringfwd.h \
+ /usr/include/c++/5/bits/vector.tcc /usr/include/c++/5/string \
+ /usr/include/c++/5/bits/stringfwd.h \
  /usr/include/c++/5/bits/char_traits.h /usr/include/c++/5/bits/postypes.h \
  /usr/include/c++/5/cwchar /usr/include/wchar.h /usr/include/stdio.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h \
@@ -88,12 +88,26 @@ dep/GameObject.d bin/GameObject.o: src/GameObject.cpp \
  /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
  /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /usr/include/c++/5/bits/basic_string.tcc include/GameObject.h \
- /usr/include/c++/5/algorithm /usr/include/c++/5/utility \
- /usr/include/c++/5/bits/stl_relops.h /usr/include/c++/5/bits/stl_algo.h \
+ /usr/include/c++/5/bits/basic_string.tcc /usr/include/c++/5/memory \
+ /usr/include/c++/5/bits/stl_tempbuf.h \
+ /usr/include/c++/5/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/5/typeinfo /usr/include/c++/5/ext/concurrence.h \
+ /usr/include/c++/5/bits/uses_allocator.h /usr/include/c++/5/functional \
+ /usr/include/c++/5/tuple /usr/include/c++/5/utility \
+ /usr/include/c++/5/bits/stl_relops.h /usr/include/c++/5/array \
+ /usr/include/c++/5/stdexcept /usr/include/c++/5/bits/unique_ptr.h \
+ /usr/include/c++/5/bits/shared_ptr.h \
+ /usr/include/c++/5/bits/shared_ptr_base.h \
+ /usr/include/c++/5/bits/allocated_ptr.h \
+ /usr/include/c++/5/ext/aligned_buffer.h \
+ /usr/include/c++/5/bits/shared_ptr_atomic.h \
+ /usr/include/c++/5/bits/atomic_base.h \
+ /usr/include/c++/5/backward/auto_ptr.h include/Component.h \
+ include/GameObject.h /usr/include/c++/5/algorithm \
+ /usr/include/c++/5/bits/stl_algo.h \
  /usr/include/c++/5/bits/algorithmfwd.h \
- /usr/include/c++/5/bits/stl_heap.h /usr/include/c++/5/bits/stl_tempbuf.h \
- /usr/include/c++/5/random /usr/include/c++/5/cmath /usr/include/math.h \
+ /usr/include/c++/5/bits/stl_heap.h /usr/include/c++/5/random \
+ /usr/include/c++/5/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/huge_val.h \
@@ -160,7 +174,7 @@ dep/GameObject.d bin/GameObject.o: src/GameObject.cpp \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/xsavecintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/mwaitxintrin.h \
  /usr/include/c++/5/bits/random.tcc /usr/include/c++/5/numeric \
- /usr/include/c++/5/bits/stl_numeric.h /usr/include/c++/5/typeinfo
+ /usr/include/c++/5/bits/stl_numeric.h
 
 /usr/include/stdc-predef.h:
 
@@ -259,8 +273,6 @@ include/Vec2.h:
 /usr/include/c++/5/bits/range_access.h:
 
 /usr/include/c++/5/bits/vector.tcc:
-
-include/Component.h:
 
 /usr/include/c++/5/string:
 
@@ -402,21 +414,57 @@ include/Component.h:
 
 /usr/include/c++/5/bits/basic_string.tcc:
 
-include/GameObject.h:
+/usr/include/c++/5/memory:
 
-/usr/include/c++/5/algorithm:
+/usr/include/c++/5/bits/stl_tempbuf.h:
+
+/usr/include/c++/5/bits/stl_raw_storage_iter.h:
+
+/usr/include/c++/5/typeinfo:
+
+/usr/include/c++/5/ext/concurrence.h:
+
+/usr/include/c++/5/bits/uses_allocator.h:
+
+/usr/include/c++/5/functional:
+
+/usr/include/c++/5/tuple:
 
 /usr/include/c++/5/utility:
 
 /usr/include/c++/5/bits/stl_relops.h:
+
+/usr/include/c++/5/array:
+
+/usr/include/c++/5/stdexcept:
+
+/usr/include/c++/5/bits/unique_ptr.h:
+
+/usr/include/c++/5/bits/shared_ptr.h:
+
+/usr/include/c++/5/bits/shared_ptr_base.h:
+
+/usr/include/c++/5/bits/allocated_ptr.h:
+
+/usr/include/c++/5/ext/aligned_buffer.h:
+
+/usr/include/c++/5/bits/shared_ptr_atomic.h:
+
+/usr/include/c++/5/bits/atomic_base.h:
+
+/usr/include/c++/5/backward/auto_ptr.h:
+
+include/Component.h:
+
+include/GameObject.h:
+
+/usr/include/c++/5/algorithm:
 
 /usr/include/c++/5/bits/stl_algo.h:
 
 /usr/include/c++/5/bits/algorithmfwd.h:
 
 /usr/include/c++/5/bits/stl_heap.h:
-
-/usr/include/c++/5/bits/stl_tempbuf.h:
 
 /usr/include/c++/5/random:
 
@@ -561,5 +609,3 @@ include/GameObject.h:
 /usr/include/c++/5/numeric:
 
 /usr/include/c++/5/bits/stl_numeric.h:
-
-/usr/include/c++/5/typeinfo:

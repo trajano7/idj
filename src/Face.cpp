@@ -12,10 +12,9 @@ void Face::Damage(int damage) {
 
     Component* soundComponent;
     Sound* sound;
-
+    
     hitpoints -= damage;
     if (hitpoints <= 0) {
-        associated.RequestDelete();
         soundComponent = associated.GetComponent("Sound");
         if (sound != nullptr) {
             sound = static_cast<Sound*>(soundComponent);
@@ -29,6 +28,10 @@ void Face::Damage(int damage) {
 
 void Face::Update(float dt) {
 
+    Sound* sound = static_cast<Sound*>(associated.GetComponent("Sound"));
+
+    //Wait for the death sound stop play to be deleted
+    if (hitpoints <= 0 && !(sound->IsPlaying())) associated.RequestDelete();
     return;
 
 }

@@ -1,9 +1,10 @@
 dep/Sound.d bin/Sound.o: src/Sound.cpp /usr/include/stdc-predef.h \
- include/Sound.h include/SDL_include.h /usr/include/SDL2/SDL_mixer.h \
- /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
- /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
- /usr/include/SDL2/close_code.h /usr/include/x86_64-linux-gnu/sys/types.h \
- /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ include/Sound.h include/SDL_include.h /usr/include/SDL2/SDL.h \
+ /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
+ /usr/include/SDL2/SDL_config.h /usr/include/SDL2/SDL_platform.h \
+ /usr/include/SDL2/begin_code.h /usr/include/SDL2/close_code.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/features.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
@@ -38,11 +39,30 @@ dep/Sound.d bin/Sound.o: src/Sound.cpp /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/nan.h \
  /usr/include/x86_64-linux-gnu/bits/mathdef.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h /usr/include/iconv.h \
- /usr/include/SDL2/SDL_rwops.h /usr/include/SDL2/SDL_error.h \
- /usr/include/SDL2/SDL_audio.h /usr/include/SDL2/SDL_endian.h \
- /usr/include/SDL2/SDL_mutex.h /usr/include/SDL2/SDL_thread.h \
- /usr/include/SDL2/SDL_atomic.h /usr/include/SDL2/SDL_version.h \
- include/Component.h /usr/include/c++/5/string \
+ /usr/include/SDL2/SDL_assert.h /usr/include/SDL2/SDL_atomic.h \
+ /usr/include/SDL2/SDL_audio.h /usr/include/SDL2/SDL_error.h \
+ /usr/include/SDL2/SDL_endian.h /usr/include/SDL2/SDL_mutex.h \
+ /usr/include/SDL2/SDL_thread.h /usr/include/SDL2/SDL_rwops.h \
+ /usr/include/SDL2/SDL_clipboard.h /usr/include/SDL2/SDL_cpuinfo.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/mmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/xmmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/mm_malloc.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/emmintrin.h \
+ /usr/include/SDL2/SDL_events.h /usr/include/SDL2/SDL_video.h \
+ /usr/include/SDL2/SDL_pixels.h /usr/include/SDL2/SDL_rect.h \
+ /usr/include/SDL2/SDL_surface.h /usr/include/SDL2/SDL_blendmode.h \
+ /usr/include/SDL2/SDL_keyboard.h /usr/include/SDL2/SDL_keycode.h \
+ /usr/include/SDL2/SDL_scancode.h /usr/include/SDL2/SDL_mouse.h \
+ /usr/include/SDL2/SDL_joystick.h /usr/include/SDL2/SDL_gamecontroller.h \
+ /usr/include/SDL2/SDL_quit.h /usr/include/SDL2/SDL_gesture.h \
+ /usr/include/SDL2/SDL_touch.h /usr/include/SDL2/SDL_filesystem.h \
+ /usr/include/SDL2/SDL_haptic.h /usr/include/SDL2/SDL_hints.h \
+ /usr/include/SDL2/SDL_loadso.h /usr/include/SDL2/SDL_log.h \
+ /usr/include/SDL2/SDL_messagebox.h /usr/include/SDL2/SDL_power.h \
+ /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_system.h \
+ /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
+ /usr/include/SDL2/SDL_mixer.h include/Component.h \
+ /usr/include/c++/5/string \
  /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/cpu_defines.h \
@@ -102,7 +122,21 @@ dep/Sound.d bin/Sound.o: src/Sound.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/bits/stl_construct.h \
  /usr/include/c++/5/bits/stl_uninitialized.h \
  /usr/include/c++/5/bits/stl_vector.h \
- /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc
+ /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc \
+ /usr/include/c++/5/memory /usr/include/c++/5/bits/stl_tempbuf.h \
+ /usr/include/c++/5/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/5/typeinfo /usr/include/c++/5/ext/concurrence.h \
+ /usr/include/c++/5/bits/uses_allocator.h /usr/include/c++/5/functional \
+ /usr/include/c++/5/tuple /usr/include/c++/5/utility \
+ /usr/include/c++/5/bits/stl_relops.h /usr/include/c++/5/array \
+ /usr/include/c++/5/stdexcept /usr/include/c++/5/bits/unique_ptr.h \
+ /usr/include/c++/5/bits/shared_ptr.h \
+ /usr/include/c++/5/bits/shared_ptr_base.h \
+ /usr/include/c++/5/bits/allocated_ptr.h \
+ /usr/include/c++/5/ext/aligned_buffer.h \
+ /usr/include/c++/5/bits/shared_ptr_atomic.h \
+ /usr/include/c++/5/bits/atomic_base.h \
+ /usr/include/c++/5/backward/auto_ptr.h
 
 /usr/include/stdc-predef.h:
 
@@ -110,7 +144,9 @@ include/Sound.h:
 
 include/SDL_include.h:
 
-/usr/include/SDL2/SDL_mixer.h:
+/usr/include/SDL2/SDL.h:
+
+/usr/include/SDL2/SDL_main.h:
 
 /usr/include/SDL2/SDL_stdinc.h:
 
@@ -224,11 +260,13 @@ include/SDL_include.h:
 
 /usr/include/iconv.h:
 
-/usr/include/SDL2/SDL_rwops.h:
+/usr/include/SDL2/SDL_assert.h:
 
-/usr/include/SDL2/SDL_error.h:
+/usr/include/SDL2/SDL_atomic.h:
 
 /usr/include/SDL2/SDL_audio.h:
+
+/usr/include/SDL2/SDL_error.h:
 
 /usr/include/SDL2/SDL_endian.h:
 
@@ -236,9 +274,73 @@ include/SDL_include.h:
 
 /usr/include/SDL2/SDL_thread.h:
 
-/usr/include/SDL2/SDL_atomic.h:
+/usr/include/SDL2/SDL_rwops.h:
+
+/usr/include/SDL2/SDL_clipboard.h:
+
+/usr/include/SDL2/SDL_cpuinfo.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/mmintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/xmmintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/mm_malloc.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/emmintrin.h:
+
+/usr/include/SDL2/SDL_events.h:
+
+/usr/include/SDL2/SDL_video.h:
+
+/usr/include/SDL2/SDL_pixels.h:
+
+/usr/include/SDL2/SDL_rect.h:
+
+/usr/include/SDL2/SDL_surface.h:
+
+/usr/include/SDL2/SDL_blendmode.h:
+
+/usr/include/SDL2/SDL_keyboard.h:
+
+/usr/include/SDL2/SDL_keycode.h:
+
+/usr/include/SDL2/SDL_scancode.h:
+
+/usr/include/SDL2/SDL_mouse.h:
+
+/usr/include/SDL2/SDL_joystick.h:
+
+/usr/include/SDL2/SDL_gamecontroller.h:
+
+/usr/include/SDL2/SDL_quit.h:
+
+/usr/include/SDL2/SDL_gesture.h:
+
+/usr/include/SDL2/SDL_touch.h:
+
+/usr/include/SDL2/SDL_filesystem.h:
+
+/usr/include/SDL2/SDL_haptic.h:
+
+/usr/include/SDL2/SDL_hints.h:
+
+/usr/include/SDL2/SDL_loadso.h:
+
+/usr/include/SDL2/SDL_log.h:
+
+/usr/include/SDL2/SDL_messagebox.h:
+
+/usr/include/SDL2/SDL_power.h:
+
+/usr/include/SDL2/SDL_render.h:
+
+/usr/include/SDL2/SDL_system.h:
+
+/usr/include/SDL2/SDL_timer.h:
 
 /usr/include/SDL2/SDL_version.h:
+
+/usr/include/SDL2/SDL_mixer.h:
 
 include/Component.h:
 
@@ -403,3 +505,43 @@ include/Vec2.h:
 /usr/include/c++/5/bits/stl_bvector.h:
 
 /usr/include/c++/5/bits/vector.tcc:
+
+/usr/include/c++/5/memory:
+
+/usr/include/c++/5/bits/stl_tempbuf.h:
+
+/usr/include/c++/5/bits/stl_raw_storage_iter.h:
+
+/usr/include/c++/5/typeinfo:
+
+/usr/include/c++/5/ext/concurrence.h:
+
+/usr/include/c++/5/bits/uses_allocator.h:
+
+/usr/include/c++/5/functional:
+
+/usr/include/c++/5/tuple:
+
+/usr/include/c++/5/utility:
+
+/usr/include/c++/5/bits/stl_relops.h:
+
+/usr/include/c++/5/array:
+
+/usr/include/c++/5/stdexcept:
+
+/usr/include/c++/5/bits/unique_ptr.h:
+
+/usr/include/c++/5/bits/shared_ptr.h:
+
+/usr/include/c++/5/bits/shared_ptr_base.h:
+
+/usr/include/c++/5/bits/allocated_ptr.h:
+
+/usr/include/c++/5/ext/aligned_buffer.h:
+
+/usr/include/c++/5/bits/shared_ptr_atomic.h:
+
+/usr/include/c++/5/bits/atomic_base.h:
+
+/usr/include/c++/5/backward/auto_ptr.h:

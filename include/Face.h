@@ -3,6 +3,7 @@
 
 #include "Component.h"
 
+//Class that represents a enemy
 class Face : public Component {
 
     private: 

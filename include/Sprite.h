@@ -10,7 +10,7 @@ using namespace std;
 #define INCLUDE_SDL 
 #include "SDL_include.h"
 
-//Music class has one SDL_Texture (a image) and the methods to the methods to manipulate it
+//Sprite is a child class of Componen, it has one SDL_Texture (a image) and the methods to the methods to manipulate it
 class Sprite : public Component {
 
     private:
@@ -22,6 +22,7 @@ class Sprite : public Component {
         
     public: 
 
+        //Receive in the constructor the GameObject that will store the sprite
         Sprite(GameObject &associated);
         Sprite(string file, GameObject &associated);
         ~Sprite();
@@ -35,10 +36,12 @@ class Sprite : public Component {
         //Check if the texture has some image loaded
         bool IsOpen();
 
+        //Virtual method from the base class:
         //Adds the texture to the game renderer
         void Render();
         void Update(float dt);
         bool Is(string type);
+
 };
 
 #endif

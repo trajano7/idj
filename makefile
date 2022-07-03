@@ -36,7 +36,7 @@ DEP_FILES = $(addprefix $(DEP_PATH)/,$(addsuffix .d,$(FILE_NAMES)))
 OBJ_FILES = $(addprefix $(BIN_PATH)/,$(notdir $(CPP_FILES:.cpp=.o)))
 
 ##### Executable name
-EXEC = compiled_prog
+EXEC = Matheus_170152227
 
 ###################################
 ##### Windows Makefile for SDL2 use

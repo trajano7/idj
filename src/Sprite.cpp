@@ -63,8 +63,8 @@ void Sprite::Render() {
     //dstrect indicates the render position of the sprite
     SDL_Rect dstrect;
 
-    dstrect.x = associated.box.x; //Incomplete -> need to be fixed
-    dstrect.y = associated.box.y; //
+    dstrect.x = associated.box.x; 
+    dstrect.y = associated.box.y; 
     dstrect.w = clipRect.w;
     dstrect.h = clipRect.h;
 

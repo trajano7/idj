@@ -21,7 +21,7 @@ Sound::~Sound() {
 }
 
 void Sound::Open(string file) {
-
+    
     chunk = Mix_LoadWAV(file.c_str());
     if (!IsOpen()) {
         SDL_Log("Unable to load chunk: %s", SDL_GetError());
@@ -51,6 +51,14 @@ void Sound::Stop() {
     if(IsOpen()) {
        Mix_HaltChannel(channel);
     }
+
+}
+
+bool Sound::IsPlaying() {
+
+    if (Mix_Playing(channel) != 0) return true;
+
+    return false;
 
 }
 
