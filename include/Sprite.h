@@ -39,6 +39,7 @@ class Sprite : public Component {
         //Virtual method from the base class:
         //Adds the texture to the game renderer
         void Render();
+        void Render(float x, float y);
         void Update(float dt);
         bool Is(string type);
 
