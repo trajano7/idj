@@ -1,3 +1,5 @@
+#ifndef TILE_SET_H
+#define TILE_SET_H
 
 #include <string>
 
@@ -24,3 +26,5 @@ class TileSet {
         int GetTileHeight();
 
 };
+
+#endif
