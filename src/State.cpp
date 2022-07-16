@@ -1,24 +1,36 @@
 #include "State.h"
 #include "Face.h"
+#include "TileMap.h"
+#include "TileSet.h"
 
 #include <cmath>
 #include "Sound.h"
 
 State::State() : music("Recursos/audio/stageState.ogg") {
 
-	//Add Sprite component to hold the background image
+	//Background GameObject creation
 	GameObject* backGround;
 	Sprite* sprite;
 
 	backGround = new GameObject();
 	sprite = new Sprite("Recursos/img/ocean.jpg", *backGround);
-
 	backGround->box.x = 0;
 	backGround->box.y = 0;
-
 	backGround->AddComponent(sprite);
-
 	objectArray.emplace_back(backGround);
+	
+	//TileMap GameObject creation
+	GameObject* scenery;
+	TileMap* tileMap;
+	TileSet* tileSet;
+
+	scenery = new GameObject();
+	scenery->box.x = 0;
+	scenery->box.y = 0;
+	tileSet = new TileSet(64,64,"Recursos/img/tileset.png");
+	tileMap = new TileMap(*scenery,"Recursos/map/tileMap.txt",tileSet);
+	scenery->AddComponent(tileMap);
+	objectArray.emplace_back(scenery);
 
     quitRequested = false;
     music.Play(-1);

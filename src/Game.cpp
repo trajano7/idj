@@ -4,6 +4,10 @@
 #include <iostream>
 #include "Game.h"
 
+#include "TileSet.h"
+#include "TileMap.h"
+#include "Resources.h"
+
 Game* Game::instance = nullptr;
 
 Game::Game(string title, int width, int height) {
@@ -98,6 +102,9 @@ SDL_Renderer* Game::GetRenderer() {
 
 void Game::Run() {
 
+    //TileSet set(64,64,"Recursos/img/tileset.png");
+    //TileMap map(*(new GameObject), "Recursos/map/tileMap.txt",&set);
+
     //Runs until the current active state change the quit flag
     while (!state->QuitRequested()) {
 
@@ -110,6 +117,10 @@ void Game::Run() {
         SDL_Delay(33);
 
     }
+
+    Resources::ClearImages();
+    Resources::ClearMusics();
+    Resources::ClearSounds();
 
 
 }

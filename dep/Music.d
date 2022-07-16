@@ -120,7 +120,16 @@ dep/Music.d bin/Music.o: src/Music.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_messagebox.h /usr/include/SDL2/SDL_power.h \
  /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_system.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
- /usr/include/SDL2/SDL_mixer.h
+ /usr/include/SDL2/SDL_mixer.h include/Resources.h \
+ /usr/include/c++/5/unordered_map /usr/include/c++/5/utility \
+ /usr/include/c++/5/bits/stl_relops.h /usr/include/c++/5/tuple \
+ /usr/include/c++/5/array /usr/include/c++/5/stdexcept \
+ /usr/include/c++/5/bits/uses_allocator.h \
+ /usr/include/c++/5/ext/aligned_buffer.h \
+ /usr/include/c++/5/bits/hashtable.h \
+ /usr/include/c++/5/bits/hashtable_policy.h \
+ /usr/include/c++/5/bits/unordered_map.h /usr/include/SDL2/SDL_image.h \
+ /usr/include/SDL2/SDL.h
 
 /usr/include/stdc-predef.h:
 
@@ -469,3 +478,31 @@ include/SDL_include.h:
 /usr/include/SDL2/SDL_version.h:
 
 /usr/include/SDL2/SDL_mixer.h:
+
+include/Resources.h:
+
+/usr/include/c++/5/unordered_map:
+
+/usr/include/c++/5/utility:
+
+/usr/include/c++/5/bits/stl_relops.h:
+
+/usr/include/c++/5/tuple:
+
+/usr/include/c++/5/array:
+
+/usr/include/c++/5/stdexcept:
+
+/usr/include/c++/5/bits/uses_allocator.h:
+
+/usr/include/c++/5/ext/aligned_buffer.h:
+
+/usr/include/c++/5/bits/hashtable.h:
+
+/usr/include/c++/5/bits/hashtable_policy.h:
+
+/usr/include/c++/5/bits/unordered_map.h:
+
+/usr/include/SDL2/SDL_image.h:
+
+/usr/include/SDL2/SDL.h:

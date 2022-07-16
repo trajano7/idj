@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jul 14 18:38:42 2022
+# Make data base, printed on Sat Jul 16 00:36:33 2022
 
 # Variables
 
@@ -75,7 +75,7 @@ MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-9KWEqvUIv4
+DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-mE9fLstz9n
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
@@ -105,7 +105,7 @@ UNITY_HAS_3D_SUPPORT = true
 # environment
 GPG_AGENT_INFO = /home/trajano/.gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/trajano:@/tmp/.ICE-unix/1699,unix/trajano:/tmp/.ICE-unix/1699
+SESSION_MANAGER = local/trajano:@/tmp/.ICE-unix/2273,unix/trajano:/tmp/.ICE-unix/2273
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # makefile (from 'makefile', line 27)
@@ -131,7 +131,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 6142
+GIO_LAUNCHED_DESKTOP_FILE_PID = 23251
 # automatic
 %F = $(notdir $%)
 # makefile (from 'makefile', line 67)
@@ -203,7 +203,7 @@ SHLVL = 1
 # environment
 IM_CONFIG_PHASE = 1
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-6e4aab29-cb22-4eee-82ca-20d32f2a5194.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-7d61cdc9-1e8d-4887-9ab7-9b5db8848bc7.sock
 # environment
 COMPIZ_CONFIG_PROFILE = ubuntu
 # makefile (from 'makefile', line 39)
@@ -265,7 +265,7 @@ COMPILER = g++
 # default
 MAKEFILES := 
 # environment
-UPSTART_SESSION = unix:abstract=/com/ubuntu/upstart-session/1000/1473
+UPSTART_SESSION = unix:abstract=/com/ubuntu/upstart-session/1000/2036
 # environment
 LC_NUMERIC = pt_BR.UTF-8
 # automatic
@@ -279,6 +279,7 @@ LC_ALL = C
 # environment
 QT4_IM_MODULE = xim
 # makefile (from 'makefile', line 15)
+ 
 LIBS = -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lm
 # automatic
 ^F = $(notdir $^)
@@ -288,7 +289,6 @@ SUFFIXES :=
 FLAGS = -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
- 
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
@@ -302,7 +302,7 @@ LC_ADDRESS = pt_BR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 6142
+VSCODE_PID = 23251
 # variable set hash-table stats:
 # Load=146/1024=14%, Rehash=0, Collisions=20/207=10%
 
@@ -312,12 +312,12 @@ VSCODE_PID = 6142
 
 # Directories
 
-# include (device 2050, inode 26477742): 15 files, no impossibilities.
+# include (device 2050, inode 26477742): 16 files, no impossibilities.
 # . (device 2050, inode 26476798): 13 files, no impossibilities.
 # dep (device 2050, inode 29098072): No files, no impossibilities so far.
-# src (device 2050, inode 26477741): 15 files, no impossibilities.
+# src (device 2050, inode 26477741): 16 files, no impossibilities.
 
-# 43 files, no impossibilities in 4 directories.
+# 45 files, no impossibilities in 4 directories.
 
 # Implicit Rules
 
@@ -390,7 +390,7 @@ bin/State.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-.PRECIOUS: dep/Component.d dep/Face.d dep/Game.d dep/GameObject.d dep/Main.d dep/Music.d dep/Rect.d dep/SDL_include.d dep/Sound.d dep/Sprite.d dep/State.d dep/TileMap.d dep/TileSet.d dep/Vec2.d
+.PRECIOUS: dep/Component.d dep/Face.d dep/Game.d dep/GameObject.d dep/Main.d dep/Music.d dep/Rect.d dep/Resources.d dep/SDL_include.d dep/Sound.d dep/Sprite.d dep/State.d dep/TileMap.d dep/TileSet.d dep/Vec2.d
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -457,6 +457,13 @@ bin/Sprite.o:
 
 # Not a target:
 .SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+dep/Resources.d:
+#  Precious file (prerequisite of .PRECIOUS).
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -533,6 +540,12 @@ bin/GameObject.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+bin/Resources.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 .SECONDEXPANSION:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -547,6 +560,7 @@ bin/Game.o:
 # Not a target:
 src/Sound.cpp:
 #  Implicit rule search has been done.
+ 
 #  Last modified 2022-07-04 17:49:29.989504432
 #  File has been updated.
 #  Successfully updated.
@@ -571,8 +585,7 @@ dep/Sound.d: src/Sound.cpp | folders
 #  Precious file (prerequisite of .PRECIOUS).
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'Sound'
- 
-#  Last modified 2022-07-04 17:49:29.945504774
+#  Last modified 2022-07-15 17:36:32.634197944
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -583,7 +596,7 @@ dep/Sound.d: src/Sound.cpp | folders
 bin/Sound.o: dep/Sound.d | folders
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'Sound'
-#  Last modified 2022-07-04 17:49:29.881505271
+#  Last modified 2022-07-15 17:36:33.326194734
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -647,9 +660,9 @@ dep/Vec2.d:
 #  Modification time never checked.
 #  File has not been updated.
 
-Matheus_170152227: bin/Sound.o bin/Game.o bin/State.o bin/Sprite.o bin/Vec2.o bin/Main.o bin/Rect.o bin/Music.o bin/Component.o bin/TileMap.o bin/GameObject.o bin/Face.o bin/TileSet.o
+Matheus_170152227: bin/Sound.o bin/Resources.o bin/Game.o bin/State.o bin/Sprite.o bin/Vec2.o bin/Main.o bin/Rect.o bin/Music.o bin/Component.o bin/TileMap.o bin/GameObject.o bin/Face.o bin/TileSet.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-04 17:49:29.841505582
+#  Last modified 2022-07-15 23:54:27.202347067
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -687,19 +700,19 @@ cppcheck:
 	cppcheck --enable=all . -I./include --suppress=missingIncludeSystem
 
 # files hash-table stats:
-# Load=45/1024=4%, Rehash=0, Collisions=0/118=0%
+# Load=47/1024=5%, Rehash=0, Collisions=2/122=2%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 89 / storage = 914 B / avg = 10 B
-# current buf: size = 8162 B / used = 914 B / count = 89 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 93 / storage = 972 B / avg = 10 B
+# current buf: size = 8162 B / used = 972 B / count = 93 / avg = 10 B
 
-# strcache performance: lookups = 139 / hit rate = 35%
+# strcache performance: lookups = 143 / hit rate = 34%
 # hash-table stats:
-# Load=89/8192=1%, Rehash=0, Collisions=7/139=5%
-# Finished Make data base on Thu Jul 14 18:38:42 2022
+# Load=93/8192=1%, Rehash=0, Collisions=7/143=5%
+# Finished Make data base on Sat Jul 16 00:36:33 2022
 
  

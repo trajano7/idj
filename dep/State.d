@@ -140,6 +140,7 @@ dep/State.d bin/State.o: src/State.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_system.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  include/Music.h /usr/include/SDL2/SDL_mixer.h include/Face.h \
+ include/TileMap.h include/TileSet.h include/TileSet.h \
  /usr/include/c++/5/cmath include/Sound.h
 
 /usr/include/stdc-predef.h:
@@ -555,6 +556,12 @@ include/Music.h:
 /usr/include/SDL2/SDL_mixer.h:
 
 include/Face.h:
+
+include/TileMap.h:
+
+include/TileSet.h:
+
+include/TileSet.h:
 
 /usr/include/c++/5/cmath:
 

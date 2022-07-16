@@ -13,16 +13,18 @@ TileSet::TileSet(int tileWidth,int tileHeight, string file)  : tileSet(file, *(n
 
 void TileSet::RenderTile(unsigned int index, float x, float y) {
 
+
     int indexRow, indexColumn;
 
     indexRow = index / columns;
     indexColumn = index % columns;
 
-    //Check if the index is a valid tile
+    //Check if the index is a valid tile.
     if (index >= 0 && index <= (rows*columns - 1)) {
         tileSet.SetClip(indexColumn*tileWidth,indexRow*tileHeight,tileWidth,tileHeight);
         tileSet.Render(x,y);
     }
+    else SDL_Log("Index %d out of range.\n", index);
 
     return;
 

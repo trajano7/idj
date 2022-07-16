@@ -1,5 +1,5 @@
-dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
- /usr/include/c++/5/iostream \
+dep/TileSet.d bin/TileSet.o: src/TileSet.cpp /usr/include/stdc-predef.h \
+ include/TileSet.h /usr/include/c++/5/string \
  /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -7,21 +7,11 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/cpu_defines.h \
- /usr/include/c++/5/ostream /usr/include/c++/5/ios \
- /usr/include/c++/5/iosfwd /usr/include/c++/5/bits/stringfwd.h \
- /usr/include/c++/5/bits/memoryfwd.h /usr/include/c++/5/bits/postypes.h \
- /usr/include/c++/5/cwchar /usr/include/wchar.h /usr/include/stdio.h \
- /usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h \
- /usr/include/x86_64-linux-gnu/bits/wchar.h \
- /usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h /usr/include/xlocale.h \
- /usr/include/c++/5/exception \
- /usr/include/c++/5/bits/atomic_lockfree_defines.h \
- /usr/include/c++/5/bits/exception_ptr.h \
- /usr/include/c++/5/bits/exception_defines.h \
- /usr/include/c++/5/bits/nested_exception.h \
+ /usr/include/c++/5/bits/stringfwd.h /usr/include/c++/5/bits/memoryfwd.h \
  /usr/include/c++/5/bits/char_traits.h \
  /usr/include/c++/5/bits/stl_algobase.h \
  /usr/include/c++/5/bits/functexcept.h \
+ /usr/include/c++/5/bits/exception_defines.h \
  /usr/include/c++/5/bits/cpp_type_traits.h \
  /usr/include/c++/5/ext/type_traits.h \
  /usr/include/c++/5/ext/numeric_traits.h \
@@ -31,18 +21,39 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/bits/stl_iterator_base_funcs.h \
  /usr/include/c++/5/debug/debug.h /usr/include/c++/5/bits/stl_iterator.h \
  /usr/include/c++/5/bits/ptr_traits.h \
- /usr/include/c++/5/bits/predefined_ops.h /usr/include/c++/5/cstdint \
+ /usr/include/c++/5/bits/predefined_ops.h \
+ /usr/include/c++/5/bits/postypes.h /usr/include/c++/5/cwchar \
+ /usr/include/wchar.h /usr/include/stdio.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h /usr/include/xlocale.h \
+ /usr/include/c++/5/cstdint \
  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdint.h /usr/include/stdint.h \
+ /usr/include/c++/5/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/5/bits/c++allocator.h \
+ /usr/include/c++/5/ext/new_allocator.h /usr/include/c++/5/new \
+ /usr/include/c++/5/exception \
+ /usr/include/c++/5/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/5/bits/exception_ptr.h \
+ /usr/include/c++/5/bits/nested_exception.h \
  /usr/include/c++/5/bits/localefwd.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/c++locale.h \
  /usr/include/c++/5/clocale /usr/include/locale.h \
- /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/5/cctype \
- /usr/include/ctype.h /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/5/iosfwd \
+ /usr/include/c++/5/cctype /usr/include/ctype.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
  /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
- /usr/include/c++/5/bits/ios_base.h /usr/include/c++/5/ext/atomicity.h \
+ /usr/include/c++/5/bits/ostream_insert.h \
+ /usr/include/c++/5/bits/cxxabi_forced.h \
+ /usr/include/c++/5/bits/stl_function.h \
+ /usr/include/c++/5/backward/binders.h \
+ /usr/include/c++/5/bits/range_access.h \
+ /usr/include/c++/5/initializer_list \
+ /usr/include/c++/5/bits/basic_string.h \
+ /usr/include/c++/5/ext/atomicity.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/gthr.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/gthr-default.h \
  /usr/include/pthread.h /usr/include/sched.h /usr/include/time.h \
@@ -52,17 +63,6 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/atomic_word.h \
- /usr/include/c++/5/bits/locale_classes.h /usr/include/c++/5/string \
- /usr/include/c++/5/bits/allocator.h \
- /usr/include/x86_64-linux-gnu/c++/5/bits/c++allocator.h \
- /usr/include/c++/5/ext/new_allocator.h /usr/include/c++/5/new \
- /usr/include/c++/5/bits/ostream_insert.h \
- /usr/include/c++/5/bits/cxxabi_forced.h \
- /usr/include/c++/5/bits/stl_function.h \
- /usr/include/c++/5/backward/binders.h \
- /usr/include/c++/5/bits/range_access.h \
- /usr/include/c++/5/initializer_list \
- /usr/include/c++/5/bits/basic_string.h \
  /usr/include/c++/5/ext/alloc_traits.h \
  /usr/include/c++/5/bits/alloc_traits.h \
  /usr/include/c++/5/ext/string_conversions.h /usr/include/c++/5/cstdlib \
@@ -83,22 +83,26 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/c++/5/bits/functional_hash.h \
  /usr/include/c++/5/bits/hash_bytes.h \
- /usr/include/c++/5/bits/basic_string.tcc \
- /usr/include/c++/5/bits/locale_classes.tcc \
- /usr/include/c++/5/system_error \
- /usr/include/x86_64-linux-gnu/c++/5/bits/error_constants.h \
- /usr/include/c++/5/stdexcept /usr/include/c++/5/streambuf \
- /usr/include/c++/5/bits/streambuf.tcc \
- /usr/include/c++/5/bits/basic_ios.h \
- /usr/include/c++/5/bits/locale_facets.h /usr/include/c++/5/cwctype \
- /usr/include/wctype.h \
- /usr/include/x86_64-linux-gnu/c++/5/bits/ctype_base.h \
- /usr/include/c++/5/bits/streambuf_iterator.h \
- /usr/include/x86_64-linux-gnu/c++/5/bits/ctype_inline.h \
- /usr/include/c++/5/bits/locale_facets.tcc \
- /usr/include/c++/5/bits/basic_ios.tcc \
- /usr/include/c++/5/bits/ostream.tcc /usr/include/c++/5/istream \
- /usr/include/c++/5/bits/istream.tcc include/Game.h include/SDL_include.h \
+ /usr/include/c++/5/bits/basic_string.tcc include/Sprite.h \
+ include/Component.h include/GameObject.h include/Rect.h include/Vec2.h \
+ /usr/include/c++/5/vector /usr/include/c++/5/bits/stl_construct.h \
+ /usr/include/c++/5/bits/stl_uninitialized.h \
+ /usr/include/c++/5/bits/stl_vector.h \
+ /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc \
+ /usr/include/c++/5/memory /usr/include/c++/5/bits/stl_tempbuf.h \
+ /usr/include/c++/5/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/5/typeinfo /usr/include/c++/5/ext/concurrence.h \
+ /usr/include/c++/5/bits/uses_allocator.h /usr/include/c++/5/functional \
+ /usr/include/c++/5/tuple /usr/include/c++/5/utility \
+ /usr/include/c++/5/bits/stl_relops.h /usr/include/c++/5/array \
+ /usr/include/c++/5/stdexcept /usr/include/c++/5/bits/unique_ptr.h \
+ /usr/include/c++/5/bits/shared_ptr.h \
+ /usr/include/c++/5/bits/shared_ptr_base.h \
+ /usr/include/c++/5/bits/allocated_ptr.h \
+ /usr/include/c++/5/ext/aligned_buffer.h \
+ /usr/include/c++/5/bits/shared_ptr_atomic.h \
+ /usr/include/c++/5/bits/atomic_base.h \
+ /usr/include/c++/5/backward/auto_ptr.h include/SDL_include.h \
  /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
  /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
  /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
@@ -134,37 +138,13 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_loadso.h /usr/include/SDL2/SDL_log.h \
  /usr/include/SDL2/SDL_messagebox.h /usr/include/SDL2/SDL_power.h \
  /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_system.h \
- /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
- /usr/include/SDL2/SDL_image.h /usr/include/SDL2/SDL.h \
- /usr/include/SDL2/SDL_mixer.h include/State.h /usr/include/c++/5/memory \
- /usr/include/c++/5/bits/stl_construct.h \
- /usr/include/c++/5/bits/stl_uninitialized.h \
- /usr/include/c++/5/bits/stl_tempbuf.h \
- /usr/include/c++/5/bits/stl_raw_storage_iter.h \
- /usr/include/c++/5/typeinfo /usr/include/c++/5/ext/concurrence.h \
- /usr/include/c++/5/bits/uses_allocator.h /usr/include/c++/5/functional \
- /usr/include/c++/5/tuple /usr/include/c++/5/utility \
- /usr/include/c++/5/bits/stl_relops.h /usr/include/c++/5/array \
- /usr/include/c++/5/bits/unique_ptr.h \
- /usr/include/c++/5/bits/shared_ptr.h \
- /usr/include/c++/5/bits/shared_ptr_base.h \
- /usr/include/c++/5/bits/allocated_ptr.h \
- /usr/include/c++/5/ext/aligned_buffer.h \
- /usr/include/c++/5/bits/shared_ptr_atomic.h \
- /usr/include/c++/5/bits/atomic_base.h \
- /usr/include/c++/5/backward/auto_ptr.h /usr/include/c++/5/vector \
- /usr/include/c++/5/bits/stl_vector.h \
- /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc \
- include/Sprite.h include/Component.h include/GameObject.h include/Rect.h \
- include/Vec2.h include/Music.h include/TileSet.h include/TileMap.h \
- include/TileSet.h include/Resources.h /usr/include/c++/5/unordered_map \
- /usr/include/c++/5/bits/hashtable.h \
- /usr/include/c++/5/bits/hashtable_policy.h \
- /usr/include/c++/5/bits/unordered_map.h
+ /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h
 
 /usr/include/stdc-predef.h:
 
-/usr/include/c++/5/iostream:
+include/TileSet.h:
+
+/usr/include/c++/5/string:
 
 /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:
 
@@ -182,47 +162,17 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
 
 /usr/include/x86_64-linux-gnu/c++/5/bits/cpu_defines.h:
 
-/usr/include/c++/5/ostream:
-
-/usr/include/c++/5/ios:
-
-/usr/include/c++/5/iosfwd:
-
 /usr/include/c++/5/bits/stringfwd.h:
 
 /usr/include/c++/5/bits/memoryfwd.h:
-
-/usr/include/c++/5/bits/postypes.h:
-
-/usr/include/c++/5/cwchar:
-
-/usr/include/wchar.h:
-
-/usr/include/stdio.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h:
-
-/usr/include/x86_64-linux-gnu/bits/wchar.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h:
-
-/usr/include/xlocale.h:
-
-/usr/include/c++/5/exception:
-
-/usr/include/c++/5/bits/atomic_lockfree_defines.h:
-
-/usr/include/c++/5/bits/exception_ptr.h:
-
-/usr/include/c++/5/bits/exception_defines.h:
-
-/usr/include/c++/5/bits/nested_exception.h:
 
 /usr/include/c++/5/bits/char_traits.h:
 
 /usr/include/c++/5/bits/stl_algobase.h:
 
 /usr/include/c++/5/bits/functexcept.h:
+
+/usr/include/c++/5/bits/exception_defines.h:
 
 /usr/include/c++/5/bits/cpp_type_traits.h:
 
@@ -250,11 +200,43 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
 
 /usr/include/c++/5/bits/predefined_ops.h:
 
+/usr/include/c++/5/bits/postypes.h:
+
+/usr/include/c++/5/cwchar:
+
+/usr/include/wchar.h:
+
+/usr/include/stdio.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h:
+
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h:
+
+/usr/include/xlocale.h:
+
 /usr/include/c++/5/cstdint:
 
 /usr/lib/gcc/x86_64-linux-gnu/5/include/stdint.h:
 
 /usr/include/stdint.h:
+
+/usr/include/c++/5/bits/allocator.h:
+
+/usr/include/x86_64-linux-gnu/c++/5/bits/c++allocator.h:
+
+/usr/include/c++/5/ext/new_allocator.h:
+
+/usr/include/c++/5/new:
+
+/usr/include/c++/5/exception:
+
+/usr/include/c++/5/bits/atomic_lockfree_defines.h:
+
+/usr/include/c++/5/bits/exception_ptr.h:
+
+/usr/include/c++/5/bits/nested_exception.h:
 
 /usr/include/c++/5/bits/localefwd.h:
 
@@ -265,6 +247,8 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
 /usr/include/locale.h:
 
 /usr/include/x86_64-linux-gnu/bits/locale.h:
+
+/usr/include/c++/5/iosfwd:
 
 /usr/include/c++/5/cctype:
 
@@ -282,7 +266,19 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
 
 /usr/include/x86_64-linux-gnu/bits/byteswap-16.h:
 
-/usr/include/c++/5/bits/ios_base.h:
+/usr/include/c++/5/bits/ostream_insert.h:
+
+/usr/include/c++/5/bits/cxxabi_forced.h:
+
+/usr/include/c++/5/bits/stl_function.h:
+
+/usr/include/c++/5/backward/binders.h:
+
+/usr/include/c++/5/bits/range_access.h:
+
+/usr/include/c++/5/initializer_list:
+
+/usr/include/c++/5/bits/basic_string.h:
 
 /usr/include/c++/5/ext/atomicity.h:
 
@@ -307,32 +303,6 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
 /usr/include/x86_64-linux-gnu/c++/5/bits/atomic_word.h:
-
-/usr/include/c++/5/bits/locale_classes.h:
-
-/usr/include/c++/5/string:
-
-/usr/include/c++/5/bits/allocator.h:
-
-/usr/include/x86_64-linux-gnu/c++/5/bits/c++allocator.h:
-
-/usr/include/c++/5/ext/new_allocator.h:
-
-/usr/include/c++/5/new:
-
-/usr/include/c++/5/bits/ostream_insert.h:
-
-/usr/include/c++/5/bits/cxxabi_forced.h:
-
-/usr/include/c++/5/bits/stl_function.h:
-
-/usr/include/c++/5/backward/binders.h:
-
-/usr/include/c++/5/bits/range_access.h:
-
-/usr/include/c++/5/initializer_list:
-
-/usr/include/c++/5/bits/basic_string.h:
 
 /usr/include/c++/5/ext/alloc_traits.h:
 
@@ -392,43 +362,67 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
 
 /usr/include/c++/5/bits/basic_string.tcc:
 
-/usr/include/c++/5/bits/locale_classes.tcc:
+include/Sprite.h:
 
-/usr/include/c++/5/system_error:
+include/Component.h:
 
-/usr/include/x86_64-linux-gnu/c++/5/bits/error_constants.h:
+include/GameObject.h:
+
+include/Rect.h:
+
+include/Vec2.h:
+
+/usr/include/c++/5/vector:
+
+/usr/include/c++/5/bits/stl_construct.h:
+
+/usr/include/c++/5/bits/stl_uninitialized.h:
+
+/usr/include/c++/5/bits/stl_vector.h:
+
+/usr/include/c++/5/bits/stl_bvector.h:
+
+/usr/include/c++/5/bits/vector.tcc:
+
+/usr/include/c++/5/memory:
+
+/usr/include/c++/5/bits/stl_tempbuf.h:
+
+/usr/include/c++/5/bits/stl_raw_storage_iter.h:
+
+/usr/include/c++/5/typeinfo:
+
+/usr/include/c++/5/ext/concurrence.h:
+
+/usr/include/c++/5/bits/uses_allocator.h:
+
+/usr/include/c++/5/functional:
+
+/usr/include/c++/5/tuple:
+
+/usr/include/c++/5/utility:
+
+/usr/include/c++/5/bits/stl_relops.h:
+
+/usr/include/c++/5/array:
 
 /usr/include/c++/5/stdexcept:
 
-/usr/include/c++/5/streambuf:
+/usr/include/c++/5/bits/unique_ptr.h:
 
-/usr/include/c++/5/bits/streambuf.tcc:
+/usr/include/c++/5/bits/shared_ptr.h:
 
-/usr/include/c++/5/bits/basic_ios.h:
+/usr/include/c++/5/bits/shared_ptr_base.h:
 
-/usr/include/c++/5/bits/locale_facets.h:
+/usr/include/c++/5/bits/allocated_ptr.h:
 
-/usr/include/c++/5/cwctype:
+/usr/include/c++/5/ext/aligned_buffer.h:
 
-/usr/include/wctype.h:
+/usr/include/c++/5/bits/shared_ptr_atomic.h:
 
-/usr/include/x86_64-linux-gnu/c++/5/bits/ctype_base.h:
+/usr/include/c++/5/bits/atomic_base.h:
 
-/usr/include/c++/5/bits/streambuf_iterator.h:
-
-/usr/include/x86_64-linux-gnu/c++/5/bits/ctype_inline.h:
-
-/usr/include/c++/5/bits/locale_facets.tcc:
-
-/usr/include/c++/5/bits/basic_ios.tcc:
-
-/usr/include/c++/5/bits/ostream.tcc:
-
-/usr/include/c++/5/istream:
-
-/usr/include/c++/5/bits/istream.tcc:
-
-include/Game.h:
+/usr/include/c++/5/backward/auto_ptr.h:
 
 include/SDL_include.h:
 
@@ -553,89 +547,3 @@ include/SDL_include.h:
 /usr/include/SDL2/SDL_timer.h:
 
 /usr/include/SDL2/SDL_version.h:
-
-/usr/include/SDL2/SDL_image.h:
-
-/usr/include/SDL2/SDL.h:
-
-/usr/include/SDL2/SDL_mixer.h:
-
-include/State.h:
-
-/usr/include/c++/5/memory:
-
-/usr/include/c++/5/bits/stl_construct.h:
-
-/usr/include/c++/5/bits/stl_uninitialized.h:
-
-/usr/include/c++/5/bits/stl_tempbuf.h:
-
-/usr/include/c++/5/bits/stl_raw_storage_iter.h:
-
-/usr/include/c++/5/typeinfo:
-
-/usr/include/c++/5/ext/concurrence.h:
-
-/usr/include/c++/5/bits/uses_allocator.h:
-
-/usr/include/c++/5/functional:
-
-/usr/include/c++/5/tuple:
-
-/usr/include/c++/5/utility:
-
-/usr/include/c++/5/bits/stl_relops.h:
-
-/usr/include/c++/5/array:
-
-/usr/include/c++/5/bits/unique_ptr.h:
-
-/usr/include/c++/5/bits/shared_ptr.h:
-
-/usr/include/c++/5/bits/shared_ptr_base.h:
-
-/usr/include/c++/5/bits/allocated_ptr.h:
-
-/usr/include/c++/5/ext/aligned_buffer.h:
-
-/usr/include/c++/5/bits/shared_ptr_atomic.h:
-
-/usr/include/c++/5/bits/atomic_base.h:
-
-/usr/include/c++/5/backward/auto_ptr.h:
-
-/usr/include/c++/5/vector:
-
-/usr/include/c++/5/bits/stl_vector.h:
-
-/usr/include/c++/5/bits/stl_bvector.h:
-
-/usr/include/c++/5/bits/vector.tcc:
-
-include/Sprite.h:
-
-include/Component.h:
-
-include/GameObject.h:
-
-include/Rect.h:
-
-include/Vec2.h:
-
-include/Music.h:
-
-include/TileSet.h:
-
-include/TileMap.h:
-
-include/TileSet.h:
-
-include/Resources.h:
-
-/usr/include/c++/5/unordered_map:
-
-/usr/include/c++/5/bits/hashtable.h:
-
-/usr/include/c++/5/bits/hashtable_policy.h:
-
-/usr/include/c++/5/bits/unordered_map.h:

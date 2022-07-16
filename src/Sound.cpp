@@ -1,4 +1,5 @@
 #include "Sound.h"
+#include "Resources.h"
 
 Sound::Sound(GameObject& associated) : Component(associated) {
 
@@ -16,17 +17,12 @@ Sound::Sound(GameObject& associated, string file) : Component(associated) {
 Sound::~Sound() {
 
     Stop();
-    if (IsOpen()) Mix_FreeChunk(chunk);
 
 }
 
 void Sound::Open(string file) {
     
-    chunk = Mix_LoadWAV(file.c_str());
-    if (!IsOpen()) {
-        SDL_Log("Unable to load chunk: %s", SDL_GetError());
-        exit(EXIT_FAILURE);
-    }
+    chunk = Resources::GetSound(file);
 
     return;
 

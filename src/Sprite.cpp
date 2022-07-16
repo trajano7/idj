@@ -2,6 +2,7 @@
 
 #include "Sprite.h"
 #include "Game.h"
+#include "Resources.h"
 
 #include <typeinfo>
 
@@ -22,19 +23,11 @@ Sprite::Sprite(string file, GameObject &associated) : Component(associated) {
 
 Sprite::~Sprite() {
 
-    if (IsOpen()) SDL_DestroyTexture(texture);
-
 }
 
 void Sprite::Open(string file) {
 
-    if (IsOpen()) SDL_DestroyTexture(texture);
-
-    texture = IMG_LoadTexture(Game::GetInstance().GetRenderer(), file.c_str());
-    if (!IsOpen()) {
-        SDL_Log("Unable to load texture: %s", SDL_GetError());
-        exit(EXIT_FAILURE);
-    }
+    texture = Resources::GetImage(file);
 
     if (SDL_QueryTexture(texture,nullptr,nullptr,&width,&height) != 0) {
         SDL_Log("Unable to query texture: %s", SDL_GetError());

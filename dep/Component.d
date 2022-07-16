@@ -88,7 +88,21 @@ dep/Component.d bin/Component.o: src/Component.cpp \
  /usr/include/c++/5/bits/stl_construct.h \
  /usr/include/c++/5/bits/stl_uninitialized.h \
  /usr/include/c++/5/bits/stl_vector.h \
- /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc
+ /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc \
+ /usr/include/c++/5/memory /usr/include/c++/5/bits/stl_tempbuf.h \
+ /usr/include/c++/5/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/5/typeinfo /usr/include/c++/5/ext/concurrence.h \
+ /usr/include/c++/5/bits/uses_allocator.h /usr/include/c++/5/functional \
+ /usr/include/c++/5/tuple /usr/include/c++/5/utility \
+ /usr/include/c++/5/bits/stl_relops.h /usr/include/c++/5/array \
+ /usr/include/c++/5/stdexcept /usr/include/c++/5/bits/unique_ptr.h \
+ /usr/include/c++/5/bits/shared_ptr.h \
+ /usr/include/c++/5/bits/shared_ptr_base.h \
+ /usr/include/c++/5/bits/allocated_ptr.h \
+ /usr/include/c++/5/ext/aligned_buffer.h \
+ /usr/include/c++/5/bits/shared_ptr_atomic.h \
+ /usr/include/c++/5/bits/atomic_base.h \
+ /usr/include/c++/5/backward/auto_ptr.h
 
 /usr/include/stdc-predef.h:
 
@@ -329,3 +343,43 @@ include/Vec2.h:
 /usr/include/c++/5/bits/stl_bvector.h:
 
 /usr/include/c++/5/bits/vector.tcc:
+
+/usr/include/c++/5/memory:
+
+/usr/include/c++/5/bits/stl_tempbuf.h:
+
+/usr/include/c++/5/bits/stl_raw_storage_iter.h:
+
+/usr/include/c++/5/typeinfo:
+
+/usr/include/c++/5/ext/concurrence.h:
+
+/usr/include/c++/5/bits/uses_allocator.h:
+
+/usr/include/c++/5/functional:
+
+/usr/include/c++/5/tuple:
+
+/usr/include/c++/5/utility:
+
+/usr/include/c++/5/bits/stl_relops.h:
+
+/usr/include/c++/5/array:
+
+/usr/include/c++/5/stdexcept:
+
+/usr/include/c++/5/bits/unique_ptr.h:
+
+/usr/include/c++/5/bits/shared_ptr.h:
+
+/usr/include/c++/5/bits/shared_ptr_base.h:
+
+/usr/include/c++/5/bits/allocated_ptr.h:
+
+/usr/include/c++/5/ext/aligned_buffer.h:
+
+/usr/include/c++/5/bits/shared_ptr_atomic.h:
+
+/usr/include/c++/5/bits/atomic_base.h:
+
+/usr/include/c++/5/backward/auto_ptr.h:

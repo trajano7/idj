@@ -1,6 +1,7 @@
 #define INCLUDE_SDL_MIXER
 
 #include "Music.h"
+#include "Resources.h"
 
 Music::Music() {
 
@@ -17,18 +18,13 @@ Music::Music(string file) {
 
 void Music::Open(string file) {
 
-    music = Mix_LoadMUS(file.c_str());
-    if (!IsOpen()) {
-        SDL_Log("Unable to load music: %s", SDL_GetError());
-        exit(EXIT_FAILURE);
-    }
+    music = Resources::GetMusic(file);
 
 }
 
 Music::~Music() {
 
     Stop(1500);
-    if (music != nullptr) Mix_FreeMusic(music);
 
 }
 

@@ -10,6 +10,7 @@ using namespace std;
 TileMap::TileMap(GameObject& associated, string file, TileSet* tileSet) : Component(associated) {
 
     Load(file);
+    this->tileSet = tileSet;
 
 }
 
@@ -21,7 +22,7 @@ void TileMap::Load(string file) {
     fstream tm ("Recursos/map/tileMap.txt", ios::in);
     if(!tm.is_open()) {
         SDL_Log("Erro ao abrir o tile map.");
-        exit(0);
+        exit(EXIT_FAILURE);
     }
 
     //Gets the file header: width, height and depth
@@ -77,3 +78,66 @@ int& TileMap::At(int x, int y, int z) {
 
 }
 
+void TileMap::RenderLayer(int layer, int cameraX, int cameraY) {
+
+    int index, tileWidth, tileHeight;
+
+    tileWidth = tileSet->GetTileWidth();
+    tileHeight = tileSet->GetTileHeight();
+
+    for (int y = 0; y < mapWidth; y++) {
+        for (int x = 0; x < mapHeight; x++) {
+            index = At(x,y,layer);
+            if (index >= 0) {
+                tileSet->RenderTile(index,associated.box.x + x*tileWidth,associated.box.y + y*tileHeight);
+            }
+        }
+    }
+
+    return;
+
+}
+
+void TileMap::Render() {
+
+    for (int l = 0; l < mapDepth; l++) {
+        RenderLayer(l,0,0);
+    }
+
+    return;
+
+}
+
+void TileMap::Update(float dt) {
+
+    return;
+
+}
+
+bool TileMap::Is(string type) {
+
+    if("TileMap" == type) {
+        return true;
+    }
+
+    return false;
+
+}
+
+int TileMap::GetWidth() {
+
+    return mapWidth;
+
+}
+
+int TileMap::GetHeight() {
+
+    return mapHeight;
+
+}
+
+int TileMap::GetDepth() {
+
+    return mapDepth;
+
+}

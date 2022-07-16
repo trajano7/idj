@@ -6,12 +6,17 @@
 
 #include "Vec2.h"
 #include "Rect.h"
+#include "TileSet.h"
+#include "Sprite.h"
 #include <iostream>
  
 int main(int argc, char *argv[]) {
 
     Game game = Game::GetInstance();
-    game.Run();   
+    //TileSet tileTeste(64,64,"./Recursos/img/tileset.png");  
+    //tileTeste.RenderTile(0,0,0);
+    game.Run(); 
+
 
     Vec2 teste(4,4);
     Vec2 teste2(3,2);

@@ -3,6 +3,8 @@ make: Entering directory '/home/trajano/Documents/idj/idj'
 mkdir -p dep bin include src
 g++ -Iinclude  src/Sound.cpp -M -MT dep/Sound.d -MT bin/Sound.o -MP -MF dep/Sound.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Sound.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Sound.o
+g++ -Iinclude  src/Resources.cpp -M -MT dep/Resources.d -MT bin/Resources.o -MP -MF dep/Resources.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -Iinclude  src/Resources.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Resources.o
 g++ -Iinclude  src/Game.cpp -M -MT dep/Game.d -MT bin/Game.o -MP -MF dep/Game.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Game.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Game.o
 g++ -Iinclude  src/State.cpp -M -MT dep/State.d -MT bin/State.o -MP -MF dep/State.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
@@ -27,6 +29,6 @@ g++ -Iinclude  src/Face.cpp -M -MT dep/Face.d -MT bin/Face.o -MP -MF dep/Face.d 
 g++ -Iinclude  src/Face.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Face.o
 g++ -Iinclude  src/TileSet.cpp -M -MT dep/TileSet.d -MT bin/TileSet.o -MP -MF dep/TileSet.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/TileSet.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/TileSet.o
-g++ -o Matheus_170152227 bin/Sound.o bin/Game.o bin/State.o bin/Sprite.o bin/Vec2.o bin/Main.o bin/Rect.o bin/Music.o bin/Component.o bin/TileMap.o bin/GameObject.o bin/Face.o bin/TileSet.o  -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lm -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -o Matheus_170152227 bin/Sound.o bin/Resources.o bin/Game.o bin/State.o bin/Sprite.o bin/Vec2.o bin/Main.o bin/Rect.o bin/Music.o bin/Component.o bin/TileMap.o bin/GameObject.o bin/Face.o bin/TileSet.o  -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lm -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 make: Leaving directory '/home/trajano/Documents/idj/idj'
  
