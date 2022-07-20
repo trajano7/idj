@@ -12,6 +12,8 @@
 
 using namespace std;
 
+//Class stores all the image, msuic and sound information to avoid duplicated data
+//All data and methods are static so the same object can be used by any class
 class Resources {
 
     private:

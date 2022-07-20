@@ -16,9 +16,10 @@ void Face::Damage(int damage) {
     hitpoints -= damage;
     if (hitpoints <= 0) {
         soundComponent = associated.GetComponent("Sound");
-        if (sound != nullptr) {
+        if (soundComponent != nullptr) {
             sound = static_cast<Sound*>(soundComponent);
-            sound->Play(1);
+            if (!(sound->IsPlaying())) //if to do not repeat the sound while it play
+                sound->Play(1);
         }
     }
 

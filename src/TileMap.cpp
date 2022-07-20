@@ -19,7 +19,7 @@ void TileMap::Load(string file) {
     string line, word;
     int aux[3];
 
-    fstream tm ("Recursos/map/tileMap.txt", ios::in);
+    fstream tm (file, ios::in);
     if(!tm.is_open()) {
         SDL_Log("Erro ao abrir o tile map.");
         exit(EXIT_FAILURE);
@@ -32,7 +32,7 @@ void TileMap::Load(string file) {
         getline(str, word, ',');
         aux[i] = stoi(word);
     }
-    getline(tm,line); //blank line
+    getline(tm,line); //ignore blank line
 
     mapWidth = aux[0];
     mapHeight = aux[1];
@@ -52,7 +52,7 @@ void TileMap::Load(string file) {
             //cout << endl;
         }
         //cout << endl;
-        getline(tm,line); //blank line 
+        getline(tm,line); //ignore blank line 
     }
 
     return;
@@ -72,6 +72,7 @@ int& TileMap::At(int x, int y, int z) {
     int index, matrixSize;
 
     matrixSize = mapWidth*mapHeight;
+    //Formula to calculate the index to acess tileMatrix
     index = x + mapWidth*y + matrixSize*z;
 
     return tileMatrix[index];
@@ -89,6 +90,7 @@ void TileMap::RenderLayer(int layer, int cameraX, int cameraY) {
         for (int x = 0; x < mapHeight; x++) {
             index = At(x,y,layer);
             if (index >= 0) {
+                //Render all tiles from the layer starting at TileMap GameObject box (x,y)
                 tileSet->RenderTile(index,associated.box.x + x*tileWidth,associated.box.y + y*tileHeight);
             }
         }

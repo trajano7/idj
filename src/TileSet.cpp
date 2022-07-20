@@ -1,6 +1,6 @@
 #include "TileSet.h"
 
-TileSet::TileSet(int tileWidth,int tileHeight, string file)  : tileSet(file, *(new GameObject)) {
+TileSet::TileSet(int tileWidth,int tileHeight, string file)  : tileSet(file, associatedAux) {
 
     this->tileWidth = tileWidth;
     this->tileHeight = tileHeight;
@@ -13,9 +13,9 @@ TileSet::TileSet(int tileWidth,int tileHeight, string file)  : tileSet(file, *(n
 
 void TileSet::RenderTile(unsigned int index, float x, float y) {
 
-
     int indexRow, indexColumn;
 
+    //converts the index to matrix form, so the image can be cliped
     indexRow = index / columns;
     indexColumn = index % columns;
 

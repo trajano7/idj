@@ -121,7 +121,6 @@ void Game::Run() {
     Resources::ClearImages();
     Resources::ClearMusics();
     Resources::ClearSounds();
-
-
+    
 }
 

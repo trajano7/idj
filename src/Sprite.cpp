@@ -23,10 +23,12 @@ Sprite::Sprite(string file, GameObject &associated) : Component(associated) {
 
 Sprite::~Sprite() {
 
+     //if (IsOpen()) SDL_DestroyTexture(texture);
+
 }
 
 void Sprite::Open(string file) {
-
+    
     texture = Resources::GetImage(file);
 
     if (SDL_QueryTexture(texture,nullptr,nullptr,&width,&height) != 0) {

@@ -2,6 +2,10 @@
 
 #include "Game.h"
 
+#include <iostream>
+
+
+
 unordered_map<std::string, SDL_Texture*> Resources::imageTable = {};
 unordered_map<std::string, Mix_Music*> Resources::musicTable = {};
 unordered_map<std::string, Mix_Chunk*> Resources::soundTable = {};
@@ -71,6 +75,8 @@ void Resources::ClearImages() {
         SDL_DestroyTexture(img->second);
     }
 
+    imageTable.clear();
+
 }
 
 void Resources::ClearMusics() {
@@ -81,6 +87,8 @@ void Resources::ClearMusics() {
          Mix_FreeMusic(msc->second);
     }
 
+    musicTable.clear();
+
 }
 
 void Resources::ClearSounds() {
@@ -90,6 +98,8 @@ void Resources::ClearSounds() {
     for (snd = soundTable.begin(); snd != soundTable.end(); snd++) {
          Mix_FreeChunk(snd->second);
     }
+
+    soundTable.clear();
 
 }
 

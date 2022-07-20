@@ -17,6 +17,7 @@ Sound::Sound(GameObject& associated, string file) : Component(associated) {
 Sound::~Sound() {
 
     Stop();
+    //if (IsOpen()) Mix_FreeChunk(chunk);
 
 }
 
