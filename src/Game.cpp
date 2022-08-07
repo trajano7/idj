@@ -7,6 +7,7 @@
 #include "TileSet.h"
 #include "TileMap.h"
 #include "Resources.h"
+#include "InputManager.h"
 
 Game* Game::instance = nullptr;
 
@@ -66,7 +67,7 @@ Game::Game(string title, int width, int height) {
 Game& Game::GetInstance() {
 
     if (instance == nullptr) {
-        new Game("Matheus_170152227", 1024, 600);
+        instance = new Game("Matheus_170152227", 1024, 600);
     }
 
     return *instance;
@@ -102,12 +103,16 @@ SDL_Renderer* Game::GetRenderer() {
 
 void Game::Run() {
 
+    InputManager &inputManager = InputManager::GetInstance();
+
     //TileSet set(64,64,"Recursos/img/tileset.png");
     //TileMap map(*(new GameObject), "Recursos/map/tileMap.txt",&set);
 
     //Runs until the current active state change the quit flag
     while (!state->QuitRequested()) {
 
+        inputManager.Update();
+        //if (inputManager.QuitRequested()) SDL_Log("%d: QUIT REQUESTED: %d\n",  inputManager.QuitRequested());
         state->Update(1.0);
         state->Render();
 

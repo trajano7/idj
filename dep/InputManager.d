@@ -1,5 +1,6 @@
-dep/Face.d bin/Face.o: src/Face.cpp /usr/include/stdc-predef.h \
- include/Face.h include/Component.h /usr/include/c++/5/string \
+dep/InputManager.d bin/InputManager.o: src/InputManager.cpp \
+ /usr/include/stdc-predef.h include/InputManager.h \
+ /usr/include/c++/5/unordered_map /usr/include/c++/5/utility \
  /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -7,16 +8,22 @@ dep/Face.d bin/Face.o: src/Face.cpp /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/cpu_defines.h \
+ /usr/include/c++/5/bits/stl_relops.h /usr/include/c++/5/bits/stl_pair.h \
+ /usr/include/c++/5/bits/move.h /usr/include/c++/5/bits/concept_check.h \
+ /usr/include/c++/5/type_traits /usr/include/c++/5/initializer_list \
+ /usr/include/c++/5/tuple /usr/include/c++/5/array \
+ /usr/include/c++/5/stdexcept /usr/include/c++/5/exception \
+ /usr/include/c++/5/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/5/bits/exception_ptr.h \
+ /usr/include/c++/5/bits/exception_defines.h \
+ /usr/include/c++/5/bits/nested_exception.h /usr/include/c++/5/string \
  /usr/include/c++/5/bits/stringfwd.h /usr/include/c++/5/bits/memoryfwd.h \
  /usr/include/c++/5/bits/char_traits.h \
  /usr/include/c++/5/bits/stl_algobase.h \
  /usr/include/c++/5/bits/functexcept.h \
- /usr/include/c++/5/bits/exception_defines.h \
  /usr/include/c++/5/bits/cpp_type_traits.h \
  /usr/include/c++/5/ext/type_traits.h \
  /usr/include/c++/5/ext/numeric_traits.h \
- /usr/include/c++/5/bits/stl_pair.h /usr/include/c++/5/bits/move.h \
- /usr/include/c++/5/bits/concept_check.h /usr/include/c++/5/type_traits \
  /usr/include/c++/5/bits/stl_iterator_base_types.h \
  /usr/include/c++/5/bits/stl_iterator_base_funcs.h \
  /usr/include/c++/5/debug/debug.h /usr/include/c++/5/bits/stl_iterator.h \
@@ -32,10 +39,6 @@ dep/Face.d bin/Face.o: src/Face.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/bits/allocator.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/c++allocator.h \
  /usr/include/c++/5/ext/new_allocator.h /usr/include/c++/5/new \
- /usr/include/c++/5/exception \
- /usr/include/c++/5/bits/atomic_lockfree_defines.h \
- /usr/include/c++/5/bits/exception_ptr.h \
- /usr/include/c++/5/bits/nested_exception.h \
  /usr/include/c++/5/bits/localefwd.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/c++locale.h \
  /usr/include/c++/5/clocale /usr/include/locale.h \
@@ -51,7 +54,6 @@ dep/Face.d bin/Face.o: src/Face.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/bits/stl_function.h \
  /usr/include/c++/5/backward/binders.h \
  /usr/include/c++/5/bits/range_access.h \
- /usr/include/c++/5/initializer_list \
  /usr/include/c++/5/bits/basic_string.h \
  /usr/include/c++/5/ext/atomicity.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/gthr.h \
@@ -83,32 +85,18 @@ dep/Face.d bin/Face.o: src/Face.cpp /usr/include/stdc-predef.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/c++/5/bits/functional_hash.h \
  /usr/include/c++/5/bits/hash_bytes.h \
- /usr/include/c++/5/bits/basic_string.tcc include/GameObject.h \
- include/Rect.h include/Vec2.h /usr/include/c++/5/vector \
- /usr/include/c++/5/bits/stl_construct.h \
- /usr/include/c++/5/bits/stl_uninitialized.h \
- /usr/include/c++/5/bits/stl_vector.h \
- /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc \
- /usr/include/c++/5/memory /usr/include/c++/5/bits/stl_tempbuf.h \
- /usr/include/c++/5/bits/stl_raw_storage_iter.h \
- /usr/include/c++/5/typeinfo /usr/include/c++/5/ext/concurrence.h \
- /usr/include/c++/5/bits/uses_allocator.h /usr/include/c++/5/functional \
- /usr/include/c++/5/tuple /usr/include/c++/5/utility \
- /usr/include/c++/5/bits/stl_relops.h /usr/include/c++/5/array \
- /usr/include/c++/5/stdexcept /usr/include/c++/5/bits/unique_ptr.h \
- /usr/include/c++/5/bits/shared_ptr.h \
- /usr/include/c++/5/bits/shared_ptr_base.h \
- /usr/include/c++/5/bits/allocated_ptr.h \
+ /usr/include/c++/5/bits/basic_string.tcc \
+ /usr/include/c++/5/bits/uses_allocator.h \
  /usr/include/c++/5/ext/aligned_buffer.h \
- /usr/include/c++/5/bits/shared_ptr_atomic.h \
- /usr/include/c++/5/bits/atomic_base.h \
- /usr/include/c++/5/backward/auto_ptr.h include/Sound.h \
- include/SDL_include.h /usr/include/SDL2/SDL.h \
- /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
- /usr/include/SDL2/SDL_config.h /usr/include/SDL2/SDL_platform.h \
- /usr/include/SDL2/begin_code.h /usr/include/SDL2/close_code.h \
- /usr/include/string.h /usr/include/strings.h /usr/include/inttypes.h \
- /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ /usr/include/c++/5/bits/hashtable.h \
+ /usr/include/c++/5/bits/hashtable_policy.h \
+ /usr/include/c++/5/bits/unordered_map.h include/SDL_include.h \
+ /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
+ /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
+ /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
+ /usr/include/SDL2/close_code.h /usr/include/string.h \
+ /usr/include/strings.h /usr/include/inttypes.h /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/huge_val.h \
  /usr/include/x86_64-linux-gnu/bits/huge_valf.h \
@@ -138,19 +126,15 @@ dep/Face.d bin/Face.o: src/Face.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_loadso.h /usr/include/SDL2/SDL_log.h \
  /usr/include/SDL2/SDL_messagebox.h /usr/include/SDL2/SDL_power.h \
  /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_system.h \
- /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
- /usr/include/SDL2/SDL_mixer.h include/InputManager.h \
- /usr/include/c++/5/unordered_map /usr/include/c++/5/bits/hashtable.h \
- /usr/include/c++/5/bits/hashtable_policy.h \
- /usr/include/c++/5/bits/unordered_map.h
+ /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h
 
 /usr/include/stdc-predef.h:
 
-include/Face.h:
+include/InputManager.h:
 
-include/Component.h:
+/usr/include/c++/5/unordered_map:
 
-/usr/include/c++/5/string:
+/usr/include/c++/5/utility:
 
 /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h:
 
@@ -168,6 +152,36 @@ include/Component.h:
 
 /usr/include/x86_64-linux-gnu/c++/5/bits/cpu_defines.h:
 
+/usr/include/c++/5/bits/stl_relops.h:
+
+/usr/include/c++/5/bits/stl_pair.h:
+
+/usr/include/c++/5/bits/move.h:
+
+/usr/include/c++/5/bits/concept_check.h:
+
+/usr/include/c++/5/type_traits:
+
+/usr/include/c++/5/initializer_list:
+
+/usr/include/c++/5/tuple:
+
+/usr/include/c++/5/array:
+
+/usr/include/c++/5/stdexcept:
+
+/usr/include/c++/5/exception:
+
+/usr/include/c++/5/bits/atomic_lockfree_defines.h:
+
+/usr/include/c++/5/bits/exception_ptr.h:
+
+/usr/include/c++/5/bits/exception_defines.h:
+
+/usr/include/c++/5/bits/nested_exception.h:
+
+/usr/include/c++/5/string:
+
 /usr/include/c++/5/bits/stringfwd.h:
 
 /usr/include/c++/5/bits/memoryfwd.h:
@@ -178,21 +192,11 @@ include/Component.h:
 
 /usr/include/c++/5/bits/functexcept.h:
 
-/usr/include/c++/5/bits/exception_defines.h:
-
 /usr/include/c++/5/bits/cpp_type_traits.h:
 
 /usr/include/c++/5/ext/type_traits.h:
 
 /usr/include/c++/5/ext/numeric_traits.h:
-
-/usr/include/c++/5/bits/stl_pair.h:
-
-/usr/include/c++/5/bits/move.h:
-
-/usr/include/c++/5/bits/concept_check.h:
-
-/usr/include/c++/5/type_traits:
 
 /usr/include/c++/5/bits/stl_iterator_base_types.h:
 
@@ -236,14 +240,6 @@ include/Component.h:
 
 /usr/include/c++/5/new:
 
-/usr/include/c++/5/exception:
-
-/usr/include/c++/5/bits/atomic_lockfree_defines.h:
-
-/usr/include/c++/5/bits/exception_ptr.h:
-
-/usr/include/c++/5/bits/nested_exception.h:
-
 /usr/include/c++/5/bits/localefwd.h:
 
 /usr/include/x86_64-linux-gnu/c++/5/bits/c++locale.h:
@@ -281,8 +277,6 @@ include/Component.h:
 /usr/include/c++/5/backward/binders.h:
 
 /usr/include/c++/5/bits/range_access.h:
-
-/usr/include/c++/5/initializer_list:
 
 /usr/include/c++/5/bits/basic_string.h:
 
@@ -368,65 +362,15 @@ include/Component.h:
 
 /usr/include/c++/5/bits/basic_string.tcc:
 
-include/GameObject.h:
-
-include/Rect.h:
-
-include/Vec2.h:
-
-/usr/include/c++/5/vector:
-
-/usr/include/c++/5/bits/stl_construct.h:
-
-/usr/include/c++/5/bits/stl_uninitialized.h:
-
-/usr/include/c++/5/bits/stl_vector.h:
-
-/usr/include/c++/5/bits/stl_bvector.h:
-
-/usr/include/c++/5/bits/vector.tcc:
-
-/usr/include/c++/5/memory:
-
-/usr/include/c++/5/bits/stl_tempbuf.h:
-
-/usr/include/c++/5/bits/stl_raw_storage_iter.h:
-
-/usr/include/c++/5/typeinfo:
-
-/usr/include/c++/5/ext/concurrence.h:
-
 /usr/include/c++/5/bits/uses_allocator.h:
-
-/usr/include/c++/5/functional:
-
-/usr/include/c++/5/tuple:
-
-/usr/include/c++/5/utility:
-
-/usr/include/c++/5/bits/stl_relops.h:
-
-/usr/include/c++/5/array:
-
-/usr/include/c++/5/stdexcept:
-
-/usr/include/c++/5/bits/unique_ptr.h:
-
-/usr/include/c++/5/bits/shared_ptr.h:
-
-/usr/include/c++/5/bits/shared_ptr_base.h:
-
-/usr/include/c++/5/bits/allocated_ptr.h:
 
 /usr/include/c++/5/ext/aligned_buffer.h:
 
-/usr/include/c++/5/bits/shared_ptr_atomic.h:
+/usr/include/c++/5/bits/hashtable.h:
 
-/usr/include/c++/5/bits/atomic_base.h:
+/usr/include/c++/5/bits/hashtable_policy.h:
 
-/usr/include/c++/5/backward/auto_ptr.h:
-
-include/Sound.h:
+/usr/include/c++/5/bits/unordered_map.h:
 
 include/SDL_include.h:
 
@@ -551,15 +495,3 @@ include/SDL_include.h:
 /usr/include/SDL2/SDL_timer.h:
 
 /usr/include/SDL2/SDL_version.h:
-
-/usr/include/SDL2/SDL_mixer.h:
-
-include/InputManager.h:
-
-/usr/include/c++/5/unordered_map:
-
-/usr/include/c++/5/bits/hashtable.h:
-
-/usr/include/c++/5/bits/hashtable_policy.h:
-
-/usr/include/c++/5/bits/unordered_map.h:

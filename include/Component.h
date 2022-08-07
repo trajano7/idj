@@ -15,7 +15,7 @@ class Component {
         Component(GameObject& associated);
         virtual ~Component();
 
-        //Virtual pure methods, must me implemented in child classes
+        //Virtual pure methods, must be implemented in child classes
         virtual void Update(float dt) = 0;
         virtual void Render() = 0;
         virtual bool Is(string type) = 0;

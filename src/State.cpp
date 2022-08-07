@@ -5,6 +5,7 @@
 
 #include <cmath>
 #include "Sound.h"
+#include "InputManager.h"
 
 State::State() : music("Recursos/audio/stageState.ogg") {
 
@@ -51,7 +52,21 @@ void State::LoadAssets() {
 
 void State::Update(float dt) {
 
-	Input();
+	InputManager& inputManager = InputManager::GetInstance();
+
+	inputManager.QuitRequested();
+
+	//SDL_Log("AQUIIIIIIIIIIIIIIII %d\n",inputManager.QuitRequested());
+
+	if (inputManager.QuitRequested()) {
+		//SDL_Log("AQUIIIIIIIIIIIIIIII %d\n",inputManager.QuitRequested());
+		quitRequested = true;
+	}
+	if (inputManager.KeyPress(ESCAPE_KEY)) quitRequested = true;
+	if (inputManager.KeyPress(SPACE_KEY)) {
+		Vec2 objPos = Vec2( 200, 0 ).RotateVec2( -M_PI + M_PI*(rand() % 1001)/500.0 ) + Vec2( inputManager.GetMouseX(), inputManager.GetMouseY() );
+		AddObject((int)objPos.x, (int)objPos.y);		
+	}
 	for(int i = 0; i < objectArray.size(); i++) {
 		objectArray[i]->Update(dt);
 	}

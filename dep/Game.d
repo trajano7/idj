@@ -160,7 +160,7 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
  include/TileSet.h include/Resources.h /usr/include/c++/5/unordered_map \
  /usr/include/c++/5/bits/hashtable.h \
  /usr/include/c++/5/bits/hashtable_policy.h \
- /usr/include/c++/5/bits/unordered_map.h
+ /usr/include/c++/5/bits/unordered_map.h include/InputManager.h
 
 /usr/include/stdc-predef.h:
 
@@ -639,3 +639,5 @@ include/Resources.h:
 /usr/include/c++/5/bits/hashtable_policy.h:
 
 /usr/include/c++/5/bits/unordered_map.h:
+
+include/InputManager.h:

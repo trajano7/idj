@@ -141,7 +141,10 @@ dep/State.d bin/State.o: src/State.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  include/Music.h /usr/include/SDL2/SDL_mixer.h include/Face.h \
  include/TileMap.h include/TileSet.h include/TileSet.h \
- /usr/include/c++/5/cmath include/Sound.h
+ /usr/include/c++/5/cmath include/Sound.h include/InputManager.h \
+ /usr/include/c++/5/unordered_map /usr/include/c++/5/bits/hashtable.h \
+ /usr/include/c++/5/bits/hashtable_policy.h \
+ /usr/include/c++/5/bits/unordered_map.h
 
 /usr/include/stdc-predef.h:
 
@@ -566,3 +569,13 @@ include/TileSet.h:
 /usr/include/c++/5/cmath:
 
 include/Sound.h:
+
+include/InputManager.h:
+
+/usr/include/c++/5/unordered_map:
+
+/usr/include/c++/5/bits/hashtable.h:
+
+/usr/include/c++/5/bits/hashtable_policy.h:
+
+/usr/include/c++/5/bits/unordered_map.h:
