@@ -62,6 +62,9 @@ Game::Game(string title, int width, int height) {
 
     state = new State();
 
+    frameStart = SDL_GetTicks();
+    dt = 0;
+
 }
 
 Game& Game::GetInstance() {
@@ -101,6 +104,17 @@ SDL_Renderer* Game::GetRenderer() {
 
 }
 
+void Game::CalculateDeltaTime() {
+
+    int oldFrameStart = frameStart;
+    float aux;
+    frameStart = SDL_GetTicks();
+
+    aux = (float) (frameStart - oldFrameStart)/1000;
+    dt = (float) (frameStart - oldFrameStart)/1000;
+
+} 
+
 void Game::Run() {
 
     InputManager &inputManager = InputManager::GetInstance();
@@ -108,12 +122,15 @@ void Game::Run() {
     //TileSet set(64,64,"Recursos/img/tileset.png");
     //TileMap map(*(new GameObject), "Recursos/map/tileMap.txt",&set);
 
+    frameStart = SDL_GetTicks();
+
     //Runs until the current active state change the quit flag
     while (!state->QuitRequested()) {
 
+        CalculateDeltaTime();
+
         inputManager.Update();
-        //if (inputManager.QuitRequested()) SDL_Log("%d: QUIT REQUESTED: %d\n",  inputManager.QuitRequested());
-        state->Update(1.0);
+        state->Update(dt);
         state->Render();
 
         SDL_RenderPresent(renderer);

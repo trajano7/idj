@@ -22,6 +22,11 @@ class Game {
         SDL_Renderer* renderer;
         State* state;
 
+        int frameStart;
+        float dt;
+
+        void CalculateDeltaTime();
+
     public: 
 
         ~Game();
@@ -32,6 +37,7 @@ class Game {
         State& GetState();
         //Method that keeps the main game loop
         void Run();
+        float GetDeltaTime();
 
 };
 

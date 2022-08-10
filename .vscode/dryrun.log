@@ -11,6 +11,8 @@ g++ -Iinclude  src/State.cpp -M -MT dep/State.d -MT bin/State.o -MP -MF dep/Stat
 g++ -Iinclude  src/State.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/State.o
 g++ -Iinclude  src/Sprite.cpp -M -MT dep/Sprite.d -MT bin/Sprite.o -MP -MF dep/Sprite.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Sprite.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Sprite.o
+g++ -Iinclude  src/Camera.cpp -M -MT dep/Camera.d -MT bin/Camera.o -MP -MF dep/Camera.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -Iinclude  src/Camera.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Camera.o
 g++ -Iinclude  src/Vec2.cpp -M -MT dep/Vec2.d -MT bin/Vec2.o -MP -MF dep/Vec2.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Vec2.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Vec2.o
 g++ -Iinclude  src/Main.cpp -M -MT dep/Main.d -MT bin/Main.o -MP -MF dep/Main.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
@@ -31,6 +33,8 @@ g++ -Iinclude  src/Face.cpp -M -MT dep/Face.d -MT bin/Face.o -MP -MF dep/Face.d 
 g++ -Iinclude  src/Face.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Face.o
 g++ -Iinclude  src/TileSet.cpp -M -MT dep/TileSet.d -MT bin/TileSet.o -MP -MF dep/TileSet.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/TileSet.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/TileSet.o
-g++ -o Matheus_170152227 bin/Sound.o bin/Resources.o bin/Game.o bin/State.o bin/Sprite.o bin/Vec2.o bin/Main.o bin/Rect.o bin/Music.o bin/Component.o bin/TileMap.o bin/InputManager.o bin/GameObject.o bin/Face.o bin/TileSet.o  -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lm -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -Iinclude  src/CameraFollower.cpp -M -MT dep/CameraFollower.d -MT bin/CameraFollower.o -MP -MF dep/CameraFollower.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -Iinclude  src/CameraFollower.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/CameraFollower.o
+g++ -o Matheus_170152227 bin/Sound.o bin/Resources.o bin/Game.o bin/State.o bin/Sprite.o bin/Camera.o bin/Vec2.o bin/Main.o bin/Rect.o bin/Music.o bin/Component.o bin/TileMap.o bin/InputManager.o bin/GameObject.o bin/Face.o bin/TileSet.o bin/CameraFollower.o  -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lm -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 make: Leaving directory '/home/trajano/Documents/idj/idj'
  

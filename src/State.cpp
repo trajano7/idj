@@ -6,18 +6,23 @@
 #include <cmath>
 #include "Sound.h"
 #include "InputManager.h"
+#include "Camera.h"
+#include "CameraFollower.h"
 
 State::State() : music("Recursos/audio/stageState.ogg") {
 
 	//Background GameObject creation
 	GameObject* backGround;
 	Sprite* sprite;
+	CameraFollower* cameraFollower;
 
 	backGround = new GameObject();
 	sprite = new Sprite("Recursos/img/ocean.jpg", *backGround);
-	backGround->box.x = 0;
-	backGround->box.y = 0;
+	cameraFollower = new CameraFollower(*backGround);
+	backGround->box.x = Camera::pos.x;
+	backGround->box.y = Camera::pos.y;
 	backGround->AddComponent(sprite);
+	backGround->AddComponent(cameraFollower);
 	objectArray.emplace_back(backGround);
 	
 	//TileMap GameObject creation
@@ -54,15 +59,11 @@ void State::Update(float dt) {
 
 	InputManager& inputManager = InputManager::GetInstance();
 
-	inputManager.QuitRequested();
+	Camera::Update(dt);
 
-	//SDL_Log("AQUIIIIIIIIIIIIIIII %d\n",inputManager.QuitRequested());
-
-	if (inputManager.QuitRequested()) {
-		//SDL_Log("AQUIIIIIIIIIIIIIIII %d\n",inputManager.QuitRequested());
+	if (inputManager.QuitRequested() || inputManager.KeyPress(ESCAPE_KEY)) {
 		quitRequested = true;
 	}
-	if (inputManager.KeyPress(ESCAPE_KEY)) quitRequested = true;
 	if (inputManager.KeyPress(SPACE_KEY)) {
 		Vec2 objPos = Vec2( 200, 0 ).RotateVec2( -M_PI + M_PI*(rand() % 1001)/500.0 ) + Vec2( inputManager.GetMouseX(), inputManager.GetMouseY() );
 		AddObject((int)objPos.x, (int)objPos.y);		
@@ -81,7 +82,14 @@ void State::Update(float dt) {
 void State::Render() {
 
 	for(int i = 0; i < objectArray.size(); i++) {
-		objectArray[i]->Render();
+		if (objectArray[i]->GetComponent("Face") != nullptr) {
+			((Sprite*)objectArray[i]->GetComponent("Sprite"))->Render(
+				objectArray[i]->box.x - ((int) round(Camera::pos.x)),
+				objectArray[i]->box.y - ((int) round(Camera::pos.y))
+			);
+		}
+		else 
+			objectArray[i]->Render();
 	}
 
     return;
@@ -100,9 +108,11 @@ void State::AddObject(int mouseX, int mouseY) {
 	sound = new Sound(*enemy, "Recursos/audio/boom.wav");
 	face = new Face(*enemy);
 
+	//SDL_Log("mouses: %d %d\n", mouseX, mouseY);
+
 	//Adjust the coordenades to render the image center on it
-	enemy->box.x = mouseX - sprite->GetWidth()/2;
-	enemy->box.y = mouseY + sprite->GetHeight()/2;
+	enemy->box.x = mouseX - sprite->GetWidth()/2 + ((int) round(Camera::pos.x));
+	enemy->box.y = mouseY + sprite->GetHeight()/2 + ((int) round(Camera::pos.y));
 
 	enemy->AddComponent(sprite);
 	enemy->AddComponent(sound);

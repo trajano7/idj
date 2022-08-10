@@ -144,7 +144,8 @@ dep/State.d bin/State.o: src/State.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/cmath include/Sound.h include/InputManager.h \
  /usr/include/c++/5/unordered_map /usr/include/c++/5/bits/hashtable.h \
  /usr/include/c++/5/bits/hashtable_policy.h \
- /usr/include/c++/5/bits/unordered_map.h
+ /usr/include/c++/5/bits/unordered_map.h include/Camera.h \
+ include/CameraFollower.h
 
 /usr/include/stdc-predef.h:
 
@@ -579,3 +580,7 @@ include/InputManager.h:
 /usr/include/c++/5/bits/hashtable_policy.h:
 
 /usr/include/c++/5/bits/unordered_map.h:
+
+include/Camera.h:
+
+include/CameraFollower.h:

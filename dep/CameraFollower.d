@@ -1,5 +1,6 @@
-dep/Face.d bin/Face.o: src/Face.cpp /usr/include/stdc-predef.h \
- include/Face.h include/Component.h /usr/include/c++/5/string \
+dep/CameraFollower.d bin/CameraFollower.o: src/CameraFollower.cpp \
+ /usr/include/stdc-predef.h include/CameraFollower.h \
+ /usr/include/c++/5/string \
  /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -83,9 +84,9 @@ dep/Face.d bin/Face.o: src/Face.cpp /usr/include/stdc-predef.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/c++/5/bits/functional_hash.h \
  /usr/include/c++/5/bits/hash_bytes.h \
- /usr/include/c++/5/bits/basic_string.tcc include/GameObject.h \
- include/Rect.h include/Vec2.h /usr/include/c++/5/vector \
- /usr/include/c++/5/bits/stl_construct.h \
+ /usr/include/c++/5/bits/basic_string.tcc include/Component.h \
+ include/GameObject.h include/Rect.h include/Vec2.h \
+ /usr/include/c++/5/vector /usr/include/c++/5/bits/stl_construct.h \
  /usr/include/c++/5/bits/stl_uninitialized.h \
  /usr/include/c++/5/bits/stl_vector.h \
  /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc \
@@ -102,53 +103,11 @@ dep/Face.d bin/Face.o: src/Face.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/ext/aligned_buffer.h \
  /usr/include/c++/5/bits/shared_ptr_atomic.h \
  /usr/include/c++/5/bits/atomic_base.h \
- /usr/include/c++/5/backward/auto_ptr.h include/Sound.h \
- include/SDL_include.h /usr/include/SDL2/SDL.h \
- /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
- /usr/include/SDL2/SDL_config.h /usr/include/SDL2/SDL_platform.h \
- /usr/include/SDL2/begin_code.h /usr/include/SDL2/close_code.h \
- /usr/include/string.h /usr/include/strings.h /usr/include/inttypes.h \
- /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
- /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
- /usr/include/x86_64-linux-gnu/bits/huge_val.h \
- /usr/include/x86_64-linux-gnu/bits/huge_valf.h \
- /usr/include/x86_64-linux-gnu/bits/huge_vall.h \
- /usr/include/x86_64-linux-gnu/bits/inf.h \
- /usr/include/x86_64-linux-gnu/bits/nan.h \
- /usr/include/x86_64-linux-gnu/bits/mathdef.h \
- /usr/include/x86_64-linux-gnu/bits/mathcalls.h /usr/include/iconv.h \
- /usr/include/SDL2/SDL_assert.h /usr/include/SDL2/SDL_atomic.h \
- /usr/include/SDL2/SDL_audio.h /usr/include/SDL2/SDL_error.h \
- /usr/include/SDL2/SDL_endian.h /usr/include/SDL2/SDL_mutex.h \
- /usr/include/SDL2/SDL_thread.h /usr/include/SDL2/SDL_rwops.h \
- /usr/include/SDL2/SDL_clipboard.h /usr/include/SDL2/SDL_cpuinfo.h \
- /usr/lib/gcc/x86_64-linux-gnu/5/include/mmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/5/include/xmmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/5/include/mm_malloc.h \
- /usr/lib/gcc/x86_64-linux-gnu/5/include/emmintrin.h \
- /usr/include/SDL2/SDL_events.h /usr/include/SDL2/SDL_video.h \
- /usr/include/SDL2/SDL_pixels.h /usr/include/SDL2/SDL_rect.h \
- /usr/include/SDL2/SDL_surface.h /usr/include/SDL2/SDL_blendmode.h \
- /usr/include/SDL2/SDL_keyboard.h /usr/include/SDL2/SDL_keycode.h \
- /usr/include/SDL2/SDL_scancode.h /usr/include/SDL2/SDL_mouse.h \
- /usr/include/SDL2/SDL_joystick.h /usr/include/SDL2/SDL_gamecontroller.h \
- /usr/include/SDL2/SDL_quit.h /usr/include/SDL2/SDL_gesture.h \
- /usr/include/SDL2/SDL_touch.h /usr/include/SDL2/SDL_filesystem.h \
- /usr/include/SDL2/SDL_haptic.h /usr/include/SDL2/SDL_hints.h \
- /usr/include/SDL2/SDL_loadso.h /usr/include/SDL2/SDL_log.h \
- /usr/include/SDL2/SDL_messagebox.h /usr/include/SDL2/SDL_power.h \
- /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_system.h \
- /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
- /usr/include/SDL2/SDL_mixer.h include/InputManager.h \
- /usr/include/c++/5/unordered_map /usr/include/c++/5/bits/hashtable.h \
- /usr/include/c++/5/bits/hashtable_policy.h \
- /usr/include/c++/5/bits/unordered_map.h include/Camera.h
+ /usr/include/c++/5/backward/auto_ptr.h include/Camera.h
 
 /usr/include/stdc-predef.h:
 
-include/Face.h:
-
-include/Component.h:
+include/CameraFollower.h:
 
 /usr/include/c++/5/string:
 
@@ -368,6 +327,8 @@ include/Component.h:
 
 /usr/include/c++/5/bits/basic_string.tcc:
 
+include/Component.h:
+
 include/GameObject.h:
 
 include/Rect.h:
@@ -425,143 +386,5 @@ include/Vec2.h:
 /usr/include/c++/5/bits/atomic_base.h:
 
 /usr/include/c++/5/backward/auto_ptr.h:
-
-include/Sound.h:
-
-include/SDL_include.h:
-
-/usr/include/SDL2/SDL.h:
-
-/usr/include/SDL2/SDL_main.h:
-
-/usr/include/SDL2/SDL_stdinc.h:
-
-/usr/include/SDL2/SDL_config.h:
-
-/usr/include/SDL2/SDL_platform.h:
-
-/usr/include/SDL2/begin_code.h:
-
-/usr/include/SDL2/close_code.h:
-
-/usr/include/string.h:
-
-/usr/include/strings.h:
-
-/usr/include/inttypes.h:
-
-/usr/include/math.h:
-
-/usr/include/x86_64-linux-gnu/bits/math-vector.h:
-
-/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
-
-/usr/include/x86_64-linux-gnu/bits/huge_val.h:
-
-/usr/include/x86_64-linux-gnu/bits/huge_valf.h:
-
-/usr/include/x86_64-linux-gnu/bits/huge_vall.h:
-
-/usr/include/x86_64-linux-gnu/bits/inf.h:
-
-/usr/include/x86_64-linux-gnu/bits/nan.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathdef.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
-
-/usr/include/iconv.h:
-
-/usr/include/SDL2/SDL_assert.h:
-
-/usr/include/SDL2/SDL_atomic.h:
-
-/usr/include/SDL2/SDL_audio.h:
-
-/usr/include/SDL2/SDL_error.h:
-
-/usr/include/SDL2/SDL_endian.h:
-
-/usr/include/SDL2/SDL_mutex.h:
-
-/usr/include/SDL2/SDL_thread.h:
-
-/usr/include/SDL2/SDL_rwops.h:
-
-/usr/include/SDL2/SDL_clipboard.h:
-
-/usr/include/SDL2/SDL_cpuinfo.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/5/include/mmintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/5/include/xmmintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/5/include/mm_malloc.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/5/include/emmintrin.h:
-
-/usr/include/SDL2/SDL_events.h:
-
-/usr/include/SDL2/SDL_video.h:
-
-/usr/include/SDL2/SDL_pixels.h:
-
-/usr/include/SDL2/SDL_rect.h:
-
-/usr/include/SDL2/SDL_surface.h:
-
-/usr/include/SDL2/SDL_blendmode.h:
-
-/usr/include/SDL2/SDL_keyboard.h:
-
-/usr/include/SDL2/SDL_keycode.h:
-
-/usr/include/SDL2/SDL_scancode.h:
-
-/usr/include/SDL2/SDL_mouse.h:
-
-/usr/include/SDL2/SDL_joystick.h:
-
-/usr/include/SDL2/SDL_gamecontroller.h:
-
-/usr/include/SDL2/SDL_quit.h:
-
-/usr/include/SDL2/SDL_gesture.h:
-
-/usr/include/SDL2/SDL_touch.h:
-
-/usr/include/SDL2/SDL_filesystem.h:
-
-/usr/include/SDL2/SDL_haptic.h:
-
-/usr/include/SDL2/SDL_hints.h:
-
-/usr/include/SDL2/SDL_loadso.h:
-
-/usr/include/SDL2/SDL_log.h:
-
-/usr/include/SDL2/SDL_messagebox.h:
-
-/usr/include/SDL2/SDL_power.h:
-
-/usr/include/SDL2/SDL_render.h:
-
-/usr/include/SDL2/SDL_system.h:
-
-/usr/include/SDL2/SDL_timer.h:
-
-/usr/include/SDL2/SDL_version.h:
-
-/usr/include/SDL2/SDL_mixer.h:
-
-include/InputManager.h:
-
-/usr/include/c++/5/unordered_map:
-
-/usr/include/c++/5/bits/hashtable.h:
-
-/usr/include/c++/5/bits/hashtable_policy.h:
-
-/usr/include/c++/5/bits/unordered_map.h:
 
 include/Camera.h:

@@ -37,14 +37,12 @@ void InputManager::Update() {
     while (SDL_PollEvent(&event)) { 
         switch (event.type) {
             case SDL_KEYDOWN:
-                SDL_Log("KEYDOWN\n");
                 if (!event.key.repeat) { 
                     keyState[event.key.keysym.sym] = true;
                     keyUpdate[event.key.keysym.sym] = updateCounter;
                 }
                 break;
             case SDL_KEYUP:
-                SDL_Log("KEYUP\n");
                 keyState[event.key.keysym.sym] = false;
                 keyUpdate[event.key.keysym.sym] = updateCounter;
                 break;

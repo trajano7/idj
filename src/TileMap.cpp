@@ -4,6 +4,9 @@
 #include <sstream>
 
 #include "TileMap.h"
+#include "Camera.h"
+
+#include "InputManager.h"
 
 using namespace std;
 
@@ -91,7 +94,7 @@ void TileMap::RenderLayer(int layer, int cameraX, int cameraY) {
             index = At(x,y,layer);
             if (index >= 0) {
                 //Render all tiles from the layer starting at TileMap GameObject box (x,y)
-                tileSet->RenderTile(index,associated.box.x + x*tileWidth,associated.box.y + y*tileHeight);
+                tileSet->RenderTile(index,(associated.box.x + x*tileWidth) - cameraX,(associated.box.y + y*tileHeight) - cameraY);
             }
         }
     }
@@ -103,7 +106,7 @@ void TileMap::RenderLayer(int layer, int cameraX, int cameraY) {
 void TileMap::Render() {
 
     for (int l = 0; l < mapDepth; l++) {
-        RenderLayer(l,0,0);
+        RenderLayer(l,round(Camera::pos.x),round(Camera::pos.y));
     }
 
     return;
