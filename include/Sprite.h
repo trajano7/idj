@@ -10,7 +10,7 @@ using namespace std;
 #define INCLUDE_SDL 
 #include "SDL_include.h"
 
-//Sprite is a child class of Componen, it has one SDL_Texture (a image) and the methods to the methods to manipulate it
+//Sprite is a child class of Component, it has one SDL_Texture (a image) and the methods to the methods to manipulate it
 class Sprite : public Component {
 
     private:

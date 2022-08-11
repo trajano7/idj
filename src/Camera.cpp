@@ -4,7 +4,7 @@
 #include "InputManager.h"
 
 Vec2 Camera::pos = Vec2(0,0);
-Vec2 Camera::speed = Vec2(256,256);
+Vec2 Camera::speed = Vec2(256,256); //Constant camera speed
 GameObject* Camera::focus = nullptr;
 
 void Camera::Follow(GameObject* newFocus) {
@@ -34,7 +34,7 @@ void Camera::Update(float dt) {
     }
     //Without a focus
     else { 
-       pos.x = pos.x + speed.x*dt*inputManager.IsKeyDown(RIGHT_ARROW_KEY);     
+       pos.x = pos.x + speed.x*dt*inputManager.IsKeyDown(RIGHT_ARROW_KEY); //False: 0, True: 1    
        pos.x = pos.x - speed.x*dt*inputManager.IsKeyDown(LEFT_ARROW_KEY);
        pos.y = pos.y + speed.y*dt*inputManager.IsKeyDown(DOWN_ARROW_KEY);
        pos.y = pos.y - speed.y*dt*inputManager.IsKeyDown(UP_ARROW_KEY);

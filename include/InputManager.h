@@ -16,23 +16,28 @@
 
 using namespace std;
 
+//This class is responsable to read and store the input state each frame
 class InputManager {
 
     public:
 
+        //Singleton pattern
         static InputManager& GetInstance();
         ~InputManager();
 
         void Update();
 
+        //Check keyboard input
         bool KeyPress(int key);
         bool KeyRealease(int key);
         bool IsKeyDown(int key);
 
+        //Check mouse input
         bool MousePress(int button);
         bool MouseRelease(int button);
         bool IsMouseDown(int button);
 
+        //Get the postion of the mouse relative to the game window
         int GetMouseX();
         int GetMouseY();
         
@@ -40,14 +45,18 @@ class InputManager {
 
     private:
 
+        //Read the input events and store it
         InputManager();
 
+        //Update structures store the frame that some input update happened and State store if some button its pressed or not
         bool mouseState[6];
         int mouseUpdate[6];
         unordered_map<int, bool> keyState;
         unordered_map<int, int> keyUpdate;
         bool quitRequested;
+        //Counts the frames
         int updateCounter;
+        //Postion of the mouse relative to the game window
         int mouseX;
         int mouseY;
 

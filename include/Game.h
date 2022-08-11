@@ -22,7 +22,9 @@ class Game {
         SDL_Renderer* renderer;
         State* state;
 
+        //Store the last frame start time
         int frameStart;
+        //Store the time difference between the last and current frame
         float dt;
 
         void CalculateDeltaTime();

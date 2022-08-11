@@ -33,10 +33,11 @@ void Face::Update(float dt) {
 
     InputManager& inputManager = InputManager::GetInstance();
 
-
+    //Check if the left mouse button was clicked in the current frame
     if (inputManager.MousePress(LEFT_MOUSE_BUTTON)) {
+        //Check if the click occurred in the Face
         if(associated.box.PointInRect( {(float) inputManager.GetMouseX() + Camera::pos.x, (float) inputManager.GetMouseY() + Camera::pos.y} )) {
-		    // Aplica dano
+		    //Compute the damage
 		    Damage(std::rand() % 10 + 10);
 		}
     }

@@ -7,12 +7,12 @@
 
 using namespace std;
 
+//This component makes the GameObject follow the Camera position
 class CameraFollower : public Component {
 
     public:
 
         CameraFollower(GameObject& associated);
-        // CameraFollower(GameObject& associated) : Component(associated);
 
         void Update(float dt);
         void Render();

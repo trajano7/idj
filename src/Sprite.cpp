@@ -3,6 +3,7 @@
 #include "Sprite.h"
 #include "Game.h"
 #include "Resources.h"
+#include "Camera.h"
 
 #include <typeinfo>
 
@@ -55,7 +56,10 @@ void Sprite::SetClip(int x, int y, int w, int h) {
 
 void Sprite::Render() {
 
-    Render(associated.box.x,associated.box.y);
+    //Adjust the render position based on Camera position
+    Render(
+     associated.box.x - ((int) round(Camera::pos.x))
+    ,associated.box.y - ((int) round(Camera::pos.y)));
 
     return;
 

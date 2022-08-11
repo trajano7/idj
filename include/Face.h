@@ -6,10 +6,6 @@
 //Class that represents a enemy
 class Face : public Component {
 
-    private: 
-
-        int hitpoints;
-
     public:
 
         Face(GameObject& associated);
@@ -19,6 +15,10 @@ class Face : public Component {
         void Update(float dt);
         void Render();
         bool Is(string type);
+
+    private: 
+
+        int hitpoints;
 
 };
 

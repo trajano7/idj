@@ -31,13 +31,14 @@ void InputManager::Update() {
     SDL_Event event;
 
     SDL_GetMouseState(&mouseX,&mouseY);
-    quitRequested = false;
+    quitRequested = false; 
     updateCounter++;
 
+    //Read all event queue
     while (SDL_PollEvent(&event)) { 
         switch (event.type) {
             case SDL_KEYDOWN:
-                if (!event.key.repeat) { 
+                if (!event.key.repeat) { //Compute just one KEYDOWN event if the key is being pressed in the same frame
                     keyState[event.key.keysym.sym] = true;
                     keyUpdate[event.key.keysym.sym] = updateCounter;
                 }

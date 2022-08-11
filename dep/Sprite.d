@@ -144,7 +144,7 @@ dep/Sprite.d bin/Sprite.o: src/Sprite.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_mixer.h include/Resources.h \
  /usr/include/c++/5/unordered_map /usr/include/c++/5/bits/hashtable.h \
  /usr/include/c++/5/bits/hashtable_policy.h \
- /usr/include/c++/5/bits/unordered_map.h
+ /usr/include/c++/5/bits/unordered_map.h include/Camera.h
 
 /usr/include/stdc-predef.h:
 
@@ -575,3 +575,5 @@ include/Resources.h:
 /usr/include/c++/5/bits/hashtable_policy.h:
 
 /usr/include/c++/5/bits/unordered_map.h:
+
+include/Camera.h:
