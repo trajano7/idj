@@ -121,6 +121,7 @@ void Game::Run() {
 
     frameStart = SDL_GetTicks();
 
+    state->Start();
     //Runs until the current active state change the quit flag
     while (!state->QuitRequested()) {
 

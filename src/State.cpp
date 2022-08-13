@@ -1,5 +1,4 @@
 #include "State.h"
-#include "Face.h"
 #include "TileMap.h"
 #include "TileSet.h"
 
@@ -8,6 +7,7 @@
 #include "InputManager.h"
 #include "Camera.h"
 #include "CameraFollower.h"
+#include "Alien.h"
 
 State::State() : music("Recursos/audio/stageState.ogg") {
 
@@ -23,7 +23,8 @@ State::State() : music("Recursos/audio/stageState.ogg") {
 	backGround->box.y = 0;
 	backGround->AddComponent(sprite);
 	backGround->AddComponent(cameraFollower);
-	objectArray.emplace_back(backGround);
+	//objectArray.emplace_back(backGround);
+	AddObject(backGround);
 	
 	//TileMap GameObject creation
 	GameObject* scenery;
@@ -36,9 +37,26 @@ State::State() : music("Recursos/audio/stageState.ogg") {
 	tileSet = new TileSet(64,64,"Recursos/img/tileset.png");
 	tileMap = new TileMap(*scenery,"Recursos/map/tileMap.txt",tileSet);
 	scenery->AddComponent(tileMap);
-	objectArray.emplace_back(scenery);
+	//objectArray.emplace_back(scenery);
+	AddObject(scenery);
+
+	//Test Alien creation
+	GameObject* alienGO;
+	Alien* alien;
+
+	alienGO = new GameObject();
+	alien = new Alien(*alienGO,0);
+	alienGO->AddComponent(alien);
+	alienGO->box.x = 512 - (alienGO->box.w)/2;
+	alienGO->box.y = 300 - (alienGO->box.h)/2;
+
+	SDL_Log("%f %f", alienGO->box.x, alienGO->box.y);
+
+	AddObject(alienGO);
+
 
     quitRequested = false;
+	started = false;
     music.Play(-1);
 
 }
@@ -55,6 +73,16 @@ void State::LoadAssets() {
 
 }
 
+void State::Start() {
+
+	LoadAssets();
+	for (auto object : objectArray) {
+		object->Start();
+	}
+	started = true;
+
+}
+
 void State::Update(float dt) {
 
 	InputManager& inputManager = InputManager::GetInstance();
@@ -65,12 +93,6 @@ void State::Update(float dt) {
 	if (inputManager.QuitRequested() || inputManager.KeyPress(ESCAPE_KEY)) {
 		quitRequested = true;
 	}
-	//Spawn a enemy if spacebar is pressed
-	if (inputManager.KeyPress(SPACE_KEY)) {
-		Vec2 objPos = Vec2( 200, 0 ).RotateVec2( -M_PI + M_PI*(rand() % 1001)/500.0 ) + Vec2( inputManager.GetMouseX(), inputManager.GetMouseY() );
-		AddObject((int)objPos.x, (int)objPos.y);		
-	}
-
 	for(int i = 0; i < objectArray.size(); i++) {
 		objectArray[i]->Update(dt);
 	}
@@ -92,27 +114,28 @@ void State::Render() {
 
 }
 
-void State::AddObject(int mouseX, int mouseY) {
+weak_ptr<GameObject> State::AddObject(GameObject *go) {
 
-	GameObject* enemy;
-	Sprite* sprite;
-	Sound* sound;
-	Face* face;
+	shared_ptr<GameObject> newObject(go);
+	objectArray.push_back(newObject);
+	if(started) newObject->Start();
+	weak_ptr<GameObject> weakPtr(newObject);
 
-	enemy = new GameObject();
-	sprite = new Sprite("Recursos/img/penguinface.png", *enemy);
-	sound = new Sound(*enemy, "Recursos/audio/boom.wav");
-	face = new Face(*enemy);
+	return weakPtr;
 
-	//Adjust the coordenades to render the image center on it and sum the Camera position
-	enemy->box.x = mouseX - sprite->GetWidth()/2 + ((int) round(Camera::pos.x));
-	enemy->box.y = mouseY + sprite->GetHeight()/2 + ((int) round(Camera::pos.y));
+}
 
-	enemy->AddComponent(sprite);
-	enemy->AddComponent(sound);
-	enemy->AddComponent(face);
+weak_ptr<GameObject> State::GetObjectPtr(GameObject* go) {
 
-	objectArray.emplace_back(enemy);
+	for (auto object : objectArray) {
+		if (object.get() == go) {
+			weak_ptr<GameObject> weakPtr(object);
+			return weakPtr;
+		}
+	}
+
+	weak_ptr<GameObject> weakPtr;
+	return weakPtr;
 
 }
 

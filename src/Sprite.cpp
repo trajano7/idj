@@ -56,10 +56,12 @@ void Sprite::SetClip(int x, int y, int w, int h) {
 
 void Sprite::Render() {
 
+    // SDL_Log("Sprite: %f %f %f %f\n", associated.box.x, Camera::pos.x, associated.box.y, Camera::pos.y);
+
     //Adjust the render position based on Camera position
     Render(
-     associated.box.x - ((int) round(Camera::pos.x))
-    ,associated.box.y - ((int) round(Camera::pos.y)));
+     associated.box.x - Camera::pos.x
+    ,associated.box.y - Camera::pos.y);
 
     return;
 

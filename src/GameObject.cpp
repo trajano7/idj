@@ -8,12 +8,24 @@
 GameObject::GameObject() {
 
     isDead = false;
+    started = false;
 
 }
 
 GameObject::~GameObject() {
 
     components.clear();
+
+}
+
+void GameObject::Start() {
+
+    for (int i=0; i<components.size(); i++) {
+        components[i]->Start();
+    }
+    started = true;
+
+    return;
 
 }
 
@@ -55,6 +67,7 @@ void GameObject::RequestDelete() {
 
 void GameObject::AddComponent(Component* cpt) {
 
+    if(started) cpt->Start();
     components.emplace_back(cpt);
 
     return;
