@@ -1,5 +1,5 @@
-dep/Alien.d bin/Alien.o: src/Alien.cpp /usr/include/stdc-predef.h \
- include/Alien.h include/Component.h /usr/include/c++/5/string \
+dep/Bullet.d bin/Bullet.o: src/Bullet.cpp /usr/include/stdc-predef.h \
+ include/Bullet.h include/Component.h /usr/include/c++/5/string \
  /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/os_defines.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -102,10 +102,7 @@ dep/Alien.d bin/Alien.o: src/Alien.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/ext/aligned_buffer.h \
  /usr/include/c++/5/bits/shared_ptr_atomic.h \
  /usr/include/c++/5/bits/atomic_base.h \
- /usr/include/c++/5/backward/auto_ptr.h /usr/include/c++/5/queue \
- /usr/include/c++/5/deque /usr/include/c++/5/bits/stl_deque.h \
- /usr/include/c++/5/bits/deque.tcc /usr/include/c++/5/bits/stl_heap.h \
- /usr/include/c++/5/bits/stl_queue.h include/Sprite.h \
+ /usr/include/c++/5/backward/auto_ptr.h include/Sprite.h \
  include/SDL_include.h /usr/include/SDL2/SDL.h \
  /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
  /usr/include/SDL2/SDL_config.h /usr/include/SDL2/SDL_platform.h \
@@ -141,17 +138,11 @@ dep/Alien.d bin/Alien.o: src/Alien.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_loadso.h /usr/include/SDL2/SDL_log.h \
  /usr/include/SDL2/SDL_messagebox.h /usr/include/SDL2/SDL_power.h \
  /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_system.h \
- /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
- include/InputManager.h /usr/include/c++/5/unordered_map \
- /usr/include/c++/5/bits/hashtable.h \
- /usr/include/c++/5/bits/hashtable_policy.h \
- /usr/include/c++/5/bits/unordered_map.h include/Camera.h include/Game.h \
- include/State.h include/Sprite.h include/Music.h \
- /usr/include/SDL2/SDL_mixer.h include/Minion.h include/Bullet.h
+ /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h
 
 /usr/include/stdc-predef.h:
 
-include/Alien.h:
+include/Bullet.h:
 
 include/Component.h:
 
@@ -431,18 +422,6 @@ include/Vec2.h:
 
 /usr/include/c++/5/backward/auto_ptr.h:
 
-/usr/include/c++/5/queue:
-
-/usr/include/c++/5/deque:
-
-/usr/include/c++/5/bits/stl_deque.h:
-
-/usr/include/c++/5/bits/deque.tcc:
-
-/usr/include/c++/5/bits/stl_heap.h:
-
-/usr/include/c++/5/bits/stl_queue.h:
-
 include/Sprite.h:
 
 include/SDL_include.h:
@@ -568,29 +547,3 @@ include/SDL_include.h:
 /usr/include/SDL2/SDL_timer.h:
 
 /usr/include/SDL2/SDL_version.h:
-
-include/InputManager.h:
-
-/usr/include/c++/5/unordered_map:
-
-/usr/include/c++/5/bits/hashtable.h:
-
-/usr/include/c++/5/bits/hashtable_policy.h:
-
-/usr/include/c++/5/bits/unordered_map.h:
-
-include/Camera.h:
-
-include/Game.h:
-
-include/State.h:
-
-include/Sprite.h:
-
-include/Music.h:
-
-/usr/include/SDL2/SDL_mixer.h:
-
-include/Minion.h:
-
-include/Bullet.h:

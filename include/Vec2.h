@@ -42,7 +42,7 @@ class Vec2 {
 
            return;
 
-        }   
+        } 
 
         //Multiplies the vector by a scalar
         Vec2 MultScaVec2(float scalar);

@@ -1,6 +1,5 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/trajano/Documents/idj/idj'
- 
 mkdir -p dep bin include src
 g++ -Iinclude  src/Sound.cpp -M -MT dep/Sound.d -MT bin/Sound.o -MP -MF dep/Sound.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Sound.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Sound.o
@@ -32,12 +31,14 @@ g++ -Iinclude  src/InputManager.cpp -M -MT dep/InputManager.d -MT bin/InputManag
 g++ -Iinclude  src/InputManager.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/InputManager.o
 g++ -Iinclude  src/GameObject.cpp -M -MT dep/GameObject.d -MT bin/GameObject.o -MP -MF dep/GameObject.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/GameObject.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/GameObject.o
+g++ -Iinclude  src/Minion.cpp -M -MT dep/Minion.d -MT bin/Minion.o -MP -MF dep/Minion.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -Iinclude  src/Minion.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Minion.o
 g++ -Iinclude  src/Face.cpp -M -MT dep/Face.d -MT bin/Face.o -MP -MF dep/Face.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Face.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Face.o
 g++ -Iinclude  src/TileSet.cpp -M -MT dep/TileSet.d -MT bin/TileSet.o -MP -MF dep/TileSet.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/TileSet.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/TileSet.o
 g++ -Iinclude  src/CameraFollower.cpp -M -MT dep/CameraFollower.d -MT bin/CameraFollower.o -MP -MF dep/CameraFollower.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/CameraFollower.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/CameraFollower.o
-g++ -o Matheus_170152227 bin/Sound.o bin/Resources.o bin/Game.o bin/State.o bin/Sprite.o bin/Alien.o bin/Camera.o bin/Vec2.o bin/Main.o bin/Rect.o bin/Music.o bin/Component.o bin/TileMap.o bin/InputManager.o bin/GameObject.o bin/Face.o bin/TileSet.o bin/CameraFollower.o  -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lm -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -o Matheus_170152227 bin/Sound.o bin/Resources.o bin/Game.o bin/State.o bin/Sprite.o bin/Alien.o bin/Camera.o bin/Vec2.o bin/Main.o bin/Rect.o bin/Music.o bin/Component.o bin/TileMap.o bin/InputManager.o bin/GameObject.o bin/Minion.o bin/Face.o bin/TileSet.o bin/CameraFollower.o  -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lm -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 make: Leaving directory '/home/trajano/Documents/idj/idj'
  

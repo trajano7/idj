@@ -11,6 +11,8 @@
 
 State::State() : music("Recursos/audio/stageState.ogg") {
 
+	started = false;
+
 	//Background GameObject creation
 	GameObject* backGround;
 	Sprite* sprite;
@@ -50,13 +52,9 @@ State::State() : music("Recursos/audio/stageState.ogg") {
 	alienGO->box.x = 512 - (alienGO->box.w)/2;
 	alienGO->box.y = 300 - (alienGO->box.h)/2;
 
-	SDL_Log("%f %f", alienGO->box.x, alienGO->box.y);
-
 	AddObject(alienGO);
 
-
     quitRequested = false;
-	started = false;
     music.Play(-1);
 
 }
@@ -127,9 +125,9 @@ weak_ptr<GameObject> State::AddObject(GameObject *go) {
 
 weak_ptr<GameObject> State::GetObjectPtr(GameObject* go) {
 
-	for (auto object : objectArray) {
-		if (object.get() == go) {
-			weak_ptr<GameObject> weakPtr(object);
+	for (int i = 0; i < objectArray.size(); i++) {
+		if (objectArray[i].get() == go) {
+			weak_ptr<GameObject> weakPtr(objectArray[i]);
 			return weakPtr;
 		}
 	}

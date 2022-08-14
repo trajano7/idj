@@ -3,6 +3,9 @@
 #include "Sprite.h"
 #include "InputManager.h"
 #include "Camera.h"
+#include "Game.h"
+#include "Minion.h"
+#include "Bullet.h"
 
 Alien::Alien(GameObject& associated, int nMinions) : Component(associated) {
 
@@ -22,7 +25,14 @@ Alien::~Alien() {
 
 void Alien::Start() {
 
-
+    GameObject *minionGO = new GameObject();
+    Minion* minion = new Minion(*minionGO,Game::GetInstance().GetState().GetObjectPtr(&associated),90);
+    minionGO->AddComponent(minion);
+    minionArray.push_back(Game::GetInstance().GetState().AddObject(minionGO));
+    minionGO = new GameObject();
+    minion = new Minion(*minionGO,Game::GetInstance().GetState().GetObjectPtr(&associated),0);
+    minionGO->AddComponent(minion);
+    minionArray.push_back(Game::GetInstance().GetState().AddObject(minionGO));
 
 }
 
@@ -44,7 +54,8 @@ void Alien::Update(float dt) {
         Action action = taskQueue.front();
         //SDL_Log("%d %d\n", action.type, Action::SHOOT);
         if(action.type == Action::SHOOT) {
-          SDL_Log("Pew Pew\n");
+          Minion *minion = static_cast<Minion*>((*minionArray[0].lock()).GetComponent("Minion"));
+          minion->Shoot(action.pos);
           taskQueue.pop();  
         }
         else if(action.type == Action::MOVE) {
