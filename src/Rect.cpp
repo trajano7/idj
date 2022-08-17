@@ -32,7 +32,7 @@ Vec2 Rect::RectCenter() {
     Vec2 rectCenter;
 
     rectCenter.x = this->x + (this->w / 2);
-    rectCenter.y = this->y - (this->h / 2);
+    rectCenter.y = this->y + (this->h / 2);
 
     return rectCenter;
 

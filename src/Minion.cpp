@@ -10,6 +10,9 @@
 Minion::Minion(GameObject& associated, weak_ptr<GameObject> alienCenter, float arcOffsetDeg) : Component(associated), alienCenter(alienCenter) {
 
     Sprite *minionSprite = new Sprite("Recursos/img/minion.png", associated);
+    double scale = (((double) rand() / (double) RAND_MAX) * 0.5) + 1;
+    minionSprite->SetScaleX(scale,scale);
+    SDL_Log("scala = %lf\n", scale);
     associated.AddComponent(minionSprite);
 
     arc = arcOffsetDeg;
@@ -24,7 +27,9 @@ Minion::Minion(GameObject& associated, weak_ptr<GameObject> alienCenter, float a
 
 void Minion::Update(float dt) {
 
-    arc += 0.75*M_PI;
+    arc += 0.5*M_PI;
+
+    associated.angleDeg = arc + 90;
 
     Vec2 boxCenter = Vec2((*alienCenter.lock()).box.x + (*alienCenter.lock()).box.w/2
                          ,(*alienCenter.lock()).box.y + (*alienCenter.lock()).box.h/2);
@@ -50,9 +55,9 @@ bool Minion::Is(string type) {
 void Minion::Shoot(Vec2 target) {
 
     GameObject *bulletGO = new GameObject();
-    bulletGO->box.x = associated.box.x + (associated.box.w)/2;
-    bulletGO->box.y = associated.box.y + (associated.box.h)/2;
-    Bullet *bullet = new Bullet(*bulletGO,target.DegVec2(),100,10,200,"Recursos/img/minionbullet1.png");
+    bulletGO->box.x = (associated.box.RectCenter()).x;    
+    bulletGO->box.y = (associated.box.RectCenter()).y;   
+    Bullet *bullet = new Bullet(*bulletGO,target.DegPntsVec2(associated.box.RectCenter()),100,10,200,"Recursos/img/minionbullet1.png");
     bulletGO->AddComponent(bullet);
     Game::GetInstance().GetState().AddObject(bulletGO);
 

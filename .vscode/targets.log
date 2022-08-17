@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Sat Aug 13 18:48:33 2022
+# Make data base, printed on Tue Aug 16 20:17:24 2022
 
 # Variables
 
@@ -76,7 +75,7 @@ MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-nAHS1gdsVs
+DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-MuHjyaKP0x
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
@@ -94,6 +93,7 @@ LC_NAME = pt_BR.UTF-8
 # environment
 VSCODE_CWD = /home/trajano
 # environment
+ 
 XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
@@ -106,7 +106,7 @@ UNITY_HAS_3D_SUPPORT = true
 # environment
 GPG_AGENT_INFO = /home/trajano/.gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/trajano:@/tmp/.ICE-unix/2310,unix/trajano:/tmp/.ICE-unix/2310
+SESSION_MANAGER = local/trajano:@/tmp/.ICE-unix/2311,unix/trajano:/tmp/.ICE-unix/2311
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # makefile (from 'makefile', line 27)
@@ -132,7 +132,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 12172
+GIO_LAUNCHED_DESKTOP_FILE_PID = 10721
 # automatic
 %F = $(notdir $%)
 # makefile (from 'makefile', line 67)
@@ -204,7 +204,7 @@ SHLVL = 1
 # environment
 IM_CONFIG_PHASE = 1
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-4559cb19-2022-4bc0-9562-96a2a5652bc9.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-068785d3-c963-44b6-99bf-0be1b1e6e0cf.sock
 # environment
 COMPIZ_CONFIG_PROFILE = ubuntu
 # makefile (from 'makefile', line 39)
@@ -266,7 +266,7 @@ COMPILER = g++
 # default
 MAKEFILES := 
 # environment
-UPSTART_SESSION = unix:abstract=/com/ubuntu/upstart-session/1000/2086
+UPSTART_SESSION = unix:abstract=/com/ubuntu/upstart-session/1000/2084
 # environment
 LC_NUMERIC = pt_BR.UTF-8
 # automatic
@@ -298,12 +298,11 @@ LC_IDENTIFICATION = pt_BR.UTF-8
 # makefile (from 'makefile', line 26)
 INC_PATH = include
 # environment
- 
 LC_ADDRESS = pt_BR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 12172
+VSCODE_PID = 10721
 # variable set hash-table stats:
 # Load=146/1024=14%, Rehash=0, Collisions=20/207=10%
 
@@ -313,12 +312,12 @@ VSCODE_PID = 12172
 
 # Directories
 
-# include (device 2050, inode 26477742): 21 files, no impossibilities.
+# include (device 2050, inode 26477742): 22 files, no impossibilities.
 # . (device 2050, inode 26476798): 13 files, no impossibilities.
-# dep (device 2050, inode 30277672): No files, no impossibilities so far.
-# src (device 2050, inode 26477741): 21 files, no impossibilities.
+# dep (device 2050, inode 30277661): No files, no impossibilities so far.
+# src (device 2050, inode 26477741): 22 files, no impossibilities.
 
-# 55 files, no impossibilities in 4 directories.
+# 57 files, no impossibilities in 4 directories.
 
 # Implicit Rules
 
@@ -404,7 +403,7 @@ bin/InputManager.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-.PRECIOUS: dep/Alien.d dep/Camera.d dep/CameraFollower.d dep/Component.d dep/Face.d dep/Game.d dep/GameObject.d dep/InputManager.d dep/Main.d dep/Minion.d dep/Music.d dep/Rect.d dep/Resources.d dep/SDL_include.d dep/Sound.d dep/Sprite.d dep/State.d dep/TileMap.d dep/TileSet.d dep/Vec2.d
+.PRECIOUS: dep/Alien.d dep/Bullet.d dep/Camera.d dep/CameraFollower.d dep/Component.d dep/Face.d dep/Game.d dep/GameObject.d dep/InputManager.d dep/Main.d dep/Minion.d dep/Music.d dep/Rect.d dep/Resources.d dep/SDL_include.d dep/Sound.d dep/Sprite.d dep/State.d dep/TileMap.d dep/TileSet.d dep/Vec2.d
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -458,10 +457,18 @@ folders:
 # ^ := 
 # automatic
 # ? := 
+ 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=2/15=13%
 #  recipe to execute (from 'makefile', line 126):
 	@mkdir -p $(DEP_PATH) $(BIN_PATH) $(INC_PATH) $(SRC_PATH)
+
+# Not a target:
+dep/Bullet.d:
+#  Precious file (prerequisite of .PRECIOUS).
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 bin/Sprite.o:
@@ -530,7 +537,6 @@ dep/GameObject.d:
 # Not a target:
 bin/CameraFollower.o:
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -632,7 +638,7 @@ dep/Sound.d: src/Sound.cpp | folders
 #  Precious file (prerequisite of .PRECIOUS).
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'Sound'
-#  Last modified 2022-08-12 19:17:59.098032153
+#  Last modified 2022-08-14 01:46:10.010662152
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -659,10 +665,16 @@ bin/Camera.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+bin/Bullet.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 bin/Sound.o: dep/Sound.d | folders
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'Sound'
-#  Last modified 2022-08-12 19:17:59.414031342
+#  Last modified 2022-08-14 01:46:10.326660207
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -724,12 +736,12 @@ dep/Vec2.d:
 #  Precious file (prerequisite of .PRECIOUS).
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 
-Matheus_170152227: bin/Sound.o bin/Resources.o bin/Game.o bin/State.o bin/Sprite.o bin/Alien.o bin/Camera.o bin/Vec2.o bin/Main.o bin/Rect.o bin/Music.o bin/Component.o bin/TileMap.o bin/InputManager.o bin/GameObject.o bin/Minion.o bin/Face.o bin/TileSet.o bin/CameraFollower.o
+Matheus_170152227: bin/Sound.o bin/Resources.o bin/Game.o bin/State.o bin/Sprite.o bin/Alien.o bin/Camera.o bin/Vec2.o bin/Main.o bin/Rect.o bin/Music.o bin/Component.o bin/TileMap.o bin/InputManager.o bin/GameObject.o bin/Minion.o bin/Face.o bin/Bullet.o bin/TileSet.o bin/CameraFollower.o
 #  Implicit rule search has not been done.
- 
-#  Last modified 2022-08-13 17:49:00.017695422
+#  Last modified 2022-08-16 19:33:35.947392551
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -767,19 +779,19 @@ cppcheck:
 	cppcheck --enable=all . -I./include --suppress=missingIncludeSystem
 
 # files hash-table stats:
-# Load=57/1024=6%, Rehash=0, Collisions=4/142=3%
+# Load=59/1024=6%, Rehash=0, Collisions=6/146=4%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 113 / storage = 1254 B / avg = 11 B
-# current buf: size = 8162 B / used = 1254 B / count = 113 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 117 / storage = 1300 B / avg = 11 B
+# current buf: size = 8162 B / used = 1300 B / count = 117 / avg = 11 B
 
-# strcache performance: lookups = 163 / hit rate = 30%
+# strcache performance: lookups = 167 / hit rate = 29%
 # hash-table stats:
-# Load=113/8192=1%, Rehash=0, Collisions=8/163=5%
-# Finished Make data base on Sat Aug 13 18:48:33 2022
+# Load=117/8192=1%, Rehash=0, Collisions=8/167=5%
+# Finished Make data base on Tue Aug 16 20:17:24 2022
 
  

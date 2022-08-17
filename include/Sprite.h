@@ -19,6 +19,7 @@ class Sprite : public Component {
         int width;
         int height;
         SDL_Rect clipRect;
+        Vec2 scale;
         
     public: 
 
@@ -42,6 +43,8 @@ class Sprite : public Component {
         void Render(float x, float y);
         void Update(float dt);
         bool Is(string type);
+        void SetScaleX(float scaleX, float scaleY);
+        Vec2 GetScale();
 
 };
 

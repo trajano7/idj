@@ -52,7 +52,7 @@ State::State() : music("Recursos/audio/stageState.ogg") {
 	alienGO->box.x = 512 - (alienGO->box.w)/2;
 	alienGO->box.y = 300 - (alienGO->box.h)/2;
 
-	AddObject(alienGO);
+	AddObject(alienGO); 
 
     quitRequested = false;
     music.Play(-1);

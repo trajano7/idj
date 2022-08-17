@@ -9,7 +9,9 @@ Bullet::Bullet(GameObject& associated,
                string sprite) : Component(associated) {
 
     Sprite *bulletSprite = new Sprite(sprite, associated);
-    associated.AddComponent(bulletSprite);  
+    associated.AddComponent(bulletSprite); 
+
+    associated.angleDeg = (double) angle; 
 
     Vec2 speedDir = Vec2(1,0).RotateVec2(angle);
     this->speed = speedDir.MultScaVec2(speed);

@@ -29,12 +29,14 @@ class GameObject {
 
         Rect box;
         bool started;
+        double angleDeg;
 
     private:
 
         //There are several types of componentes, each component assign a certain behavior to a GameObject
         vector <unique_ptr<Component>> components;
         bool isDead;
+        
 
 };
 

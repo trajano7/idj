@@ -10,15 +10,19 @@
 Sprite::Sprite(GameObject &associated) : Component(associated) {
 
     texture = nullptr;
+    scale.x = 1;
+    scale.y = 1;
 
 }
 
 Sprite::Sprite(string file, GameObject &associated) : Component(associated) {
 
     texture = nullptr;
+    scale.x = 1;
+    scale.y = 1;
     Open(file);
-    associated.box.w = GetWidth();
-    associated.box.h = GetHeight();
+    associated.box.w = width;
+    associated.box.h = height;
 
 }
 
@@ -37,7 +41,7 @@ void Sprite::Open(string file) {
         exit(EXIT_FAILURE);
     }
 
-    SetClip(0,0,GetWidth(),GetHeight());
+    SetClip(0,0,width,height);
 
     return;
 
@@ -74,10 +78,10 @@ void Sprite::Render(float x, float y) {
 
     dstrect.x = x; 
     dstrect.y = y; 
-    dstrect.w = clipRect.w;
-    dstrect.h = clipRect.h;
+    dstrect.w = clipRect.w*scale.x;
+    dstrect.h = clipRect.h*scale.y;
 
-    SDL_RenderCopy(Game::GetInstance().GetRenderer(),texture,&clipRect,&dstrect);
+    SDL_RenderCopyEx(Game::GetInstance().GetRenderer(),texture,&clipRect,&dstrect,associated.angleDeg,nullptr,SDL_FLIP_NONE);
 
     return;
 
@@ -85,13 +89,13 @@ void Sprite::Render(float x, float y) {
 
 int Sprite::GetWidth() {
 
-    return width;
+    return width*scale.x;
 
 }
 
 int Sprite::GetHeight() {
 
-    return height;
+    return height*scale.y;
 
 }
 
@@ -118,5 +122,16 @@ bool Sprite::Is(string type) {
     }
 
     return false;
+
+}
+
+void Sprite::SetScaleX(float scaleX, float scaleY) {
+
+    scale.x = scaleX == 0 ? 1 : scaleX;
+    scale.y = scaleY == 0 ? 1 : scaleY;
+    associated.box.w *= scale.x; 
+    associated.box.h *= scale.y; 
+
+    return;
 
 }

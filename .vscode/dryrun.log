@@ -35,10 +35,12 @@ g++ -Iinclude  src/Minion.cpp -M -MT dep/Minion.d -MT bin/Minion.o -MP -MF dep/M
 g++ -Iinclude  src/Minion.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Minion.o
 g++ -Iinclude  src/Face.cpp -M -MT dep/Face.d -MT bin/Face.o -MP -MF dep/Face.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Face.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Face.o
+g++ -Iinclude  src/Bullet.cpp -M -MT dep/Bullet.d -MT bin/Bullet.o -MP -MF dep/Bullet.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -Iinclude  src/Bullet.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Bullet.o
 g++ -Iinclude  src/TileSet.cpp -M -MT dep/TileSet.d -MT bin/TileSet.o -MP -MF dep/TileSet.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/TileSet.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/TileSet.o
 g++ -Iinclude  src/CameraFollower.cpp -M -MT dep/CameraFollower.d -MT bin/CameraFollower.o -MP -MF dep/CameraFollower.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/CameraFollower.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/CameraFollower.o
-g++ -o Matheus_170152227 bin/Sound.o bin/Resources.o bin/Game.o bin/State.o bin/Sprite.o bin/Alien.o bin/Camera.o bin/Vec2.o bin/Main.o bin/Rect.o bin/Music.o bin/Component.o bin/TileMap.o bin/InputManager.o bin/GameObject.o bin/Minion.o bin/Face.o bin/TileSet.o bin/CameraFollower.o  -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lm -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -o Matheus_170152227 bin/Sound.o bin/Resources.o bin/Game.o bin/State.o bin/Sprite.o bin/Alien.o bin/Camera.o bin/Vec2.o bin/Main.o bin/Rect.o bin/Music.o bin/Component.o bin/TileMap.o bin/InputManager.o bin/GameObject.o bin/Minion.o bin/Face.o bin/Bullet.o bin/TileSet.o bin/CameraFollower.o  -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lm -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 make: Leaving directory '/home/trajano/Documents/idj/idj'
  
