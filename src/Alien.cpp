@@ -25,22 +25,15 @@ Alien::~Alien() {
 
 void Alien::Start() {
 
+    //Add 4 minions to the Alien
     GameObject *minionGO = new GameObject();
     Minion* minion = new Minion(*minionGO,Game::GetInstance().GetState().GetObjectPtr(&associated),0);
-    minionGO->AddComponent(minion);
-    minionArray.push_back(Game::GetInstance().GetState().AddObject(minionGO));
-    minionGO = new GameObject();
-    minion = new Minion(*minionGO,Game::GetInstance().GetState().GetObjectPtr(&associated),180);
-    minionGO->AddComponent(minion);
-    minionArray.push_back(Game::GetInstance().GetState().AddObject(minionGO));
-    minionGO = new GameObject();
-    minion = new Minion(*minionGO,Game::GetInstance().GetState().GetObjectPtr(&associated),270);
-    minionGO->AddComponent(minion);
-    minionArray.push_back(Game::GetInstance().GetState().AddObject(minionGO));
-    minionGO = new GameObject();
-    minion = new Minion(*minionGO,Game::GetInstance().GetState().GetObjectPtr(&associated),90);
-    minionGO->AddComponent(minion);
-    minionArray.push_back(Game::GetInstance().GetState().AddObject(minionGO));
+    for (int i = 0; i < 4; i++) {
+        minionGO = new GameObject();
+        minion = new Minion(*minionGO,Game::GetInstance().GetState().GetObjectPtr(&associated),i*90);
+        minionGO->AddComponent(minion);
+        minionArray.push_back(Game::GetInstance().GetState().AddObject(minionGO));
+    }
 
 }
 
@@ -48,23 +41,24 @@ void Alien::Update(float dt) {
 
     InputManager inputManager = InputManager::GetInstance();
 
+    //Alien rotation speed around it origin
     associated.angleDeg -= 0.10*M_PI; 
 
-    if (inputManager.MousePress(LEFT_MOUSE_BUTTON)) {
+    if (inputManager.MousePress(LEFT_MOUSE_BUTTON)) { //Shoot action
         //SDL_Log("FIREEEEEEEEEE\n");
         Action action = Action(Action::SHOOT,(float) inputManager.GetMouseX() + Camera::pos.x, (float) inputManager.GetMouseY() + Camera::pos.y);
         taskQueue.push(action); 
     }
-    else if (inputManager.MousePress(RIGHT_MOUSE_BUTTON)) {
+    else if (inputManager.MousePress(RIGHT_MOUSE_BUTTON)) { //Move action
         Action action = Action(Action::MOVE,(float) inputManager.GetMouseX() + Camera::pos.x, (float) inputManager.GetMouseY() + Camera::pos.y);
         taskQueue.push(action); 
     }
 
     if(!taskQueue.empty()) {
         Action action = taskQueue.front();
-        //SDL_Log("%d %d\n", action.type, Action::SHOOT); rand() % minionArray.size()
         if(action.type == Action::SHOOT) {
           int nextOne = 0;
+          //Find the nearest minion to the mouse click position to shoot
           for (int i = 1; i<minionArray.size();i++) {
             if((*minionArray[i].lock()).box.RectCenter().DistVec2(action.pos) < 
                (*minionArray[nextOne].lock()).box.RectCenter().DistVec2(action.pos)) {
@@ -77,10 +71,14 @@ void Alien::Update(float dt) {
         }
         else if(action.type == Action::MOVE) {
           Vec2 dist;
-          dist.x = action.pos.x - (associated.box.x + (associated.box.w)/2);
-          dist.y = action.pos.y - (associated.box.y + (associated.box.h)/2);
+          //Calculate the distance vector
+          dist.x = action.pos.x - associated.box.RectCenter().x;
+          dist.y = action.pos.y - associated.box.RectCenter().y;
+          //Calculate the unit vector and multiplies by a scalar that defines how fast it move
           speed = (dist.UnitVec2()).MultScaVec2(5);
+          //If the current distance is smaller that the speed it just move the Alien to the final point
           if (dist.ModVec2() < speed.ModVec2()) {
+            //Put the Alien center in the click position
             associated.box.x = action.pos.x - (associated.box.w)/2;
             associated.box.y = action.pos.y - (associated.box.w)/2;
             speed = Vec2(0,0);

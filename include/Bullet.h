@@ -8,6 +8,7 @@
 
 using namespace std;
 
+//Component that implements a projectile behavior
 class Bullet : public Component {
 
     public:
@@ -16,7 +17,7 @@ class Bullet : public Component {
                float angle,
                float speed,
                int damage,
-               float maxDistance,
+               float maxDistance, //Max distance that the bullet can travel
                string sprite);
         
         void Update(float dt);

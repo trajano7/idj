@@ -28,7 +28,9 @@ class GameObject {
         Component* GetComponent(string type);
 
         Rect box;
+        //This flag indicates if the GameObject was started
         bool started;
+        //Angle used to rotate the GameObject around it origin
         double angleDeg;
 
     private:

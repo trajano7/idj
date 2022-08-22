@@ -7,6 +7,7 @@
 
 using namespace std;
 
+//Component that implement an enemy minion that follow the Alien component
 class Minion : public Component {
 
     public:
@@ -20,7 +21,9 @@ class Minion : public Component {
 
     private:
 
+        //Reference to the Alien that it orbits
         weak_ptr<GameObject> alienCenter;
+        //Current arc traveled by the minion around the Alien
         float arc;
 
 };

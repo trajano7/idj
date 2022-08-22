@@ -10,6 +10,7 @@
 Sprite::Sprite(GameObject &associated) : Component(associated) {
 
     texture = nullptr;
+    //Original scale as default
     scale.x = 1;
     scale.y = 1;
 
@@ -18,6 +19,7 @@ Sprite::Sprite(GameObject &associated) : Component(associated) {
 Sprite::Sprite(string file, GameObject &associated) : Component(associated) {
 
     texture = nullptr;
+    //Original scale as default
     scale.x = 1;
     scale.y = 1;
     Open(file);
@@ -78,6 +80,7 @@ void Sprite::Render(float x, float y) {
 
     dstrect.x = x; 
     dstrect.y = y; 
+    //Render width and height adujsted with the scale
     dstrect.w = clipRect.w*scale.x;
     dstrect.h = clipRect.h*scale.y;
 

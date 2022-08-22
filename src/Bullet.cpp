@@ -13,6 +13,7 @@ Bullet::Bullet(GameObject& associated,
 
     associated.angleDeg = (double) angle; 
 
+    //Define the bullet speed module and angle
     Vec2 speedDir = Vec2(1,0).RotateVec2(angle);
     this->speed = speedDir.MultScaVec2(speed);
     this->damage = damage;

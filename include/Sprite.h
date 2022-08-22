@@ -19,6 +19,7 @@ class Sprite : public Component {
         int width;
         int height;
         SDL_Rect clipRect;
+        //Render scale of the sprite
         Vec2 scale;
         
     public: 
