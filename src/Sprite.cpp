@@ -16,14 +16,20 @@ Sprite::Sprite(GameObject &associated) : Component(associated) {
 
 }
 
-Sprite::Sprite(string file, GameObject &associated) : Component(associated) {
+Sprite::Sprite(string file, GameObject &associated, int frameCount, float frameTime) : Component(associated) {
 
     texture = nullptr;
     //Original scale as default
     scale.x = 1;
     scale.y = 1;
+
+    this->frameCount = frameCount;
+    this->frameTime = frameTime;
+    currentFrame = 0;
+    timeElapsed = 0;
+
     Open(file);
-    associated.box.w = width;
+    associated.box.w = width/frameCount;
     associated.box.h = height;
 
 }
@@ -43,7 +49,7 @@ void Sprite::Open(string file) {
         exit(EXIT_FAILURE);
     }
 
-    SetClip(0,0,width,height);
+    SetClip(0,0,width/frameCount,height);
 
     return;
 
@@ -92,7 +98,7 @@ void Sprite::Render(float x, float y) {
 
 int Sprite::GetWidth() {
 
-    return width*scale.x;
+    return (width/frameCount)*scale.x;
 
 }
 
@@ -113,7 +119,16 @@ bool Sprite::IsOpen() {
 }
 
 void Sprite::Update(float dt) {
-
+    
+    timeElapsed += dt;
+    if (timeElapsed >= frameTime) {
+        int frameSize = width/frameCount;
+        SetClip(frameSize*currentFrame,0,frameSize,height);
+        timeElapsed = 0;
+        currentFrame = currentFrame == frameCount-1 ? 0 : currentFrame+1;
+        //SDL_Log("current frame = %d\n", currentFrame);
+    }
+    
     return;
 
 }
@@ -133,8 +148,39 @@ void Sprite::SetScaleX(float scaleX, float scaleY) {
     scale.x = scaleX == 0 ? 1 : scaleX;
     scale.y = scaleY == 0 ? 1 : scaleY;
     associated.box.w *= scale.x; 
-    associated.box.h *= scale.y; 
+    associated.box.h *= scale.y;
+    associated.box.x -= (scale.x-1)*(width/2);  
+    associated.box.y -= (scale.y-1)*(height/2);  
 
     return;
 
+}
+
+void Sprite::SetFrame(int frame) {
+
+    if (frame < frameCount) {
+        currentFrame = frame;
+        int frameSize = width/frameCount;
+        SetClip(frameSize*currentFrame,0,frameSize,height);
+        currentFrame = currentFrame == frameCount-1 ? 0 : currentFrame+1;
+    }
+    else {
+        SDL_Log("SetFrame: Invalid operation, the frame %d doesn't exist for this sprite\n", frame);
+    }
+
+}
+
+
+void Sprite::SetFrameCount(int frameCount) {
+
+    this->frameCount = frameCount;
+    associated.box.x = (width/frameCount)*scale.x;
+    SetFrame(0);
+
+}
+
+void Sprite::SetFrameTime(float frameTime) {
+
+    this->frameTime = frameTime;
+    
 }

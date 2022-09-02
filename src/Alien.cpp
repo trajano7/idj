@@ -9,7 +9,7 @@
 
 Alien::Alien(GameObject& associated, int nMinions) : Component(associated) {
 
-    Sprite *alienSprite = new Sprite("Recursos/img/alien.png", associated);
+    Sprite *alienSprite = new Sprite("Recursos/img/alien.png", associated, 1, 1);
     associated.AddComponent(alienSprite);
 
     speed = Vec2(0,0);

@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Aug 16 20:17:24 2022
+# Make data base, printed on Thu Sep  1 23:38:12 2022
 
 # Variables
 
@@ -47,11 +47,13 @@ RM = rm -f
 # makefile (from 'makefile', line 32)
 CPP_FILES = $(wildcard $(SRC_PATH)/*.cpp)
 # environment
-UPSTART_JOB = unity7
+UPSTART_JOB = unity-settings-daemon
+# environment
+VTE_VERSION = 4205
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-_ = /usr/share/code/code
+_ = /usr/bin/code
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg
 # makefile (from 'makefile', line 35)
@@ -61,7 +63,7 @@ MAKEFILE_LIST :=  makefile
 # automatic
 @F = $(notdir $@)
 # environment
-GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
+IM_CONFIG_PHASE = 1
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
@@ -75,15 +77,11 @@ MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-MuHjyaKP0x
+DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-I39qH7VVWV
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
 LC_CTYPE = pt_BR.UTF-8
-# makefile (from 'makefile', line 28)
-BIN_PATH = bin
-# environment
-UNITY_DEFAULT_PROFILE = unity
 # environment
 CLUTTER_IM_MODULE = xim
 # environment
@@ -91,28 +89,25 @@ LESSOPEN = | /usr/bin/lesspipe %s
 # environment
 LC_NAME = pt_BR.UTF-8
 # environment
-VSCODE_CWD = /home/trajano
+VSCODE_CWD = /home/trajano/Documents/idj/idj
 # environment
- 
 XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # makefile (from 'makefile', line 36)
 OBJ_FILES = $(addprefix $(BIN_PATH)/,$(notdir $(CPP_FILES:.cpp=.o)))
 # environment
-PATH = /home/trajano/bin:/home/trajano/.local/bin:/home/trajano/bin:/home/trajano/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-# environment
-UNITY_HAS_3D_SUPPORT = true
+PATH = /home/trajano/bin:/home/trajano/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # environment
 GPG_AGENT_INFO = /home/trajano/.gnupg/S.gpg-agent:0:1
-# environment
-SESSION_MANAGER = local/trajano:@/tmp/.ICE-unix/2311,unix/trajano:/tmp/.ICE-unix/2311
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # makefile (from 'makefile', line 27)
 SRC_PATH = src
 # environment
-XDG_MENU_PREFIX = gnome-
+WINDOWID = 56623114
+# makefile (from 'makefile', line 28)
+BIN_PATH = bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -120,19 +115,15 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
-SESSION = ubuntu
-# environment
 XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/trajano
 # environment
-LS_COLORS = 
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
 # environment
-JOB = unity-settings-daemon
+JOB = gnome-session
 # environment
 XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
-# environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 10721
 # automatic
 %F = $(notdir $%)
 # makefile (from 'makefile', line 67)
@@ -162,6 +153,8 @@ HOME = /home/trajano
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
+VSCODE_CLI = 1
+# environment
 VSCODE_CODE_CACHE_PATH = /home/trajano/.config/Code/CachedData/30d9c6cd9483b2cc586687151bcbcd635f373630
 # environment
 LOGNAME = trajano
@@ -173,6 +166,8 @@ APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 +F = $(notdir $+)
 # makefile (from 'makefile', line 17)
 INC_PATHS = -I$(INC_PATH) $(addprefix -I,$(SDL_INC_PATH))
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
 # makefile (from 'makefile', line 29)
 DEP_PATH = dep
 # environment
@@ -202,9 +197,7 @@ RMDIR = rm -rdf
 # environment
 SHLVL = 1
 # environment
-IM_CONFIG_PHASE = 1
-# environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-068785d3-c963-44b6-99bf-0be1b1e6e0cf.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-8324a8bd-d1a7-4304-ad62-00d8cd773448.sock
 # environment
 COMPIZ_CONFIG_PROFILE = ubuntu
 # makefile (from 'makefile', line 39)
@@ -220,7 +213,7 @@ LC_MONETARY = pt_BR.UTF-8
 # environment
 XDG_CURRENT_DESKTOP = Unity
 # environment
-UPSTART_EVENTS = xsession started
+UPSTART_EVENTS = started starting
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
@@ -229,6 +222,8 @@ GNOME_KEYRING_PID =
 LC_TELEPHONE = pt_BR.UTF-8
 # default
 MAKE_COMMAND := make
+# environment
+OLDPWD = /home/trajano/Documents/idj
 # default
 .VARIABLES := 
 # automatic
@@ -258,15 +253,13 @@ GTK2_MODULES = overlay-scrollbar
 # environment
 QT_ACCESSIBILITY = 1
 # environment
-COMPIZ_BIN_PATH = /usr/bin/
-# environment
 DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
 # makefile (from 'makefile', line 6)
 COMPILER = g++
 # default
 MAKEFILES := 
 # environment
-UPSTART_SESSION = unix:abstract=/com/ubuntu/upstart-session/1000/2084
+UPSTART_SESSION = unix:abstract=/com/ubuntu/upstart-session/1000/1961
 # environment
 LC_NUMERIC = pt_BR.UTF-8
 # automatic
@@ -274,7 +267,7 @@ LC_NUMERIC = pt_BR.UTF-8
 # environment
 LC_MEASUREMENT = pt_BR.UTF-8
 # environment
-INSTANCE = 
+INSTANCE = Unity
 # environment
 LC_ALL = C
 # environment
@@ -300,11 +293,14 @@ INC_PATH = include
 # environment
 LC_ADDRESS = pt_BR.UTF-8
 # environment
+ 
 LANG = C
 # environment
-VSCODE_PID = 10721
+TERM = xterm-256color
+# environment
+VSCODE_PID = 29821
 # variable set hash-table stats:
-# Load=146/1024=14%, Rehash=0, Collisions=20/207=10%
+# Load=144/1024=14%, Rehash=0, Collisions=18/205=9%
 
 # Pattern-specific Variable Values
 
@@ -457,7 +453,6 @@ folders:
 # ^ := 
 # automatic
 # ? := 
- 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=2/15=13%
 #  recipe to execute (from 'makefile', line 126):
@@ -581,6 +576,7 @@ bin/GameObject.o:
 #  File has not been updated.
 
 # Not a target:
+ 
 bin/Resources.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -638,7 +634,7 @@ dep/Sound.d: src/Sound.cpp | folders
 #  Precious file (prerequisite of .PRECIOUS).
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'Sound'
-#  Last modified 2022-08-14 01:46:10.010662152
+#  Last modified 2022-08-22 19:44:50.43820616
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -674,7 +670,7 @@ bin/Bullet.o:
 bin/Sound.o: dep/Sound.d | folders
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'Sound'
-#  Last modified 2022-08-14 01:46:10.326660207
+#  Last modified 2022-08-22 19:44:50.774203774
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -736,12 +732,11 @@ dep/Vec2.d:
 #  Precious file (prerequisite of .PRECIOUS).
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 
 Matheus_170152227: bin/Sound.o bin/Resources.o bin/Game.o bin/State.o bin/Sprite.o bin/Alien.o bin/Camera.o bin/Vec2.o bin/Main.o bin/Rect.o bin/Music.o bin/Component.o bin/TileMap.o bin/InputManager.o bin/GameObject.o bin/Minion.o bin/Face.o bin/Bullet.o bin/TileSet.o bin/CameraFollower.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-16 19:33:35.947392551
+#  Last modified 2022-09-01 16:49:30.322233826
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -792,6 +787,6 @@ cppcheck:
 # strcache performance: lookups = 167 / hit rate = 29%
 # hash-table stats:
 # Load=117/8192=1%, Rehash=0, Collisions=8/167=5%
-# Finished Make data base on Tue Aug 16 20:17:24 2022
+# Finished Make data base on Thu Sep  1 23:38:12 2022
 
  

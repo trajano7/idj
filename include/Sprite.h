@@ -21,12 +21,17 @@ class Sprite : public Component {
         SDL_Rect clipRect;
         //Render scale of the sprite
         Vec2 scale;
+
+        int frameCount;
+        int currentFrame;
+        float timeElapsed;
+        float frameTime;
         
     public: 
 
         //Receive in the constructor the GameObject that will store the sprite
         Sprite(GameObject &associated);
-        Sprite(string file, GameObject &associated);
+        Sprite(string file, GameObject &associated, int frameCount, float frameTime);
         ~Sprite();
 
         //Open the image
@@ -46,6 +51,10 @@ class Sprite : public Component {
         bool Is(string type);
         void SetScaleX(float scaleX, float scaleY);
         Vec2 GetScale();
+
+        void SetFrame(int frame);
+        void SetFrameCount(int frameCount);
+        void SetFrameTime(float frameTime);
 
 };
 

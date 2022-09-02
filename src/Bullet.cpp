@@ -6,9 +6,11 @@ Bullet::Bullet(GameObject& associated,
                float speed,
                int damage,
                float maxDistance,
-               string sprite) : Component(associated) {
+               string sprite,
+               int frameCount,
+               float frameTime) : Component(associated) {
 
-    Sprite *bulletSprite = new Sprite(sprite, associated);
+    Sprite *bulletSprite = new Sprite(sprite, associated, frameCount, frameTime);
     associated.AddComponent(bulletSprite); 
 
     associated.angleDeg = (double) angle; 

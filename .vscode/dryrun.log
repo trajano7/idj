@@ -1,5 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/trajano/Documents/idj/idj'
+ 
 mkdir -p dep bin include src
 g++ -Iinclude  src/Sound.cpp -M -MT dep/Sound.d -MT bin/Sound.o -MP -MF dep/Sound.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Sound.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Sound.o

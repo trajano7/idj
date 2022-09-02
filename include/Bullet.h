@@ -18,7 +18,9 @@ class Bullet : public Component {
                float speed,
                int damage,
                float maxDistance, //Max distance that the bullet can travel
-               string sprite);
+               string sprite,
+               int frameCount,
+               float frameTime);
         
         void Update(float dt);
         void Render();

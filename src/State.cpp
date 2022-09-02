@@ -19,7 +19,7 @@ State::State() : music("Recursos/audio/stageState.ogg") {
 	CameraFollower* cameraFollower;
 
 	backGround = new GameObject();
-	sprite = new Sprite("Recursos/img/ocean.jpg", *backGround);
+	sprite = new Sprite("Recursos/img/ocean.jpg", *backGround, 1, 1);
 	cameraFollower = new CameraFollower(*backGround);
 	backGround->box.x = 0;
 	backGround->box.y = 0;
