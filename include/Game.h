@@ -12,6 +12,7 @@ using namespace std;
 
 //Game class intializate SDL resources and run the main game loop
 class Game {
+    
     private:
 
         Game(string title, int width, int height);

@@ -8,6 +8,7 @@
 #include "Camera.h"
 #include "CameraFollower.h"
 #include "Alien.h"
+#include "PenguinBody.h"
 
 State::State() : music("Recursos/audio/stageState.ogg") {
 
@@ -54,6 +55,17 @@ State::State() : music("Recursos/audio/stageState.ogg") {
 
 	AddObject(alienGO); 
 
+	GameObject* penguinGO;
+	PenguinBody* penguin;
+
+	penguinGO = new GameObject();
+	penguin = new PenguinBody(*penguinGO);
+	penguinGO->AddComponent(penguin);
+	penguinGO->box.x = 0;
+	penguinGO->box.y = 0;
+
+	AddObject(penguinGO);
+
     quitRequested = false;
     music.Play(-1);
 
@@ -72,10 +84,10 @@ void State::LoadAssets() {
 }
 
 void State::Start() {
-
+	
 	LoadAssets();
-	for (auto object : objectArray) {
-		object->Start();
+	for (int i; i < objectArray.size(); i++) {
+		objectArray[i]->Start();
 	}
 	started = true;
 
