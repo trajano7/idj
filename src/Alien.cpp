@@ -6,14 +6,23 @@
 #include "Game.h"
 #include "Minion.h"
 #include "Bullet.h"
+#include "Collider.h"
+#include "Sound.h"
+#include "PenguinBody.h"
 
 Alien::Alien(GameObject& associated, int nMinions) : Component(associated) {
 
-    Sprite *alienSprite = new Sprite("Recursos/img/alien.png", associated, 1, 1);
+    Sprite *alienSprite = new Sprite("Recursos/img/alien.png", associated, 1, 1,-1);
     associated.AddComponent(alienSprite);
+    Collider *collider = new Collider(associated,Vec2(1,1),Vec2(0,0));
+    associated.AddComponent(collider);
 
     speed = Vec2(0,0);
     hp = 30;
+
+    state = AlienState::RESTING;
+    restTimer = Timer();
+    destination = Vec2(0,0);
 
 }
 
@@ -40,58 +49,51 @@ void Alien::Start() {
 void Alien::Update(float dt) {
 
     InputManager inputManager = InputManager::GetInstance();
+    Vec2 dist;
 
     //Alien rotation speed around it origin
     associated.angleDeg -= 0.10*M_PI; 
 
-    if (inputManager.MousePress(LEFT_MOUSE_BUTTON)) { //Shoot action
-        //SDL_Log("FIREEEEEEEEEE\n");
-        Action action = Action(Action::SHOOT,(float) inputManager.GetMouseX() + Camera::pos.x, (float) inputManager.GetMouseY() + Camera::pos.y);
-        taskQueue.push(action); 
-    }
-    else if (inputManager.MousePress(RIGHT_MOUSE_BUTTON)) { //Move action
-        Action action = Action(Action::MOVE,(float) inputManager.GetMouseX() + Camera::pos.x, (float) inputManager.GetMouseY() + Camera::pos.y);
-        taskQueue.push(action); 
-    }
-
-    if(!taskQueue.empty()) {
-        Action action = taskQueue.front();
-        if(action.type == Action::SHOOT) {
-          int nextOne = 0;
-          //Find the nearest minion to the mouse click position to shoot
-          for (int i = 1; i<minionArray.size();i++) {
-            if((*minionArray[i].lock()).box.RectCenter().DistVec2(action.pos) < 
-               (*minionArray[nextOne].lock()).box.RectCenter().DistVec2(action.pos)) {
-                nextOne = i;
-               }
-          }
-          Minion *minion = static_cast<Minion*>((*minionArray[nextOne].lock()).GetComponent("Minion"));
-          minion->Shoot(action.pos);
-          taskQueue.pop();  
+    if (state == AlienState::RESTING) {
+        restTimer.Update(dt);
+        if (restTimer.Get() >= 0.66 && PenguinBody::player != nullptr) {
+            destination = PenguinBody::player->GetPenguinPos();
+            dist.x = destination.x - associated.box.RectCenter().x;
+            dist.y = destination.y - associated.box.RectCenter().y;
+            speed = (dist.UnitVec2()).MultScaVec2(5);
+            state = AlienState::MOVING;
         }
-        else if(action.type == Action::MOVE) {
-          Vec2 dist;
-          //Calculate the distance vector
-          dist.x = action.pos.x - associated.box.RectCenter().x;
-          dist.y = action.pos.y - associated.box.RectCenter().y;
-          //Calculate the unit vector and multiplies by a scalar that defines how fast it move
-          speed = (dist.UnitVec2()).MultScaVec2(5);
-          //If the current distance is smaller that the speed it just move the Alien to the final point
-          if (dist.ModVec2() < speed.ModVec2()) {
-            //Put the Alien center in the click position
-            associated.box.x = action.pos.x - (associated.box.w)/2;
-            associated.box.y = action.pos.y - (associated.box.w)/2;
+    }
+    else if (state == AlienState::MOVING) {
+        dist.x = destination.x - associated.box.RectCenter().x;
+        dist.y = destination.y - associated.box.RectCenter().y;
+        //Calculate the unit vector and multiplies by a scalar that defines how fast it move
+        speed = (dist.UnitVec2()).MultScaVec2(5);
+
+        if (dist.ModVec2() < speed.ModVec2()) { //If is close enough
+            //Put the Alien in the destination center
+            associated.box.x = destination.x - (associated.box.w)/2;
+            associated.box.y = destination.y - (associated.box.h)/2;
             speed = Vec2(0,0);
-            taskQueue.pop();
-          }
-          else {
+            int nextOne = 0;
+            //Find the nearest minion to the penguin to shoot
+            destination = PenguinBody::player->GetPenguinPos();
+            for (int i = 1; i<minionArray.size();i++) {
+                if((*minionArray[i].lock()).box.RectCenter().DistVec2(destination) < 
+                   (*minionArray[nextOne].lock()).box.RectCenter().DistVec2(destination)) {
+                    nextOne = i;
+                }
+            }
+            Minion *minion = static_cast<Minion*>((*minionArray[nextOne].lock()).GetComponent("Minion"));
+            minion->Shoot(destination); 
+            restTimer.Restart();
+            state = AlienState::RESTING;  
+        }
+        else {
             associated.box.x += speed.x;
             associated.box.y += speed.y;
-          }
-        }    
+        }
     }
-
-    if(hp <= 0) associated.RequestDelete();
 
 }
 
@@ -109,10 +111,26 @@ bool Alien::Is(string type) {
 
 }
 
-Alien::Action::Action(ActionType type, float x, float y) {
+void Alien::NotifyCollision(GameObject& other) {
 
-    this->type = type;
-    pos.x = x;
-    pos.y = y;
+    Bullet *bullet = static_cast<Bullet *>(other.GetComponent("Bullet"));
+    //Check if other is a bullet and if it was shoot by the player
+    if (bullet != nullptr && !bullet->targetsPlayer) {
+        hp -= bullet->GetDamage();
+        if(hp <= 0) { //Alien died
+          //Creates a destruction animation with a sprite and sound in the same location of the Alien
+          GameObject *explosionGO = new GameObject();
+          Sprite *explosion = new Sprite("Recursos/img/aliendeath.png", *explosionGO, 4, 0.5,2); 
+          explosionGO->box.x = associated.box.RectCenter().x - explosionGO->box.w/2;
+          explosionGO->box.y = associated.box.RectCenter().y - explosionGO->box.h/2;
+          Sound *explosionSound = new Sound(*explosionGO,"Recursos/audio/boom.wav");
+          explosionSound->Play(1);
+          explosionGO->AddComponent(explosion);
+          explosionGO->AddComponent(explosionSound);
+          Game::GetInstance().GetState().AddObject(explosionGO);
+          //Request Alien GameObject destruction
+          associated.RequestDelete();
+        }
+    }
 
 }

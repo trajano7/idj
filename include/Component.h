@@ -20,6 +20,8 @@ class Component {
         virtual void Update(float dt) = 0;
         virtual void Render() = 0;
         virtual bool Is(string type) = 0;
+        //Notify that a collision occured with it associated, so it can take some action
+        virtual void NotifyCollision(GameObject& other);
 
     protected:
 

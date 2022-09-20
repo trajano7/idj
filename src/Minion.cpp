@@ -4,17 +4,20 @@
 #include "Vec2.h"
 #include "Bullet.h"
 #include "Game.h"
+#include "Collider.h"
 
 #include "cmath"
 
 Minion::Minion(GameObject& associated, weak_ptr<GameObject> alienCenter, float arcOffsetDeg) : Component(associated), alienCenter(alienCenter) {
 
-    Sprite *minionSprite = new Sprite("Recursos/img/minion.png", associated, 1, 1);
+    Sprite *minionSprite = new Sprite("Recursos/img/minion.png", associated, 1, 1,-1);
     //Calculate a random scala to each Minion created
     double scale = (((double) rand() / (double) RAND_MAX) * 0.5) + 1;
     minionSprite->SetScaleX(scale,scale);
     //SDL_Log("scala = %lf\n", scale);
     associated.AddComponent(minionSprite);
+    Collider *collider = new Collider(associated,Vec2(1,1),Vec2(0,0));
+    associated.AddComponent(collider);
 
     //Initial arc
     arc = arcOffsetDeg;
@@ -28,6 +31,22 @@ Minion::Minion(GameObject& associated, weak_ptr<GameObject> alienCenter, float a
 }
 
 void Minion::Update(float dt) {
+
+    //Check if the Alien was destroyed
+    if (!alienCenter.lock()) {
+        GameObject *explosionGO = new GameObject();
+        //Creates a destruction animation with a sprite and sound in the same location of the Minion
+        Sprite *explosion = new Sprite("Recursos/img/miniondeath.png", *explosionGO, 4, 0.5,2); 
+        explosionGO->box.x = associated.box.RectCenter().x - explosionGO->box.w/2;
+        explosionGO->box.y = associated.box.RectCenter().y - explosionGO->box.h/2;
+        explosionGO->AddComponent(explosion);
+        Vec2 scale = (static_cast<Sprite *>(associated.GetComponent("Sprite")))->GetScale();
+        explosion->SetScaleX(scale.x,scale.y);
+        Game::GetInstance().GetState().AddObject(explosionGO);
+        //Request Minion GameObject destruction
+        associated.RequestDelete();
+        return;
+    }
 
     //Increment the previous arc by a fraction of PI, so it can rotate around the Alien
     arc += 0.5*M_PI;
@@ -65,8 +84,12 @@ void Minion::Shoot(Vec2 target) {
     //Bullet angle is the angle between the origin and the target,
     //Chosen values for speed, damage and maxDistance: 100, 10 and 200,
     Bullet *bullet = new Bullet(*bulletGO,target.DegPntsVec2(associated.box.RectCenter()),100,10,200,
-                                "Recursos/img/minionbullet2.png",3,0.5);
+                                "Recursos/img/minionbullet2.png",3,0.5,true);
     bulletGO->AddComponent(bullet);
     Game::GetInstance().GetState().AddObject(bulletGO);
+
+}
+
+void Minion::NotifyCollision(GameObject& other) {
 
 }

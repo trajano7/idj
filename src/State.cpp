@@ -9,6 +9,8 @@
 #include "CameraFollower.h"
 #include "Alien.h"
 #include "PenguinBody.h"
+#include "Collision.cpp"
+#include "Collider.h"
 
 State::State() : music("Recursos/audio/stageState.ogg") {
 
@@ -20,7 +22,7 @@ State::State() : music("Recursos/audio/stageState.ogg") {
 	CameraFollower* cameraFollower;
 
 	backGround = new GameObject();
-	sprite = new Sprite("Recursos/img/ocean.jpg", *backGround, 1, 1);
+	sprite = new Sprite("Recursos/img/ocean.jpg", *backGround, 1, 1,-1);
 	cameraFollower = new CameraFollower(*backGround);
 	backGround->box.x = 0;
 	backGround->box.y = 0;
@@ -55,16 +57,19 @@ State::State() : music("Recursos/audio/stageState.ogg") {
 
 	AddObject(alienGO); 
 
+	//Penguin player creation
 	GameObject* penguinGO;
 	PenguinBody* penguin;
 
 	penguinGO = new GameObject();
 	penguin = new PenguinBody(*penguinGO);
 	penguinGO->AddComponent(penguin);
-	penguinGO->box.x = 0;
-	penguinGO->box.y = 0;
+	penguinGO->box.x = 704;
+	penguinGO->box.y = 640;
 
 	AddObject(penguinGO);
+
+	Camera::Follow(penguinGO);
 
     quitRequested = false;
     music.Play(-1);
@@ -96,17 +101,39 @@ void State::Start() {
 void State::Update(float dt) {
 
 	InputManager& inputManager = InputManager::GetInstance();
+	Collider *colliderA, *colliderB;
 
-	Camera::Update(dt);
+	Camera::Update(dt);;
 
 	//Check quit events
 	if (inputManager.QuitRequested() || inputManager.KeyPress(ESCAPE_KEY)) {
 		quitRequested = true;
 	}
-	for(int i = 0; i < objectArray.size(); i++) {
+	//Call all GameObjects updates
+	for (int i = 0; i < objectArray.size(); i++) {
 		objectArray[i]->Update(dt);
 	}
-	for(int i = 0; i < objectArray.size(); i++) {
+	//Check if some collision occured between two GameObjects
+	for (int i = 0; i < objectArray.size(); i++) {
+		colliderA = static_cast<Collider*>(objectArray[i]->GetComponent("Collider"));
+		if (colliderA == nullptr) continue;
+		for (int j = i+1; j < objectArray.size(); j++) {
+			colliderB = static_cast<Collider*>(objectArray[j]->GetComponent("Collider"));
+			if (colliderB == nullptr) continue;
+			bool collision = false;
+			collision = Collision::IsColliding(colliderA->box,
+								   					colliderB->box,
+					               					objectArray[i]->angleDeg*(M_PI/180),
+								   					objectArray[j]->angleDeg*(M_PI/180));
+		    if (collision) {
+				objectArray[i]->NotifyCollision(*objectArray[j]);
+				objectArray[j]->NotifyCollision(*objectArray[i]);
+			}
+	
+		}
+	}
+	//Check if some GameObject requested to be deleted
+	for (int i = 0; i < objectArray.size(); i++) {
 	    if (objectArray[i]->IsDead()) {
 		   objectArray.erase(objectArray.begin()+i);	
 		}

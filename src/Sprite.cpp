@@ -16,7 +16,7 @@ Sprite::Sprite(GameObject &associated) : Component(associated) {
 
 }
 
-Sprite::Sprite(string file, GameObject &associated, int frameCount, float frameTime) : Component(associated) {
+Sprite::Sprite(string file, GameObject &associated, int frameCount, float frameTime, float secondsToSelfDestruct) : Component(associated) {
 
     texture = nullptr;
     //Original scale as default
@@ -31,6 +31,9 @@ Sprite::Sprite(string file, GameObject &associated, int frameCount, float frameT
     Open(file);
     associated.box.w = width/frameCount;
     associated.box.h = height;
+
+    selfDestructCount = Timer();
+    this->secondsToSelfDestruct = secondsToSelfDestruct;
 
 }
 
@@ -120,13 +123,21 @@ bool Sprite::IsOpen() {
 
 void Sprite::Update(float dt) {
     
+    //If the spirte has a time limit, it update and check the Timer till get to the time limit
+    if (secondsToSelfDestruct > 0) {
+        selfDestructCount.Update(dt);
+        if (selfDestructCount.Get() >= secondsToSelfDestruct) {
+            associated.RequestDelete();
+        }
+    }
+
+    //If the time elapsed is greater than the frama time, it changes to the next frame
     timeElapsed += dt;
     if (timeElapsed >= frameTime) {
         int frameSize = width/frameCount;
         SetClip(frameSize*currentFrame,0,frameSize,height);
         timeElapsed = 0;
         currentFrame = currentFrame == frameCount-1 ? 0 : currentFrame+1;
-        //SDL_Log("current frame = %d\n", currentFrame);
     }
     
     return;
@@ -153,6 +164,12 @@ void Sprite::SetScaleX(float scaleX, float scaleY) {
     associated.box.y -= (scale.y-1)*(height/2);  
 
     return;
+
+}
+
+Vec2 Sprite::GetScale() {
+
+    return Vec2(scale.x,scale.y);
 
 }
 

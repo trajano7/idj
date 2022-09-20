@@ -103,12 +103,13 @@ dep/State.d bin/State.o: src/State.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/bits/stl_vector.h \
  /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc \
  include/Sprite.h include/Component.h include/GameObject.h include/Rect.h \
- include/Vec2.h include/SDL_include.h /usr/include/SDL2/SDL.h \
- /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
- /usr/include/SDL2/SDL_config.h /usr/include/SDL2/SDL_platform.h \
- /usr/include/SDL2/begin_code.h /usr/include/SDL2/close_code.h \
- /usr/include/string.h /usr/include/strings.h /usr/include/inttypes.h \
- /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ include/Vec2.h include/Timer.h include/SDL_include.h \
+ /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
+ /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
+ /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
+ /usr/include/SDL2/close_code.h /usr/include/string.h \
+ /usr/include/strings.h /usr/include/inttypes.h /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/huge_val.h \
  /usr/include/x86_64-linux-gnu/bits/huge_valf.h \
@@ -148,7 +149,65 @@ dep/State.d bin/State.o: src/State.cpp /usr/include/stdc-predef.h \
  include/CameraFollower.h include/Alien.h /usr/include/c++/5/queue \
  /usr/include/c++/5/deque /usr/include/c++/5/bits/stl_deque.h \
  /usr/include/c++/5/bits/deque.tcc /usr/include/c++/5/bits/stl_heap.h \
- /usr/include/c++/5/bits/stl_queue.h include/PenguinBody.h
+ /usr/include/c++/5/bits/stl_queue.h include/PenguinBody.h \
+ src/Collision.cpp include/Rect.h include/Vec2.h \
+ /usr/include/c++/5/algorithm /usr/include/c++/5/bits/stl_algo.h \
+ /usr/include/c++/5/bits/algorithmfwd.h /usr/include/c++/5/random \
+ /usr/include/c++/5/limits /usr/include/c++/5/bits/random.h \
+ /usr/include/c++/5/bits/uniform_int_dist.h \
+ /usr/include/x86_64-linux-gnu/c++/5/bits/opt_random.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/x86intrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/ia32intrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/pmmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/tmmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/ammintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/smmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/popcntintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/wmmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/immintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/avxintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/avx2intrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/avx512fintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/avx512erintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/avx512pfintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/avx512cdintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/avx512vlintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/avx512bwintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/avx512dqintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/avx512vlbwintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/avx512vldqintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/avx512ifmaintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/avx512ifmavlintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/avx512vbmiintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/avx512vbmivlintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/shaintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/lzcntintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/bmiintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/bmi2intrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/fmaintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/f16cintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/rtmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/xtestintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/mm3dnow.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/prfchwintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/fma4intrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/xopintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/lwpintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/tbmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/rdseedintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/fxsrintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/xsaveintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/xsaveoptintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/adxintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/clwbintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/pcommitintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/clflushoptintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/xsavesintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/xsavecintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/5/include/mwaitxintrin.h \
+ /usr/include/c++/5/bits/random.tcc /usr/include/c++/5/numeric \
+ /usr/include/c++/5/bits/stl_numeric.h include/SDL_include.h \
+ include/Collider.h
 
 /usr/include/stdc-predef.h:
 
@@ -434,6 +493,8 @@ include/Rect.h:
 
 include/Vec2.h:
 
+include/Timer.h:
+
 include/SDL_include.h:
 
 /usr/include/SDL2/SDL.h:
@@ -601,3 +662,133 @@ include/Alien.h:
 /usr/include/c++/5/bits/stl_queue.h:
 
 include/PenguinBody.h:
+
+src/Collision.cpp:
+
+include/Rect.h:
+
+include/Vec2.h:
+
+/usr/include/c++/5/algorithm:
+
+/usr/include/c++/5/bits/stl_algo.h:
+
+/usr/include/c++/5/bits/algorithmfwd.h:
+
+/usr/include/c++/5/random:
+
+/usr/include/c++/5/limits:
+
+/usr/include/c++/5/bits/random.h:
+
+/usr/include/c++/5/bits/uniform_int_dist.h:
+
+/usr/include/x86_64-linux-gnu/c++/5/bits/opt_random.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/x86intrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/ia32intrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/pmmintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/tmmintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/ammintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/smmintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/popcntintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/wmmintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/immintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/avxintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/avx2intrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/avx512fintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/avx512erintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/avx512pfintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/avx512cdintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/avx512vlintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/avx512bwintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/avx512dqintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/avx512vlbwintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/avx512vldqintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/avx512ifmaintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/avx512ifmavlintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/avx512vbmiintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/avx512vbmivlintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/shaintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/lzcntintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/bmiintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/bmi2intrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/fmaintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/f16cintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/rtmintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/xtestintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/mm3dnow.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/prfchwintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/fma4intrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/xopintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/lwpintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/tbmintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/rdseedintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/fxsrintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/xsaveintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/xsaveoptintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/adxintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/clwbintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/pcommitintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/clflushoptintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/xsavesintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/xsavecintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/mwaitxintrin.h:
+
+/usr/include/c++/5/bits/random.tcc:
+
+/usr/include/c++/5/numeric:
+
+/usr/include/c++/5/bits/stl_numeric.h:
+
+include/SDL_include.h:
+
+include/Collider.h:

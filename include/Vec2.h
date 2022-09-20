@@ -13,7 +13,7 @@ class Vec2 {
         Vec2(float x, float y);
         
         //Definition of methods to three c++ operators
-        Vec2 operator + (Vec2 vetor) {
+        Vec2 operator + (Vec2 vetor) const {
 
             Vec2 sum;
 
@@ -24,7 +24,7 @@ class Vec2 {
 
         }
 
-        Vec2 operator - (Vec2 vetor) {
+        Vec2 operator - (Vec2 vetor) const {
 
             Vec2 sub;
 
@@ -32,6 +32,17 @@ class Vec2 {
             sub.y = this->y - vetor.y;
 
             return sub;
+
+        }
+
+        Vec2 operator * (float scalar) const {
+
+            Vec2 mul;
+
+            mul.x = this->x*scalar;
+            mul.y = this->y*scalar;
+
+            return mul;
 
         }
 

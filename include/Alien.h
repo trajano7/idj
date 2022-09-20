@@ -3,6 +3,7 @@
 
 #include "Component.h"
 #include "Vec2.h"
+#include "Timer.h"
 
 #include <string>
 #include <queue>
@@ -22,33 +23,27 @@ class Alien : public Component {
         void Update(float dt);
         void Render();
         bool Is(string type);
+        void NotifyCollision(GameObject& other);
+
+        static int alienCount;
 
     private:
 
-        //Class visible only to Alien, indicate a Alien action
-        class Action {
-
-            public:
-
-                enum ActionType {
-                    MOVE = 0,
-                    SHOOT = 1
-                };
-                ActionType type;
-                //Position where the action happened
-                Vec2 pos;
-
-                Action(ActionType type, float x, float y);
-
+        //Indicates the states of the Alien behavior state machine 
+        enum AlienState {
+            MOVING= 0,
+            RESTING = 1
         };
+
+        AlienState state;
+        Timer restTimer; //Counts time in rest state
+        Vec2 destination; //Store player position
 
         //Alien movement speed
         Vec2 speed;
         //Alien health points
         int hp;
     
-        //Actions to be done
-        queue<Action> taskQueue;
         //Each Alien has some Minions objects that follow it
         vector<weak_ptr<GameObject>> minionArray;
 

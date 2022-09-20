@@ -26,6 +26,8 @@ class GameObject {
         void AddComponent(Component* cpt);
         void RemoveComponent(Component* cpt);
         Component* GetComponent(string type);
+        //Receive notification of collision with other GameObject and pass to it components
+        void NotifyCollision(GameObject& other);
 
         Rect box;
         //This flag indicates if the GameObject was started

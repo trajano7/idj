@@ -1,6 +1,6 @@
 #include "TileSet.h"
 
-TileSet::TileSet(int tileWidth,int tileHeight, string file)  : tileSet(file, associatedAux, 1, 1) {
+TileSet::TileSet(int tileWidth,int tileHeight, string file)  : tileSet(file, associatedAux, 1, 1,-1) {
 
     this->tileWidth = tileWidth;
     this->tileHeight = tileHeight;

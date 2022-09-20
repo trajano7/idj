@@ -104,12 +104,13 @@ dep/PeguinBody.d bin/PeguinBody.o: src/PeguinBody.cpp \
  /usr/include/c++/5/bits/shared_ptr_atomic.h \
  /usr/include/c++/5/bits/atomic_base.h \
  /usr/include/c++/5/backward/auto_ptr.h include/PenguinCannon.h \
- include/Sprite.h include/SDL_include.h /usr/include/SDL2/SDL.h \
- /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
- /usr/include/SDL2/SDL_config.h /usr/include/SDL2/SDL_platform.h \
- /usr/include/SDL2/begin_code.h /usr/include/SDL2/close_code.h \
- /usr/include/string.h /usr/include/strings.h /usr/include/inttypes.h \
- /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ include/Timer.h include/Sprite.h include/SDL_include.h \
+ /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
+ /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
+ /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
+ /usr/include/SDL2/close_code.h /usr/include/string.h \
+ /usr/include/strings.h /usr/include/inttypes.h /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/huge_val.h \
  /usr/include/x86_64-linux-gnu/bits/huge_valf.h \
@@ -144,7 +145,9 @@ dep/PeguinBody.d bin/PeguinBody.o: src/PeguinBody.cpp \
  /usr/include/SDL2/SDL_mixer.h include/InputManager.h \
  /usr/include/c++/5/unordered_map /usr/include/c++/5/bits/hashtable.h \
  /usr/include/c++/5/bits/hashtable_policy.h \
- /usr/include/c++/5/bits/unordered_map.h /usr/include/c++/5/cmath
+ /usr/include/c++/5/bits/unordered_map.h include/Collider.h \
+ include/Bullet.h include/Camera.h include/Sound.h \
+ /usr/include/c++/5/cmath
 
 /usr/include/stdc-predef.h:
 
@@ -430,6 +433,8 @@ include/Vec2.h:
 
 include/PenguinCannon.h:
 
+include/Timer.h:
+
 include/Sprite.h:
 
 include/SDL_include.h:
@@ -575,5 +580,13 @@ include/InputManager.h:
 /usr/include/c++/5/bits/hashtable_policy.h:
 
 /usr/include/c++/5/bits/unordered_map.h:
+
+include/Collider.h:
+
+include/Bullet.h:
+
+include/Camera.h:
+
+include/Sound.h:
 
 /usr/include/c++/5/cmath:

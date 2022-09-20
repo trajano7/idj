@@ -144,9 +144,9 @@ dep/Resources.d bin/Resources.o: src/Resources.cpp \
  /usr/include/c++/5/bits/stl_vector.h \
  /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc \
  include/Sprite.h include/Component.h include/GameObject.h include/Rect.h \
- include/Vec2.h include/Music.h /usr/include/c++/5/iostream \
- /usr/include/c++/5/ostream /usr/include/c++/5/ios \
- /usr/include/c++/5/bits/ios_base.h \
+ include/Vec2.h include/Timer.h include/Music.h \
+ /usr/include/c++/5/iostream /usr/include/c++/5/ostream \
+ /usr/include/c++/5/ios /usr/include/c++/5/bits/ios_base.h \
  /usr/include/c++/5/bits/locale_classes.h \
  /usr/include/c++/5/bits/locale_classes.tcc \
  /usr/include/c++/5/system_error \
@@ -588,6 +588,8 @@ include/GameObject.h:
 include/Rect.h:
 
 include/Vec2.h:
+
+include/Timer.h:
 
 include/Music.h:
 

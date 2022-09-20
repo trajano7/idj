@@ -1,5 +1,6 @@
 #include "Bullet.h"
 #include "Sprite.h"
+#include "Collider.h"
 
 Bullet::Bullet(GameObject& associated,
                float angle,
@@ -8,10 +9,13 @@ Bullet::Bullet(GameObject& associated,
                float maxDistance,
                string sprite,
                int frameCount,
-               float frameTime) : Component(associated) {
+               float frameTime,
+               bool targetsPlayer) : Component(associated) {
 
-    Sprite *bulletSprite = new Sprite(sprite, associated, frameCount, frameTime);
+    Sprite *bulletSprite = new Sprite(sprite, associated, frameCount, frameTime,-1);
     associated.AddComponent(bulletSprite); 
+    Collider *collider = new Collider(associated,Vec2(1,1),Vec2(0,0));
+    associated.AddComponent(collider);
 
     associated.angleDeg = (double) angle; 
 
@@ -19,7 +23,9 @@ Bullet::Bullet(GameObject& associated,
     Vec2 speedDir = Vec2(1,0).RotateVec2(angle);
     this->speed = speedDir.MultScaVec2(speed);
     this->damage = damage;
-    distanceLeft = maxDistance;              
+    distanceLeft = maxDistance;   
+    //Defines who shoot the bullet  
+    this->targetsPlayer = targetsPlayer;        
 
 }
 
@@ -53,5 +59,16 @@ bool Bullet::Is(string type) {
 int Bullet::GetDamage() {
 
     return damage;
+
+}
+
+void Bullet::NotifyCollision(GameObject& other) {
+
+    //Check if other is a Penguin and the bullet was shot by the Alien
+    //Or if other is Alien and the bullet was shot by the Penguin
+    if ((other.GetComponent("PenguinCannon") != nullptr && targetsPlayer) ||
+         (other.GetComponent("Alien") != nullptr && !targetsPlayer)) {
+          associated.RequestDelete();
+    }
 
 }

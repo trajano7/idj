@@ -2,15 +2,19 @@
 #define PENGUIN_CANNON_H
 
 #include "Component.h"
+#include "Timer.h"
 
 using namespace std;
 
+//Player class that can be controlled to aim and shoot
 class PenguinCannon : public Component {
 
     private:
 
+        //Reference to PenguinBody class
         weak_ptr<GameObject> pbody;
-        float angle;
+        float angle; //Aim and shoot angle
+        Timer cooldown; //Counts the cooldown between shoots
 
     public:
 
@@ -20,6 +24,7 @@ class PenguinCannon : public Component {
         void Update(float dt);
         void Render();
         bool Is(string type);
+        void NotifyCollision(GameObject& other);
 
         void Shoot();
 

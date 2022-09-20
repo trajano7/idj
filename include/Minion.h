@@ -25,6 +25,7 @@ class Minion : public Component {
         void Render();
         bool Is(string type);
         void Shoot(Vec2 target);
+        void NotifyCollision(GameObject& other);
         
 };
 

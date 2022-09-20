@@ -102,11 +102,11 @@ dep/Alien.d bin/Alien.o: src/Alien.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/ext/aligned_buffer.h \
  /usr/include/c++/5/bits/shared_ptr_atomic.h \
  /usr/include/c++/5/bits/atomic_base.h \
- /usr/include/c++/5/backward/auto_ptr.h /usr/include/c++/5/queue \
- /usr/include/c++/5/deque /usr/include/c++/5/bits/stl_deque.h \
- /usr/include/c++/5/bits/deque.tcc /usr/include/c++/5/bits/stl_heap.h \
- /usr/include/c++/5/bits/stl_queue.h include/Sprite.h \
- include/SDL_include.h /usr/include/SDL2/SDL.h \
+ /usr/include/c++/5/backward/auto_ptr.h include/Timer.h \
+ /usr/include/c++/5/queue /usr/include/c++/5/deque \
+ /usr/include/c++/5/bits/stl_deque.h /usr/include/c++/5/bits/deque.tcc \
+ /usr/include/c++/5/bits/stl_heap.h /usr/include/c++/5/bits/stl_queue.h \
+ include/Sprite.h include/SDL_include.h /usr/include/SDL2/SDL.h \
  /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
  /usr/include/SDL2/SDL_config.h /usr/include/SDL2/SDL_platform.h \
  /usr/include/SDL2/begin_code.h /usr/include/SDL2/close_code.h \
@@ -147,7 +147,8 @@ dep/Alien.d bin/Alien.o: src/Alien.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/bits/hashtable_policy.h \
  /usr/include/c++/5/bits/unordered_map.h include/Camera.h include/Game.h \
  include/State.h include/Sprite.h include/Music.h \
- /usr/include/SDL2/SDL_mixer.h include/Minion.h include/Bullet.h
+ /usr/include/SDL2/SDL_mixer.h include/Minion.h include/Bullet.h \
+ include/Collider.h include/Sound.h include/PenguinBody.h
 
 /usr/include/stdc-predef.h:
 
@@ -431,6 +432,8 @@ include/Vec2.h:
 
 /usr/include/c++/5/backward/auto_ptr.h:
 
+include/Timer.h:
+
 /usr/include/c++/5/queue:
 
 /usr/include/c++/5/deque:
@@ -594,3 +597,9 @@ include/Music.h:
 include/Minion.h:
 
 include/Bullet.h:
+
+include/Collider.h:
+
+include/Sound.h:
+
+include/PenguinBody.h:

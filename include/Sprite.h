@@ -2,6 +2,7 @@
 #define SPRITE_H
 
 #include "Component.h"
+#include "Timer.h"
 
 #include <string>
 
@@ -22,16 +23,25 @@ class Sprite : public Component {
         //Render scale of the sprite
         Vec2 scale;
 
+        //Store the number of frames in the load image
         int frameCount;
+        //Store the current frame index
         int currentFrame;
+        //Store the time elapsed since the last sprite frame change
         float timeElapsed;
+        //Store the time between frames
         float frameTime;
+
+        //Timer used to sprites animations that have a time limit
+        Timer selfDestructCount;
+        //Time limit till sprite be destroyed
+        float secondsToSelfDestruct;
         
     public: 
 
         //Receive in the constructor the GameObject that will store the sprite
         Sprite(GameObject &associated);
-        Sprite(string file, GameObject &associated, int frameCount, float frameTime);
+        Sprite(string file, GameObject &associated, int frameCount, float frameTime, float secondsToSelfDestruct);
         ~Sprite();
 
         //Open the image

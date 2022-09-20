@@ -20,12 +20,18 @@ class Bullet : public Component {
                float maxDistance, //Max distance that the bullet can travel
                string sprite,
                int frameCount,
-               float frameTime);
+               float frameTime,
+               bool targetsPlayer);
         
         void Update(float dt);
         void Render();
         bool Is(string type);
         int GetDamage();
+        void NotifyCollision(GameObject& other);
+
+        //Used to know who shoot the bullet 
+        //Player -> false and Alien -> true
+        bool targetsPlayer;
 
     private:
 

@@ -156,9 +156,9 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/bits/stl_vector.h \
  /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc \
  include/Sprite.h include/Component.h include/GameObject.h include/Rect.h \
- include/Vec2.h include/Music.h include/TileSet.h include/TileMap.h \
- include/TileSet.h include/Resources.h /usr/include/c++/5/unordered_map \
- /usr/include/c++/5/bits/hashtable.h \
+ include/Vec2.h include/Timer.h include/Music.h include/TileSet.h \
+ include/TileMap.h include/TileSet.h include/Resources.h \
+ /usr/include/c++/5/unordered_map /usr/include/c++/5/bits/hashtable.h \
  /usr/include/c++/5/bits/hashtable_policy.h \
  /usr/include/c++/5/bits/unordered_map.h include/InputManager.h
 
@@ -621,6 +621,8 @@ include/GameObject.h:
 include/Rect.h:
 
 include/Vec2.h:
+
+include/Timer.h:
 
 include/Music.h:
 

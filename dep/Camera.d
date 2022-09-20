@@ -138,8 +138,8 @@ dep/Camera.d bin/Camera.o: src/Camera.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_messagebox.h /usr/include/SDL2/SDL_power.h \
  /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_system.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
- include/State.h include/Sprite.h include/Component.h include/Music.h \
- /usr/include/SDL2/SDL_mixer.h include/InputManager.h \
+ include/State.h include/Sprite.h include/Component.h include/Timer.h \
+ include/Music.h /usr/include/SDL2/SDL_mixer.h include/InputManager.h \
  /usr/include/c++/5/unordered_map /usr/include/c++/5/bits/hashtable.h \
  /usr/include/c++/5/bits/hashtable_policy.h \
  /usr/include/c++/5/bits/unordered_map.h
@@ -555,6 +555,8 @@ include/State.h:
 include/Sprite.h:
 
 include/Component.h:
+
+include/Timer.h:
 
 include/Music.h:
 

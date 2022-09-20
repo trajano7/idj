@@ -1,6 +1,8 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/trajano/Documents/idj/idj'
 mkdir -p dep bin include src
+g++ -Iinclude  src/Collision.cpp -M -MT dep/Collision.d -MT bin/Collision.o -MP -MF dep/Collision.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -Iinclude  src/Collision.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Collision.o
 g++ -Iinclude  src/Sound.cpp -M -MT dep/Sound.d -MT bin/Sound.o -MP -MF dep/Sound.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Sound.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Sound.o
 g++ -Iinclude  src/Resources.cpp -M -MT dep/Resources.d -MT bin/Resources.o -MP -MF dep/Resources.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
@@ -9,6 +11,8 @@ g++ -Iinclude  src/Game.cpp -M -MT dep/Game.d -MT bin/Game.o -MP -MF dep/Game.d 
 g++ -Iinclude  src/Game.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Game.o
 g++ -Iinclude  src/State.cpp -M -MT dep/State.d -MT bin/State.o -MP -MF dep/State.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/State.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/State.o
+g++ -Iinclude  src/Collider.cpp -M -MT dep/Collider.d -MT bin/Collider.o -MP -MF dep/Collider.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -Iinclude  src/Collider.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Collider.o
 g++ -Iinclude  src/Sprite.cpp -M -MT dep/Sprite.d -MT bin/Sprite.o -MP -MF dep/Sprite.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Sprite.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Sprite.o
 g++ -Iinclude  src/Alien.cpp -M -MT dep/Alien.d -MT bin/Alien.o -MP -MF dep/Alien.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
@@ -21,6 +25,8 @@ g++ -Iinclude  src/Main.cpp -M -MT dep/Main.d -MT bin/Main.o -MP -MF dep/Main.d 
 g++ -Iinclude  src/Main.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Main.o
 g++ -Iinclude  src/Rect.cpp -M -MT dep/Rect.d -MT bin/Rect.o -MP -MF dep/Rect.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Rect.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Rect.o
+g++ -Iinclude  src/Timer.cpp -M -MT dep/Timer.d -MT bin/Timer.o -MP -MF dep/Timer.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -Iinclude  src/Timer.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Timer.o
 g++ -Iinclude  src/Music.cpp -M -MT dep/Music.d -MT bin/Music.o -MP -MF dep/Music.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Music.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Music.o
 g++ -Iinclude  src/Component.cpp -M -MT dep/Component.d -MT bin/Component.o -MP -MF dep/Component.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
@@ -45,6 +51,6 @@ g++ -Iinclude  src/PeguinCannon.cpp -M -MT dep/PeguinCannon.d -MT bin/PeguinCann
 g++ -Iinclude  src/PeguinCannon.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/PeguinCannon.o
 g++ -Iinclude  src/CameraFollower.cpp -M -MT dep/CameraFollower.d -MT bin/CameraFollower.o -MP -MF dep/CameraFollower.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/CameraFollower.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/CameraFollower.o
-g++ -o Matheus_170152227 bin/Sound.o bin/Resources.o bin/Game.o bin/State.o bin/Sprite.o bin/Alien.o bin/Camera.o bin/Vec2.o bin/Main.o bin/Rect.o bin/Music.o bin/Component.o bin/TileMap.o bin/PeguinBody.o bin/InputManager.o bin/GameObject.o bin/Minion.o bin/Face.o bin/Bullet.o bin/TileSet.o bin/PeguinCannon.o bin/CameraFollower.o  -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lm -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -o Matheus_170152227 bin/Collision.o bin/Sound.o bin/Resources.o bin/Game.o bin/State.o bin/Collider.o bin/Sprite.o bin/Alien.o bin/Camera.o bin/Vec2.o bin/Main.o bin/Rect.o bin/Timer.o bin/Music.o bin/Component.o bin/TileMap.o bin/PeguinBody.o bin/InputManager.o bin/GameObject.o bin/Minion.o bin/Face.o bin/Bullet.o bin/TileSet.o bin/PeguinCannon.o bin/CameraFollower.o  -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lm -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 make: Leaving directory '/home/trajano/Documents/idj/idj'
  

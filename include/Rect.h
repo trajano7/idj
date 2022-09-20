@@ -13,6 +13,15 @@ class Rect {
         float w;
         float h;
 
+        void operator = (Rect rect) {
+
+            this->x = rect.x;
+            this->y = rect.y;
+            this->w = rect.w;
+            this->h = rect.h;
+
+        }
+
         Rect();
         Rect(float x, float y, float w, float h);
 

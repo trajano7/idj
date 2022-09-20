@@ -103,7 +103,7 @@ dep/PeguinCannon.d bin/PeguinCannon.o: src/PeguinCannon.cpp \
  /usr/include/c++/5/ext/aligned_buffer.h \
  /usr/include/c++/5/bits/shared_ptr_atomic.h \
  /usr/include/c++/5/bits/atomic_base.h \
- /usr/include/c++/5/backward/auto_ptr.h include/Sprite.h \
+ /usr/include/c++/5/backward/auto_ptr.h include/Timer.h include/Sprite.h \
  include/SDL_include.h /usr/include/SDL2/SDL.h \
  /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
  /usr/include/SDL2/SDL_config.h /usr/include/SDL2/SDL_platform.h \
@@ -143,7 +143,10 @@ dep/PeguinCannon.d bin/PeguinCannon.o: src/PeguinCannon.cpp \
  include/InputManager.h /usr/include/c++/5/unordered_map \
  /usr/include/c++/5/bits/hashtable.h \
  /usr/include/c++/5/bits/hashtable_policy.h \
- /usr/include/c++/5/bits/unordered_map.h include/Vec2.h
+ /usr/include/c++/5/bits/unordered_map.h include/Vec2.h include/Bullet.h \
+ include/Game.h include/State.h include/Sprite.h include/Music.h \
+ /usr/include/SDL2/SDL_mixer.h include/Camera.h include/Collider.h \
+ /usr/include/c++/5/cmath
 
 /usr/include/stdc-predef.h:
 
@@ -427,6 +430,8 @@ include/Vec2.h:
 
 /usr/include/c++/5/backward/auto_ptr.h:
 
+include/Timer.h:
+
 include/Sprite.h:
 
 include/SDL_include.h:
@@ -564,3 +569,21 @@ include/InputManager.h:
 /usr/include/c++/5/bits/unordered_map.h:
 
 include/Vec2.h:
+
+include/Bullet.h:
+
+include/Game.h:
+
+include/State.h:
+
+include/Sprite.h:
+
+include/Music.h:
+
+/usr/include/SDL2/SDL_mixer.h:
+
+include/Camera.h:
+
+include/Collider.h:
+
+/usr/include/c++/5/cmath:

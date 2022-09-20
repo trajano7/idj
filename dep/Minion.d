@@ -102,7 +102,7 @@ dep/Minion.d bin/Minion.o: src/Minion.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/ext/aligned_buffer.h \
  /usr/include/c++/5/bits/shared_ptr_atomic.h \
  /usr/include/c++/5/bits/atomic_base.h \
- /usr/include/c++/5/backward/auto_ptr.h include/Sprite.h \
+ /usr/include/c++/5/backward/auto_ptr.h include/Sprite.h include/Timer.h \
  include/SDL_include.h /usr/include/SDL2/SDL.h \
  /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
  /usr/include/SDL2/SDL_config.h /usr/include/SDL2/SDL_platform.h \
@@ -141,7 +141,7 @@ dep/Minion.d bin/Minion.o: src/Minion.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  include/Vec2.h include/Bullet.h include/Game.h include/State.h \
  include/Sprite.h include/Music.h /usr/include/SDL2/SDL_mixer.h \
- /usr/include/c++/5/cmath
+ include/Collider.h /usr/include/c++/5/cmath
 
 /usr/include/stdc-predef.h:
 
@@ -427,6 +427,8 @@ include/Vec2.h:
 
 include/Sprite.h:
 
+include/Timer.h:
+
 include/SDL_include.h:
 
 /usr/include/SDL2/SDL.h:
@@ -564,5 +566,7 @@ include/Sprite.h:
 include/Music.h:
 
 /usr/include/SDL2/SDL_mixer.h:
+
+include/Collider.h:
 
 /usr/include/c++/5/cmath:
