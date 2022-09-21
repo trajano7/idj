@@ -2,6 +2,7 @@
 #define MUSIC_H
 
 #include <string>
+#include <memory>
 
 using namespace std;
 
@@ -11,10 +12,6 @@ using namespace std;
 
 //Music class has one music and the methods to the methods to manipulate it
 class Music {
-
-    private:
-
-        Mix_Music* music;
 
     public:
 
@@ -30,6 +27,11 @@ class Music {
         void Play(int times);
         //Stop the music
         void Stop(int msToStop);
+        
+    private:
+
+        shared_ptr<Mix_Music> music;
+
 
 
 

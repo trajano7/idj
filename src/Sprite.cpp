@@ -44,10 +44,9 @@ Sprite::~Sprite() {
 }
 
 void Sprite::Open(string file) {
-    
     texture = Resources::GetImage(file);
 
-    if (SDL_QueryTexture(texture,nullptr,nullptr,&width,&height) != 0) {
+    if (SDL_QueryTexture(texture.get(),nullptr,nullptr,&width,&height) != 0) {
         SDL_Log("Unable to query texture: %s", SDL_GetError());
         exit(EXIT_FAILURE);
     }
@@ -93,7 +92,7 @@ void Sprite::Render(float x, float y) {
     dstrect.w = clipRect.w*scale.x;
     dstrect.h = clipRect.h*scale.y;
 
-    SDL_RenderCopyEx(Game::GetInstance().GetRenderer(),texture,&clipRect,&dstrect,associated.angleDeg,nullptr,SDL_FLIP_NONE);
+    SDL_RenderCopyEx(Game::GetInstance().GetRenderer(),texture.get(),&clipRect,&dstrect,associated.angleDeg,nullptr,SDL_FLIP_NONE);
 
     return;
 

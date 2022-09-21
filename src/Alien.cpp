@@ -10,6 +10,8 @@
 #include "Sound.h"
 #include "PenguinBody.h"
 
+int Alien::alienCount = 0;
+
 Alien::Alien(GameObject& associated, int nMinions) : Component(associated) {
 
     Sprite *alienSprite = new Sprite("Recursos/img/alien.png", associated, 1, 1,-1);
@@ -24,11 +26,17 @@ Alien::Alien(GameObject& associated, int nMinions) : Component(associated) {
     restTimer = Timer();
     destination = Vec2(0,0);
 
+    alienCount++;
+    //Draw a timeOffset
+    timeOffset = ((float) (rand()%(100) + 33))/1000;
+    // SDL_Log("offset = %f\n", timeOffset);
+
 }
 
 Alien::~Alien() {
 
     minionArray.clear();
+    alienCount--;
 
 }
 
@@ -54,23 +62,23 @@ void Alien::Update(float dt) {
     //Alien rotation speed around it origin
     associated.angleDeg -= 0.10*M_PI; 
 
+    //Resting condition
     if (state == AlienState::RESTING) {
-        restTimer.Update(dt);
+        restTimer.Update(timeOffset);
+        //Move if the timer is greater than the limit and there is a player
         if (restTimer.Get() >= 0.66 && PenguinBody::player != nullptr) {
             destination = PenguinBody::player->GetPenguinPos();
-            dist.x = destination.x - associated.box.RectCenter().x;
-            dist.y = destination.y - associated.box.RectCenter().y;
-            speed = (dist.UnitVec2()).MultScaVec2(5);
             state = AlienState::MOVING;
         }
     }
+    //Moving condition
     else if (state == AlienState::MOVING) {
+        //Calculate the distance between the penguin and alien
         dist.x = destination.x - associated.box.RectCenter().x;
         dist.y = destination.y - associated.box.RectCenter().y;
         //Calculate the unit vector and multiplies by a scalar that defines how fast it move
-        speed = (dist.UnitVec2()).MultScaVec2(5);
-
-        if (dist.ModVec2() < speed.ModVec2()) { //If is close enough
+        speed = (dist.UnitVec2()).MultScaVec2(350);
+        if (dist.ModVec2() < speed.ModVec2()*dt || speed.ModVec2() == 0) { //If is close enough, if speed is 0, Penguin is stopped, so it only shoot
             //Put the Alien in the destination center
             associated.box.x = destination.x - (associated.box.w)/2;
             associated.box.y = destination.y - (associated.box.h)/2;
@@ -78,7 +86,7 @@ void Alien::Update(float dt) {
             int nextOne = 0;
             //Find the nearest minion to the penguin to shoot
             destination = PenguinBody::player->GetPenguinPos();
-            for (int i = 1; i<minionArray.size();i++) {
+            for (int i = 1; i<minionArray.size(); i++) {
                 if((*minionArray[i].lock()).box.RectCenter().DistVec2(destination) < 
                    (*minionArray[nextOne].lock()).box.RectCenter().DistVec2(destination)) {
                     nextOne = i;
@@ -90,8 +98,8 @@ void Alien::Update(float dt) {
             state = AlienState::RESTING;  
         }
         else {
-            associated.box.x += speed.x;
-            associated.box.y += speed.y;
+            associated.box.x += speed.x*dt;
+            associated.box.y += speed.y*dt;
         }
     }
 

@@ -146,9 +146,9 @@ dep/Alien.d bin/Alien.o: src/Alien.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/bits/hashtable.h \
  /usr/include/c++/5/bits/hashtable_policy.h \
  /usr/include/c++/5/bits/unordered_map.h include/Camera.h include/Game.h \
- include/State.h include/Sprite.h include/Music.h \
- /usr/include/SDL2/SDL_mixer.h include/Minion.h include/Bullet.h \
- include/Collider.h include/Sound.h include/PenguinBody.h
+ /usr/include/c++/5/stack /usr/include/c++/5/bits/stl_stack.h \
+ include/State.h include/Minion.h include/Bullet.h include/Collider.h \
+ include/Sound.h /usr/include/SDL2/SDL_mixer.h include/PenguinBody.h
 
 /usr/include/stdc-predef.h:
 
@@ -586,13 +586,11 @@ include/Camera.h:
 
 include/Game.h:
 
+/usr/include/c++/5/stack:
+
+/usr/include/c++/5/bits/stl_stack.h:
+
 include/State.h:
-
-include/Sprite.h:
-
-include/Music.h:
-
-/usr/include/SDL2/SDL_mixer.h:
 
 include/Minion.h:
 
@@ -601,5 +599,7 @@ include/Bullet.h:
 include/Collider.h:
 
 include/Sound.h:
+
+/usr/include/SDL2/SDL_mixer.h:
 
 include/PenguinBody.h:

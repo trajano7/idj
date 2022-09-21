@@ -102,12 +102,15 @@ dep/Camera.d bin/Camera.o: src/Camera.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/bits/shared_ptr_atomic.h \
  /usr/include/c++/5/bits/atomic_base.h \
  /usr/include/c++/5/backward/auto_ptr.h include/Game.h \
- include/SDL_include.h /usr/include/SDL2/SDL.h \
- /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
- /usr/include/SDL2/SDL_config.h /usr/include/SDL2/SDL_platform.h \
- /usr/include/SDL2/begin_code.h /usr/include/SDL2/close_code.h \
- /usr/include/string.h /usr/include/strings.h /usr/include/inttypes.h \
- /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ /usr/include/c++/5/stack /usr/include/c++/5/deque \
+ /usr/include/c++/5/bits/stl_deque.h /usr/include/c++/5/bits/deque.tcc \
+ /usr/include/c++/5/bits/stl_stack.h include/SDL_include.h \
+ /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
+ /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
+ /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
+ /usr/include/SDL2/close_code.h /usr/include/string.h \
+ /usr/include/strings.h /usr/include/inttypes.h /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/huge_val.h \
  /usr/include/x86_64-linux-gnu/bits/huge_valf.h \
@@ -138,9 +141,8 @@ dep/Camera.d bin/Camera.o: src/Camera.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_messagebox.h /usr/include/SDL2/SDL_power.h \
  /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_system.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
- include/State.h include/Sprite.h include/Component.h include/Timer.h \
- include/Music.h /usr/include/SDL2/SDL_mixer.h include/InputManager.h \
- /usr/include/c++/5/unordered_map /usr/include/c++/5/bits/hashtable.h \
+ include/State.h include/InputManager.h /usr/include/c++/5/unordered_map \
+ /usr/include/c++/5/bits/hashtable.h \
  /usr/include/c++/5/bits/hashtable_policy.h \
  /usr/include/c++/5/bits/unordered_map.h
 
@@ -426,6 +428,16 @@ include/Vec2.h:
 
 include/Game.h:
 
+/usr/include/c++/5/stack:
+
+/usr/include/c++/5/deque:
+
+/usr/include/c++/5/bits/stl_deque.h:
+
+/usr/include/c++/5/bits/deque.tcc:
+
+/usr/include/c++/5/bits/stl_stack.h:
+
 include/SDL_include.h:
 
 /usr/include/SDL2/SDL.h:
@@ -551,16 +563,6 @@ include/SDL_include.h:
 /usr/include/SDL2/SDL_version.h:
 
 include/State.h:
-
-include/Sprite.h:
-
-include/Component.h:
-
-include/Timer.h:
-
-include/Music.h:
-
-/usr/include/SDL2/SDL_mixer.h:
 
 include/InputManager.h:
 

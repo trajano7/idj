@@ -140,7 +140,7 @@ dep/Sound.d bin/Sound.o: src/Sound.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/unordered_map /usr/include/c++/5/bits/hashtable.h \
  /usr/include/c++/5/bits/hashtable_policy.h \
  /usr/include/c++/5/bits/unordered_map.h /usr/include/SDL2/SDL_image.h \
- /usr/include/SDL2/SDL.h
+ /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_ttf.h
 
 /usr/include/stdc-predef.h:
 
@@ -563,3 +563,5 @@ include/Resources.h:
 /usr/include/SDL2/SDL_image.h:
 
 /usr/include/SDL2/SDL.h:
+
+/usr/include/SDL2/SDL_ttf.h:

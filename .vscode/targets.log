@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Sep 19 22:42:11 2022
+# Make data base, printed on Tue Sep 20 18:26:24 2022
 
 # Variables
 
@@ -75,7 +75,7 @@ MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-zsfHfpC2YX
+DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-6K6cttdpfi
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
@@ -105,7 +105,7 @@ UNITY_HAS_3D_SUPPORT = true
 # environment
 GPG_AGENT_INFO = /home/trajano/.gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/trajano:@/tmp/.ICE-unix/1817,unix/trajano:/tmp/.ICE-unix/1817
+SESSION_MANAGER = local/trajano:@/tmp/.ICE-unix/1690,unix/trajano:/tmp/.ICE-unix/1690
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # makefile (from 'makefile', line 27)
@@ -131,7 +131,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2932
+GIO_LAUNCHED_DESKTOP_FILE_PID = 28481
 # automatic
 %F = $(notdir $%)
 # makefile (from 'makefile', line 67)
@@ -203,7 +203,7 @@ SHLVL = 1
 # environment
 IM_CONFIG_PHASE = 1
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-9bd01e6d-a0bb-41bd-97d2-44e0519e5688.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-a772ba41-fc4a-4714-839f-c236e372a21e.sock
 # environment
 COMPIZ_CONFIG_PROFILE = ubuntu
 # makefile (from 'makefile', line 39)
@@ -265,7 +265,7 @@ COMPILER = g++
 # default
 MAKEFILES := 
 # environment
-UPSTART_SESSION = unix:abstract=/com/ubuntu/upstart-session/1000/1592
+UPSTART_SESSION = unix:abstract=/com/ubuntu/upstart-session/1000/1464
 # environment
 LC_NUMERIC = pt_BR.UTF-8
 # automatic
@@ -285,10 +285,10 @@ LIBS = -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lm
 # default
 SUFFIXES := 
 # makefile (from 'makefile', line 20)
+ 
 FLAGS = -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
- 
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
@@ -302,7 +302,7 @@ LC_ADDRESS = pt_BR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2932
+VSCODE_PID = 28481
 # variable set hash-table stats:
 # Load=146/1024=14%, Rehash=0, Collisions=20/207=10%
 
@@ -312,12 +312,12 @@ VSCODE_PID = 2932
 
 # Directories
 
-# include (device 2050, inode 26477742): 26 files, no impossibilities.
-# . (device 2050, inode 26476798): 13 files, no impossibilities.
-# dep (device 2050, inode 4982845): No files, no impossibilities so far.
-# src (device 2050, inode 26477741): 27 files, no impossibilities.
+# include (device 2050, inode 26477742): 31 files, no impossibilities.
+# . (device 2050, inode 26476798): 12 files, no impossibilities.
+# dep (device 2050, inode 2361691): No files, no impossibilities so far.
+# src (device 2050, inode 26477741): 32 files, no impossibilities.
 
-# 66 files, no impossibilities in 4 directories.
+# 75 files, no impossibilities in 4 directories.
 
 # Implicit Rules
 
@@ -423,7 +423,7 @@ bin/PeguinBody.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-.PRECIOUS: dep/Alien.d dep/Bullet.d dep/Camera.d dep/CameraFollower.d dep/Collider.d dep/Collision.d dep/Component.d dep/Face.d dep/Game.d dep/GameObject.d dep/InputManager.d dep/Main.d dep/Minion.d dep/Music.d dep/PeguinBody.d dep/PeguinCannon.d dep/PenguinBody.d dep/PenguinCannon.d dep/Rect.d dep/Resources.d dep/SDL_include.d dep/Sound.d dep/Sprite.d dep/State.d dep/TileMap.d dep/TileSet.d dep/Timer.d dep/Vec2.d
+.PRECIOUS: dep/Alien.d dep/Bullet.d dep/Camera.d dep/CameraFollower.d dep/Collider.d dep/Collision.d dep/Component.d dep/EndState.d dep/Face.d dep/Game.d dep/GameData.d dep/GameObject.d dep/InputManager.d dep/Main.d dep/Minion.d dep/Music.d dep/PeguinBody.d dep/PeguinCannon.d dep/PenguinBody.d dep/PenguinCannon.d dep/Rect.d dep/Resources.d dep/SDL_include.d dep/Sound.d dep/Sprite.d dep/StageState.d dep/State.d dep/Text.d dep/TileMap.d dep/TileSet.d dep/Timer.d dep/TitleState.d dep/Vec2.d
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -497,6 +497,13 @@ dep/Bullet.d:
 #  File has not been updated.
 
 # Not a target:
+dep/TitleState.d:
+#  Precious file (prerequisite of .PRECIOUS).
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 bin/Sprite.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -524,6 +531,12 @@ debug: Matheus_170152227
 #  File has not been updated.
 # variable set hash-table stats:
 # Load=1/32=3%, Rehash=0, Collisions=0/2=0%
+
+# Not a target:
+bin/TitleState.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 makefile:
@@ -569,6 +582,7 @@ bin/CameraFollower.o:
 # Not a target:
 dep/Game.d:
 #  Precious file (prerequisite of .PRECIOUS).
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -583,7 +597,6 @@ help:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
- 
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 136):
 	@echo Available commands
@@ -614,6 +627,19 @@ bin/Resources.o:
 #  File has not been updated.
 
 .SECONDEXPANSION:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+bin/Collision.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+dep/Text.d:
+#  Precious file (prerequisite of .PRECIOUS).
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -661,6 +687,12 @@ release: Matheus_170152227
 #  File has not been updated.
 # variable set hash-table stats:
 # Load=1/32=3%, Rehash=0, Collisions=0/2=0%
+
+# Not a target:
+bin/Text.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -725,6 +757,13 @@ dep/Component.d:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+dep/EndState.d:
+#  Precious file (prerequisite of .PRECIOUS).
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 clean:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -750,26 +789,27 @@ dep/Main.d:
 #  File has not been updated.
 
 # Not a target:
-src/Collision.cpp:
+src/StageState.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-09-19 21:38:38.511560092
+#  Last modified 2022-09-20 18:13:06.916486109
 #  File has been updated.
 #  Successfully updated.
 
-dep/Collision.d: src/Collision.cpp | folders
+# Not a target:
+dep/Collision.d:
 #  Precious file (prerequisite of .PRECIOUS).
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'Collision'
-#  Last modified 2022-09-19 22:22:42.797871683
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
-#  recipe to execute (from 'makefile', line 98):
-	$(COMPILER) $(INC_PATHS) $< $(DEP_FLAGS) $(FLAGS)
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 bin/Component.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+bin/EndState.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -786,10 +826,22 @@ bin/Main.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-bin/Collision.o: dep/Collision.d | folders
+dep/StageState.d: src/StageState.cpp | folders
+#  Precious file (prerequisite of .PRECIOUS).
 #  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'Collision'
-#  Last modified 2022-09-19 22:22:43.321912856
+#  Implicit/static pattern stem: 'StageState'
+#  Last modified 2022-09-20 18:15:12.714915957
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
+#  recipe to execute (from 'makefile', line 98):
+	$(COMPILER) $(INC_PATHS) $< $(DEP_FLAGS) $(FLAGS)
+
+bin/StageState.o: dep/StageState.d | folders
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'StageState'
+#  Last modified 2022-09-20 18:15:13.510906534
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -804,10 +856,11 @@ dep/Vec2.d:
 #  Modification time never checked.
 #  File has not been updated.
 
-Matheus_170152227: bin/Collision.o bin/Sound.o bin/Resources.o bin/Game.o bin/State.o bin/Collider.o bin/Sprite.o bin/Alien.o bin/Camera.o bin/Vec2.o bin/Main.o bin/Rect.o bin/Timer.o bin/Music.o bin/Component.o bin/TileMap.o bin/PeguinBody.o bin/InputManager.o bin/GameObject.o bin/Minion.o bin/Face.o bin/Bullet.o bin/TileSet.o bin/PeguinCannon.o bin/CameraFollower.o
+Matheus_170152227: bin/StageState.o bin/State.o bin/Sound.o bin/Resources.o bin/Game.o bin/EndState.o bin/Collider.o bin/Sprite.o bin/Alien.o bin/Camera.o bin/Vec2.o bin/Main.o bin/Text.o bin/Rect.o bin/Timer.o bin/Music.o bin/Component.o bin/TileMap.o bin/PeguinBody.o bin/InputManager.o bin/GameObject.o bin/Minion.o bin/GameData.o bin/Face.o bin/Collision.o bin/Bullet.o bin/TitleState.o bin/TileSet.o bin/PeguinCannon.o bin/CameraFollower.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-09-19 22:37:06.876392211
+#  File does not exist.
 #  File has been updated.
+ 
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/7=0%
@@ -816,6 +869,13 @@ Matheus_170152227: bin/Collision.o bin/Sound.o bin/Resources.o bin/Game.o bin/St
 
 # Not a target:
 bin/Vec2.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+dep/GameData.d:
+#  Precious file (prerequisite of .PRECIOUS).
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -851,26 +911,31 @@ cppcheck:
 	cppcheck --enable=all . -I./include --suppress=missingIncludeSystem
 
 # Not a target:
+bin/GameData.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 bin/PeguinCannon.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=71/1024=7%, Rehash=0, Collisions=6/170=4%
+# Load=81/1024=8%, Rehash=0, Collisions=12/190=6%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 138 / storage = 1622 B / avg = 11 B
-# current buf: size = 8162 B / used = 1622 B / count = 138 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 158 / storage = 1894 B / avg = 11 B
+# current buf: size = 8162 B / used = 1894 B / count = 158 / avg = 11 B
 
-# strcache performance: lookups = 188 / hit rate = 26%
+# strcache performance: lookups = 207 / hit rate = 23%
 # hash-table stats:
- 
-# Load=138/8192=2%, Rehash=0, Collisions=8/188=4%
-# Finished Make data base on Mon Sep 19 22:42:11 2022
+# Load=158/8192=2%, Rehash=0, Collisions=8/207=4%
+# Finished Make data base on Tue Sep 20 18:26:24 2022
 
  

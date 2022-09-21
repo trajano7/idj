@@ -32,7 +32,7 @@ void Sound::Open(string file) {
 void Sound::Play(int times) {
 
     if (IsOpen()) {
-        channel = Mix_PlayChannel(-1,chunk,times-1);
+        channel = Mix_PlayChannel(-1,chunk.get(),times-1);
         if (channel == -1) {
             SDL_Log("Unable to play the sound: %s", SDL_GetError());
             exit(EXIT_FAILURE);  

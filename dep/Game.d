@@ -98,7 +98,13 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/bits/locale_facets.tcc \
  /usr/include/c++/5/bits/basic_ios.tcc \
  /usr/include/c++/5/bits/ostream.tcc /usr/include/c++/5/istream \
- /usr/include/c++/5/bits/istream.tcc include/Game.h include/SDL_include.h \
+ /usr/include/c++/5/bits/istream.tcc include/Game.h \
+ /usr/include/c++/5/stack /usr/include/c++/5/deque \
+ /usr/include/c++/5/bits/stl_construct.h \
+ /usr/include/c++/5/bits/stl_uninitialized.h \
+ /usr/include/c++/5/bits/stl_deque.h /usr/include/c++/5/bits/deque.tcc \
+ /usr/include/c++/5/bits/stl_stack.h \
+ /usr/include/c++/5/bits/uses_allocator.h include/SDL_include.h \
  /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
  /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
  /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
@@ -136,29 +142,27 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_system.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_image.h /usr/include/SDL2/SDL.h \
- /usr/include/SDL2/SDL_mixer.h include/State.h /usr/include/c++/5/memory \
- /usr/include/c++/5/bits/stl_construct.h \
- /usr/include/c++/5/bits/stl_uninitialized.h \
- /usr/include/c++/5/bits/stl_tempbuf.h \
+ /usr/include/SDL2/SDL_mixer.h /usr/include/SDL2/SDL_ttf.h \
+ include/State.h /usr/include/c++/5/vector \
+ /usr/include/c++/5/bits/stl_vector.h \
+ /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc \
+ include/GameObject.h include/Rect.h include/Vec2.h \
+ /usr/include/c++/5/memory /usr/include/c++/5/bits/stl_tempbuf.h \
  /usr/include/c++/5/bits/stl_raw_storage_iter.h \
  /usr/include/c++/5/typeinfo /usr/include/c++/5/ext/concurrence.h \
- /usr/include/c++/5/bits/uses_allocator.h /usr/include/c++/5/functional \
- /usr/include/c++/5/tuple /usr/include/c++/5/utility \
- /usr/include/c++/5/bits/stl_relops.h /usr/include/c++/5/array \
- /usr/include/c++/5/bits/unique_ptr.h \
+ /usr/include/c++/5/functional /usr/include/c++/5/tuple \
+ /usr/include/c++/5/utility /usr/include/c++/5/bits/stl_relops.h \
+ /usr/include/c++/5/array /usr/include/c++/5/bits/unique_ptr.h \
  /usr/include/c++/5/bits/shared_ptr.h \
  /usr/include/c++/5/bits/shared_ptr_base.h \
  /usr/include/c++/5/bits/allocated_ptr.h \
  /usr/include/c++/5/ext/aligned_buffer.h \
  /usr/include/c++/5/bits/shared_ptr_atomic.h \
  /usr/include/c++/5/bits/atomic_base.h \
- /usr/include/c++/5/backward/auto_ptr.h /usr/include/c++/5/vector \
- /usr/include/c++/5/bits/stl_vector.h \
- /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc \
- include/Sprite.h include/Component.h include/GameObject.h include/Rect.h \
- include/Vec2.h include/Timer.h include/Music.h include/TileSet.h \
- include/TileMap.h include/TileSet.h include/Resources.h \
- /usr/include/c++/5/unordered_map /usr/include/c++/5/bits/hashtable.h \
+ /usr/include/c++/5/backward/auto_ptr.h include/TileSet.h \
+ include/Sprite.h include/Component.h include/Timer.h include/TileMap.h \
+ include/TileSet.h include/Resources.h /usr/include/c++/5/unordered_map \
+ /usr/include/c++/5/bits/hashtable.h \
  /usr/include/c++/5/bits/hashtable_policy.h \
  /usr/include/c++/5/bits/unordered_map.h include/InputManager.h
 
@@ -430,6 +434,22 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
 
 include/Game.h:
 
+/usr/include/c++/5/stack:
+
+/usr/include/c++/5/deque:
+
+/usr/include/c++/5/bits/stl_construct.h:
+
+/usr/include/c++/5/bits/stl_uninitialized.h:
+
+/usr/include/c++/5/bits/stl_deque.h:
+
+/usr/include/c++/5/bits/deque.tcc:
+
+/usr/include/c++/5/bits/stl_stack.h:
+
+/usr/include/c++/5/bits/uses_allocator.h:
+
 include/SDL_include.h:
 
 /usr/include/SDL2/SDL.h:
@@ -560,13 +580,25 @@ include/SDL_include.h:
 
 /usr/include/SDL2/SDL_mixer.h:
 
+/usr/include/SDL2/SDL_ttf.h:
+
 include/State.h:
 
+/usr/include/c++/5/vector:
+
+/usr/include/c++/5/bits/stl_vector.h:
+
+/usr/include/c++/5/bits/stl_bvector.h:
+
+/usr/include/c++/5/bits/vector.tcc:
+
+include/GameObject.h:
+
+include/Rect.h:
+
+include/Vec2.h:
+
 /usr/include/c++/5/memory:
-
-/usr/include/c++/5/bits/stl_construct.h:
-
-/usr/include/c++/5/bits/stl_uninitialized.h:
 
 /usr/include/c++/5/bits/stl_tempbuf.h:
 
@@ -575,8 +607,6 @@ include/State.h:
 /usr/include/c++/5/typeinfo:
 
 /usr/include/c++/5/ext/concurrence.h:
-
-/usr/include/c++/5/bits/uses_allocator.h:
 
 /usr/include/c++/5/functional:
 
@@ -604,29 +634,13 @@ include/State.h:
 
 /usr/include/c++/5/backward/auto_ptr.h:
 
-/usr/include/c++/5/vector:
-
-/usr/include/c++/5/bits/stl_vector.h:
-
-/usr/include/c++/5/bits/stl_bvector.h:
-
-/usr/include/c++/5/bits/vector.tcc:
+include/TileSet.h:
 
 include/Sprite.h:
 
 include/Component.h:
 
-include/GameObject.h:
-
-include/Rect.h:
-
-include/Vec2.h:
-
 include/Timer.h:
-
-include/Music.h:
-
-include/TileSet.h:
 
 include/TileMap.h:
 

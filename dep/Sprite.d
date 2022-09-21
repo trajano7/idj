@@ -140,11 +140,13 @@ dep/Sprite.d bin/Sprite.o: src/Sprite.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_system.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
  /usr/include/SDL2/SDL_image.h /usr/include/SDL2/SDL.h include/Game.h \
- include/State.h include/Sprite.h include/Music.h \
- /usr/include/SDL2/SDL_mixer.h include/Resources.h \
+ /usr/include/c++/5/stack /usr/include/c++/5/deque \
+ /usr/include/c++/5/bits/stl_deque.h /usr/include/c++/5/bits/deque.tcc \
+ /usr/include/c++/5/bits/stl_stack.h include/State.h include/Resources.h \
  /usr/include/c++/5/unordered_map /usr/include/c++/5/bits/hashtable.h \
  /usr/include/c++/5/bits/hashtable_policy.h \
- /usr/include/c++/5/bits/unordered_map.h include/Camera.h
+ /usr/include/c++/5/bits/unordered_map.h /usr/include/SDL2/SDL_mixer.h \
+ /usr/include/SDL2/SDL_ttf.h include/Camera.h
 
 /usr/include/stdc-predef.h:
 
@@ -560,13 +562,17 @@ include/SDL_include.h:
 
 include/Game.h:
 
+/usr/include/c++/5/stack:
+
+/usr/include/c++/5/deque:
+
+/usr/include/c++/5/bits/stl_deque.h:
+
+/usr/include/c++/5/bits/deque.tcc:
+
+/usr/include/c++/5/bits/stl_stack.h:
+
 include/State.h:
-
-include/Sprite.h:
-
-include/Music.h:
-
-/usr/include/SDL2/SDL_mixer.h:
 
 include/Resources.h:
 
@@ -577,5 +583,9 @@ include/Resources.h:
 /usr/include/c++/5/bits/hashtable_policy.h:
 
 /usr/include/c++/5/bits/unordered_map.h:
+
+/usr/include/SDL2/SDL_mixer.h:
+
+/usr/include/SDL2/SDL_ttf.h:
 
 include/Camera.h:

@@ -1,47 +1,49 @@
 #ifndef STATE_H
 #define STATE_H
 
-#include <memory>
 #include <vector>
 
-#include "Sprite.h"
-#include "Music.h"
 #include "GameObject.h"
-
-#define INCLUDE_SDL 
-#include "SDL_include.h"
 
 using namespace std;
 
-//State class represents a game screen and it state
+//Superclass that declare all basic methods for any state
 class State {
 
     public:
 
         State();
-        ~State();
+        virtual ~State();
 
-        //Preload all assets of the state
-        void LoadAssets();
-        void Start();
-        //Update the state objects
-        void Update(float dt);
-        //Render the state sprites
-        void Render();
-        //Flag that store the quit request state
+        virtual void LoadAssets() = 0;
+        virtual void Update(float dt) = 0;
+        virtual void Render() = 0;
+
+        //Methods used when the stateStack change
+        virtual void Start() = 0;
+        virtual void Pause() = 0;
+        virtual void Resume() = 0;
+
+        //Add and get objects form the object array
+        virtual weak_ptr<GameObject> AddObject(GameObject* object);
+        virtual weak_ptr<GameObject> GetObjectPtr(GameObject *object);
+
+        //Used by Game to check if some pop or quit request was made by the state
+        bool PopRequested();
         bool QuitRequested();
-        void Input();
-        weak_ptr<GameObject> AddObject(GameObject *go);
-        weak_ptr<GameObject> GetObjectPtr(GameObject *go);
 
-    private:
+    protected:
 
-        //Sprite bg;
-        Music music;
+        //Methods that start, update and render all objects in array
+        void StartArray();
+        virtual void UpdateArray(float dt);
+        virtual void RenderArray();
+
+        bool popRequested;
         bool quitRequested;
         bool started;
+
         vector<shared_ptr<GameObject>> objectArray;
-        
 
 };
 

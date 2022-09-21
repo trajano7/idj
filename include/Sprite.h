@@ -14,29 +14,6 @@ using namespace std;
 //Sprite is a child class of Component, it has one SDL_Texture (a image) and the methods to the methods to manipulate it
 class Sprite : public Component {
 
-    private:
-
-        SDL_Texture* texture;
-        int width;
-        int height;
-        SDL_Rect clipRect;
-        //Render scale of the sprite
-        Vec2 scale;
-
-        //Store the number of frames in the load image
-        int frameCount;
-        //Store the current frame index
-        int currentFrame;
-        //Store the time elapsed since the last sprite frame change
-        float timeElapsed;
-        //Store the time between frames
-        float frameTime;
-
-        //Timer used to sprites animations that have a time limit
-        Timer selfDestructCount;
-        //Time limit till sprite be destroyed
-        float secondsToSelfDestruct;
-        
     public: 
 
         //Receive in the constructor the GameObject that will store the sprite
@@ -65,6 +42,30 @@ class Sprite : public Component {
         void SetFrame(int frame);
         void SetFrameCount(int frameCount);
         void SetFrameTime(float frameTime);
+        
+    private:
+
+        shared_ptr<SDL_Texture> texture;
+        int width;
+        int height;
+        SDL_Rect clipRect;
+        //Render scale of the sprite
+        Vec2 scale;
+
+        //Store the number of frames in the load image
+        int frameCount;
+        //Store the current frame index
+        int currentFrame;
+        //Store the time elapsed since the last sprite frame change
+        float timeElapsed;
+        //Store the time between frames
+        float frameTime;
+
+        //Timer used to sprites animations that have a time limit
+        Timer selfDestructCount;
+        //Time limit till sprite be destroyed
+        float secondsToSelfDestruct;
+        
 
 };
 

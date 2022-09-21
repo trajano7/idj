@@ -139,9 +139,10 @@ dep/Minion.d bin/Minion.o: src/Minion.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_messagebox.h /usr/include/SDL2/SDL_power.h \
  /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_system.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
- include/Vec2.h include/Bullet.h include/Game.h include/State.h \
- include/Sprite.h include/Music.h /usr/include/SDL2/SDL_mixer.h \
- include/Collider.h /usr/include/c++/5/cmath
+ include/Vec2.h include/Bullet.h include/Game.h /usr/include/c++/5/stack \
+ /usr/include/c++/5/deque /usr/include/c++/5/bits/stl_deque.h \
+ /usr/include/c++/5/bits/deque.tcc /usr/include/c++/5/bits/stl_stack.h \
+ include/State.h include/Collider.h /usr/include/c++/5/cmath
 
 /usr/include/stdc-predef.h:
 
@@ -559,13 +560,17 @@ include/Bullet.h:
 
 include/Game.h:
 
+/usr/include/c++/5/stack:
+
+/usr/include/c++/5/deque:
+
+/usr/include/c++/5/bits/stl_deque.h:
+
+/usr/include/c++/5/bits/deque.tcc:
+
+/usr/include/c++/5/bits/stl_stack.h:
+
 include/State.h:
-
-include/Sprite.h:
-
-include/Music.h:
-
-/usr/include/SDL2/SDL_mixer.h:
 
 include/Collider.h:
 

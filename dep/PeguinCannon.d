@@ -144,9 +144,10 @@ dep/PeguinCannon.d bin/PeguinCannon.o: src/PeguinCannon.cpp \
  /usr/include/c++/5/bits/hashtable.h \
  /usr/include/c++/5/bits/hashtable_policy.h \
  /usr/include/c++/5/bits/unordered_map.h include/Vec2.h include/Bullet.h \
- include/Game.h include/State.h include/Sprite.h include/Music.h \
- /usr/include/SDL2/SDL_mixer.h include/Camera.h include/Collider.h \
- /usr/include/c++/5/cmath
+ include/Game.h /usr/include/c++/5/stack /usr/include/c++/5/deque \
+ /usr/include/c++/5/bits/stl_deque.h /usr/include/c++/5/bits/deque.tcc \
+ /usr/include/c++/5/bits/stl_stack.h include/State.h include/Camera.h \
+ include/Collider.h /usr/include/c++/5/cmath
 
 /usr/include/stdc-predef.h:
 
@@ -574,13 +575,17 @@ include/Bullet.h:
 
 include/Game.h:
 
+/usr/include/c++/5/stack:
+
+/usr/include/c++/5/deque:
+
+/usr/include/c++/5/bits/stl_deque.h:
+
+/usr/include/c++/5/bits/deque.tcc:
+
+/usr/include/c++/5/bits/stl_stack.h:
+
 include/State.h:
-
-include/Sprite.h:
-
-include/Music.h:
-
-/usr/include/SDL2/SDL_mixer.h:
 
 include/Camera.h:
 

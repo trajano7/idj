@@ -9,12 +9,8 @@
 
 #include <string>
 
+//Sound is a component responsible for plays sounds in the game
 class Sound : public Component {
-
-    private:
-
-        Mix_Chunk* chunk;
-        int channel;
 
     public:
 
@@ -31,6 +27,12 @@ class Sound : public Component {
         void Update(float dt);
         void Render();
         bool Is(string type);
+        
+    private:
+
+        shared_ptr<Mix_Chunk> chunk;
+        int channel;
+
 
 };
 

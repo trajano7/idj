@@ -24,7 +24,9 @@ void Music::Open(string file) {
 
 Music::~Music() {
 
-    Stop(1500);
+    if (Mix_PlayingMusic()) {
+        Stop(500);
+    }
     //if (music != nullptr) Mix_FreeMusic(music);
 
 }
@@ -42,7 +44,7 @@ bool Music::IsOpen() {
 void Music::Play(int times) {
 
     if (IsOpen()) {
-        if (Mix_PlayMusic(music,times) == -1) {
+        if (Mix_PlayMusic(music.get(),times) == -1) {
             SDL_Log("Unable to play music: %s", SDL_GetError());
             exit(EXIT_FAILURE);
         }

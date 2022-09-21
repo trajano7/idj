@@ -14,6 +14,7 @@ Bullet::Bullet(GameObject& associated,
 
     Sprite *bulletSprite = new Sprite(sprite, associated, frameCount, frameTime,-1);
     associated.AddComponent(bulletSprite); 
+    bulletSprite->SetScaleX(1.5,1.5);
     Collider *collider = new Collider(associated,Vec2(1,1),Vec2(0,0));
     associated.AddComponent(collider);
 

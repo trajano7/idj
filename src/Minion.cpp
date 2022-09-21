@@ -82,8 +82,8 @@ void Minion::Shoot(Vec2 target) {
     bulletGO->box.x = (associated.box.RectCenter()).x;    
     bulletGO->box.y = (associated.box.RectCenter()).y;   
     //Bullet angle is the angle between the origin and the target,
-    //Chosen values for speed, damage and maxDistance: 100, 10 and 200,
-    Bullet *bullet = new Bullet(*bulletGO,target.DegPntsVec2(associated.box.RectCenter()),100,10,200,
+    //Chosen values for speed, damage and maxDistance: 400, 5 and 400,
+    Bullet *bullet = new Bullet(*bulletGO,target.DegPntsVec2(associated.box.RectCenter()),400,5,400,
                                 "Recursos/img/minionbullet2.png",3,0.5,true);
     bulletGO->AddComponent(bullet);
     Game::GetInstance().GetState().AddObject(bulletGO);

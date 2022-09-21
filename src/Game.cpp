@@ -1,5 +1,6 @@
 #define INCLUDE_SDL_MIXER
 #define INCLUDE_SDL_IMAGE
+#define INCLUDE_SDL_TTF
 
 #include <iostream>
 #include "Game.h"
@@ -40,6 +41,11 @@ Game::Game(string title, int width, int height) {
         exit(EXIT_FAILURE);
     }
 
+    if (TTF_Init() != 0) {
+        SDL_Log("SDL_TTF initialization failed: %s", SDL_GetError()); 
+        exit(EXIT_FAILURE);
+    }
+
     if (Mix_OpenAudio(MIX_DEFAULT_FREQUENCY,MIX_DEFAULT_FORMAT,MIX_DEFAULT_CHANNELS,1024) != 0) {
         SDL_Log("OpenAudio initialization failed: %s", SDL_GetError()); 
         exit(EXIT_FAILURE);
@@ -60,7 +66,7 @@ Game::Game(string title, int width, int height) {
         exit(EXIT_FAILURE);
     }
 
-    state = new State();
+    storedState = nullptr;
 
     frameStart = SDL_GetTicks();
     dt = 0;
@@ -79,12 +85,19 @@ Game& Game::GetInstance() {
 
 Game::~Game() {
 
-    free(state);
+    //Free storedState and pop all stack
+    if (storedState != nullptr) free(storedState);
+    while (!stateStack.empty()) stateStack.pop();
+
+    Resources::ClearImages();
+    Resources::ClearMusics();
+    Resources::ClearSounds();
 
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
 
     Mix_CloseAudio();
+    TTF_Quit();
     Mix_Quit();
     IMG_Quit();
 
@@ -94,7 +107,7 @@ Game::~Game() {
 
 State& Game::GetState() {
 
-    return *state;
+    return *(stateStack.top()).get();
 
 }
 
@@ -115,20 +128,53 @@ void Game::CalculateDeltaTime() {
 
 } 
 
+void Game::Push(State* state) {
+
+    storedState = state;
+
+}
+
 void Game::Run() {
 
     InputManager &inputManager = InputManager::GetInstance();
 
+    //Push the initial state
+    if (storedState == nullptr) {
+        SDL_Log("Initial state not found\n");
+        return;
+    }
+    stateStack.push(unique_ptr<State>(storedState));
+    storedState = nullptr;
+
     frameStart = SDL_GetTicks();
 
-    state->Start();
-    //Runs until the current active state change the quit flag
-    while (!state->QuitRequested()) {
+    stateStack.top()->Start();
+    //Runs until the current active state change the quit flag or if there is no states in stack 
+    while (!stateStack.top()->QuitRequested() &&  !stateStack.empty()) {
+
+        //Check if the current active state requested pop
+        if (stateStack.top()->PopRequested()) {
+            stateStack.pop();
+            //Clear unused resources of poped states
+            Resources::ClearImages();
+            Resources::ClearMusics();
+            Resources::ClearSounds();
+            Resources::ClearFonts();
+            if (stateStack.empty()) break;
+            stateStack.top()->Resume();
+        }
+        //Check if there is some storedState to be pushed
+        if (storedState != nullptr) {
+            stateStack.top()->Pause();
+            stateStack.push(unique_ptr<State>(storedState));
+            storedState = nullptr;
+            stateStack.top()->Start();
+        }
 
         CalculateDeltaTime();
         inputManager.Update();
-        state->Update(dt);
-        state->Render();
+        stateStack.top()->Update(dt);
+        stateStack.top()->Render();
 
         SDL_RenderPresent(renderer);
 
@@ -137,9 +183,13 @@ void Game::Run() {
 
     }
 
+    //Clear the stateStack
+    while (!stateStack.empty()) stateStack.pop();
+
     Resources::ClearImages();
     Resources::ClearMusics();
     Resources::ClearSounds();
+    Resources::ClearFonts();
     
 }
 

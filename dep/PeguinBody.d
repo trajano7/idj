@@ -103,8 +103,8 @@ dep/PeguinBody.d bin/PeguinBody.o: src/PeguinBody.cpp \
  /usr/include/c++/5/ext/aligned_buffer.h \
  /usr/include/c++/5/bits/shared_ptr_atomic.h \
  /usr/include/c++/5/bits/atomic_base.h \
- /usr/include/c++/5/backward/auto_ptr.h include/PenguinCannon.h \
- include/Timer.h include/Sprite.h include/SDL_include.h \
+ /usr/include/c++/5/backward/auto_ptr.h include/Timer.h \
+ include/PenguinCannon.h include/Sprite.h include/SDL_include.h \
  /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
  /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
  /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
@@ -141,13 +141,15 @@ dep/PeguinBody.d bin/PeguinBody.o: src/PeguinBody.cpp \
  /usr/include/SDL2/SDL_messagebox.h /usr/include/SDL2/SDL_power.h \
  /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_system.h \
  /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
- include/Game.h include/State.h include/Sprite.h include/Music.h \
- /usr/include/SDL2/SDL_mixer.h include/InputManager.h \
- /usr/include/c++/5/unordered_map /usr/include/c++/5/bits/hashtable.h \
+ include/Game.h /usr/include/c++/5/stack /usr/include/c++/5/deque \
+ /usr/include/c++/5/bits/stl_deque.h /usr/include/c++/5/bits/deque.tcc \
+ /usr/include/c++/5/bits/stl_stack.h include/State.h \
+ include/InputManager.h /usr/include/c++/5/unordered_map \
+ /usr/include/c++/5/bits/hashtable.h \
  /usr/include/c++/5/bits/hashtable_policy.h \
  /usr/include/c++/5/bits/unordered_map.h include/Collider.h \
  include/Bullet.h include/Camera.h include/Sound.h \
- /usr/include/c++/5/cmath
+ /usr/include/SDL2/SDL_mixer.h /usr/include/c++/5/cmath
 
 /usr/include/stdc-predef.h:
 
@@ -431,9 +433,9 @@ include/Vec2.h:
 
 /usr/include/c++/5/backward/auto_ptr.h:
 
-include/PenguinCannon.h:
-
 include/Timer.h:
+
+include/PenguinCannon.h:
 
 include/Sprite.h:
 
@@ -563,13 +565,17 @@ include/SDL_include.h:
 
 include/Game.h:
 
+/usr/include/c++/5/stack:
+
+/usr/include/c++/5/deque:
+
+/usr/include/c++/5/bits/stl_deque.h:
+
+/usr/include/c++/5/bits/deque.tcc:
+
+/usr/include/c++/5/bits/stl_stack.h:
+
 include/State.h:
-
-include/Sprite.h:
-
-include/Music.h:
-
-/usr/include/SDL2/SDL_mixer.h:
 
 include/InputManager.h:
 
@@ -588,5 +594,7 @@ include/Bullet.h:
 include/Camera.h:
 
 include/Sound.h:
+
+/usr/include/SDL2/SDL_mixer.h:
 
 /usr/include/c++/5/cmath:

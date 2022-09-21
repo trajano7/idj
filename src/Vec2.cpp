@@ -42,6 +42,7 @@ Vec2 Vec2::UnitVec2() {
 
     Vec2 unit;
     float mod = this->ModVec2();
+    if (mod == 0) return Vec2(0,0);
 
     unit.x = this->x / mod;
     unit.y = this->y / mod;

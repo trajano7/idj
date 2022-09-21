@@ -1,16 +1,18 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/trajano/Documents/idj/idj'
 mkdir -p dep bin include src
-g++ -Iinclude  src/Collision.cpp -M -MT dep/Collision.d -MT bin/Collision.o -MP -MF dep/Collision.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
-g++ -Iinclude  src/Collision.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Collision.o
+g++ -Iinclude  src/StageState.cpp -M -MT dep/StageState.d -MT bin/StageState.o -MP -MF dep/StageState.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -Iinclude  src/StageState.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/StageState.o
+g++ -Iinclude  src/State.cpp -M -MT dep/State.d -MT bin/State.o -MP -MF dep/State.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -Iinclude  src/State.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/State.o
 g++ -Iinclude  src/Sound.cpp -M -MT dep/Sound.d -MT bin/Sound.o -MP -MF dep/Sound.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Sound.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Sound.o
 g++ -Iinclude  src/Resources.cpp -M -MT dep/Resources.d -MT bin/Resources.o -MP -MF dep/Resources.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Resources.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Resources.o
 g++ -Iinclude  src/Game.cpp -M -MT dep/Game.d -MT bin/Game.o -MP -MF dep/Game.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Game.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Game.o
-g++ -Iinclude  src/State.cpp -M -MT dep/State.d -MT bin/State.o -MP -MF dep/State.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
-g++ -Iinclude  src/State.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/State.o
+g++ -Iinclude  src/EndState.cpp -M -MT dep/EndState.d -MT bin/EndState.o -MP -MF dep/EndState.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -Iinclude  src/EndState.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/EndState.o
 g++ -Iinclude  src/Collider.cpp -M -MT dep/Collider.d -MT bin/Collider.o -MP -MF dep/Collider.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Collider.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Collider.o
 g++ -Iinclude  src/Sprite.cpp -M -MT dep/Sprite.d -MT bin/Sprite.o -MP -MF dep/Sprite.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
@@ -23,6 +25,8 @@ g++ -Iinclude  src/Vec2.cpp -M -MT dep/Vec2.d -MT bin/Vec2.o -MP -MF dep/Vec2.d 
 g++ -Iinclude  src/Vec2.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Vec2.o
 g++ -Iinclude  src/Main.cpp -M -MT dep/Main.d -MT bin/Main.o -MP -MF dep/Main.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Main.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Main.o
+g++ -Iinclude  src/Text.cpp -M -MT dep/Text.d -MT bin/Text.o -MP -MF dep/Text.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -Iinclude  src/Text.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Text.o
 g++ -Iinclude  src/Rect.cpp -M -MT dep/Rect.d -MT bin/Rect.o -MP -MF dep/Rect.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Rect.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Rect.o
 g++ -Iinclude  src/Timer.cpp -M -MT dep/Timer.d -MT bin/Timer.o -MP -MF dep/Timer.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
@@ -41,16 +45,22 @@ g++ -Iinclude  src/GameObject.cpp -M -MT dep/GameObject.d -MT bin/GameObject.o -
 g++ -Iinclude  src/GameObject.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/GameObject.o
 g++ -Iinclude  src/Minion.cpp -M -MT dep/Minion.d -MT bin/Minion.o -MP -MF dep/Minion.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Minion.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Minion.o
+g++ -Iinclude  src/GameData.cpp -M -MT dep/GameData.d -MT bin/GameData.o -MP -MF dep/GameData.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -Iinclude  src/GameData.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/GameData.o
 g++ -Iinclude  src/Face.cpp -M -MT dep/Face.d -MT bin/Face.o -MP -MF dep/Face.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Face.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Face.o
+g++ -Iinclude  src/Collision.cpp -M -MT dep/Collision.d -MT bin/Collision.o -MP -MF dep/Collision.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -Iinclude  src/Collision.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Collision.o
 g++ -Iinclude  src/Bullet.cpp -M -MT dep/Bullet.d -MT bin/Bullet.o -MP -MF dep/Bullet.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/Bullet.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/Bullet.o
+g++ -Iinclude  src/TitleState.cpp -M -MT dep/TitleState.d -MT bin/TitleState.o -MP -MF dep/TitleState.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -Iinclude  src/TitleState.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/TitleState.o
 g++ -Iinclude  src/TileSet.cpp -M -MT dep/TileSet.d -MT bin/TileSet.o -MP -MF dep/TileSet.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/TileSet.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/TileSet.o
 g++ -Iinclude  src/PeguinCannon.cpp -M -MT dep/PeguinCannon.d -MT bin/PeguinCannon.o -MP -MF dep/PeguinCannon.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/PeguinCannon.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/PeguinCannon.o
 g++ -Iinclude  src/CameraFollower.cpp -M -MT dep/CameraFollower.d -MT bin/CameraFollower.o -MP -MF dep/CameraFollower.d -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 g++ -Iinclude  src/CameraFollower.cpp -c -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g -o bin/CameraFollower.o
-g++ -o Matheus_170152227 bin/Collision.o bin/Sound.o bin/Resources.o bin/Game.o bin/State.o bin/Collider.o bin/Sprite.o bin/Alien.o bin/Camera.o bin/Vec2.o bin/Main.o bin/Rect.o bin/Timer.o bin/Music.o bin/Component.o bin/TileMap.o bin/PeguinBody.o bin/InputManager.o bin/GameObject.o bin/Minion.o bin/Face.o bin/Bullet.o bin/TileSet.o bin/PeguinCannon.o bin/CameraFollower.o  -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lm -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
+g++ -o Matheus_170152227 bin/StageState.o bin/State.o bin/Sound.o bin/Resources.o bin/Game.o bin/EndState.o bin/Collider.o bin/Sprite.o bin/Alien.o bin/Camera.o bin/Vec2.o bin/Main.o bin/Text.o bin/Rect.o bin/Timer.o bin/Music.o bin/Component.o bin/TileMap.o bin/PeguinBody.o bin/InputManager.o bin/GameObject.o bin/Minion.o bin/GameData.o bin/Face.o bin/Collision.o bin/Bullet.o bin/TitleState.o bin/TileSet.o bin/PeguinCannon.o bin/CameraFollower.o  -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lm -std=c++11 -Wall -pedantic -Wextra -Werror=init-self -g
 make: Leaving directory '/home/trajano/Documents/idj/idj'
  

@@ -9,11 +9,6 @@
 //This component determine the collision area of GameObjects
 class Collider : public Component {
 
-    private:
-
-        Vec2 scale; //Collider scale in relation to GameObject size
-        Vec2 offset; //Collider offset in relation to GameObject position
-
     public:
 
         Collider(GameObject& associated, Vec2 scale, Vec2 offset);
@@ -26,6 +21,12 @@ class Collider : public Component {
         void SetOffset(Vec2 offset);
 
         Rect box;
+        
+    private:
+
+        Vec2 scale; //Collider scale in relation to GameObject size
+        Vec2 offset; //Collider offset in relation to GameObject position
+
 
 };
 

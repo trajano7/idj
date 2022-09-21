@@ -25,13 +25,14 @@ class Alien : public Component {
         bool Is(string type);
         void NotifyCollision(GameObject& other);
 
+        //Counts how many aliens are spawned, can be acessed by other classes
         static int alienCount;
 
     private:
 
         //Indicates the states of the Alien behavior state machine 
         enum AlienState {
-            MOVING= 0,
+            MOVING = 0,
             RESTING = 1
         };
 
@@ -46,6 +47,8 @@ class Alien : public Component {
     
         //Each Alien has some Minions objects that follow it
         vector<weak_ptr<GameObject>> minionArray;
+
+        float timeOffset; //Used to random the resting time of the aliens
 
 };
 

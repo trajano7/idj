@@ -23,14 +23,16 @@ PenguinBody::PenguinBody(GameObject& associated) : Component(associated) {
     speed = Vec2(0,0);
     linearSpeed = 0;
     angle = 0;
-    hp = 10;
-    PenguinBody::player = this;
+    hp = 30;
+    player = this;
+
+    invTimer = Timer();
 
 }
 
 PenguinBody::~PenguinBody() {
 
-    PenguinBody::player = nullptr;
+    player = nullptr;
 
 }
 
@@ -49,22 +51,19 @@ void PenguinBody::Update(float dt) {
 
     //W and S to move foward or backward
     if (inputManager.IsKeyDown(SDLK_w)) {
-        linearSpeed += 256*dt;
-        if (linearSpeed > 500) linearSpeed = 500;
+        linearSpeed += 400*dt;
+        if (linearSpeed > 500) linearSpeed = 400;
     }
-    else if (inputManager.IsKeyDown(SDLK_s)) {
-        linearSpeed -= 256*dt;
-        if (linearSpeed < -500) linearSpeed = -500;
-    }
-    else {
-        linearSpeed = 0;
+    if (inputManager.IsKeyDown(SDLK_s)) {
+        linearSpeed -= 400*dt;
+        if (linearSpeed < -500) linearSpeed = -400;
     }
     //A and D to rotate the penguin anticlockwise or clockwise
     if (inputManager.IsKeyDown(SDLK_d)) {
-        angle += 2*M_PI;
+        angle += 100*dt;
     }
-    else if (inputManager.IsKeyDown(SDLK_a)) {
-        angle -= 2*M_PI;
+    if (inputManager.IsKeyDown(SDLK_a)) {
+        angle -= 100*dt;
     }
 
     //Calculates speed with the linearSpeed and angle
@@ -73,6 +72,17 @@ void PenguinBody::Update(float dt) {
     associated.angleDeg = angle;
     associated.box.x += speed.x*dt;
     associated.box.y += speed.y*dt;  
+
+    //Check if the penguin next position is out of the tileSet
+    if (associated.box.x + associated.box.w >= 1480) associated.box.x = 1480 - associated.box.w;
+    else if (associated.box.x < 0) associated.box.x = 0;
+    
+    if (associated.box.y + associated.box.h >= 1280) associated.box.y = 1280 - associated.box.h;
+    else if (associated.box.y < 0) associated.box.y = 0;
+
+    if (invTimer.Get() <= 0.8) {
+        invTimer.Update(dt);
+    }
 
 }
 
@@ -93,7 +103,8 @@ bool PenguinBody::Is(string type) {
 void PenguinBody::NotifyCollision(GameObject& other) {
 
     Bullet *bullet = static_cast<Bullet *>(other.GetComponent("Bullet"));
-    if (bullet != nullptr && bullet->targetsPlayer) {
+    //Receive damage if its a bullet shot by alien and if its out of the invencible time
+    if (bullet != nullptr && bullet->targetsPlayer && invTimer.Get() > 0.8) {
         hp -= bullet->GetDamage();
         if (hp <= 0) {
             Camera::Unfollow();

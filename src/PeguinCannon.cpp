@@ -34,6 +34,7 @@ void PenguinCannon::Update(float dt) {
     InputManager inputManager = InputManager::GetInstance();
     Vec2 mousePos(inputManager.GetMouseX() + Camera::pos.x,inputManager.GetMouseY() + Camera::pos.y);
 
+    //Request delete if the penguin body was deleted
     if (pbody.lock() == nullptr) associated.RequestDelete();
  
     //Rotates the PenguinCannon accordingly to mouse position
@@ -44,7 +45,7 @@ void PenguinCannon::Update(float dt) {
 
     //Shoot if the left mouse button was clicked and the cooldown time passed
     cooldown.Update(dt);
-    if (inputManager.MousePress(LEFT_MOUSE_BUTTON) && cooldown.Get() >= 0.66) {
+    if (inputManager.MousePress(LEFT_MOUSE_BUTTON) && cooldown.Get() >= 0.8) {
         cooldown.Restart();
         Shoot();
     }
@@ -67,8 +68,10 @@ bool PenguinCannon::Is(string type) {
 
 void PenguinCannon::Shoot() {
 
+    //Bullet angle is the angle between the penguin cannon and the mouse click position,
+    //Chosen values for speed, damage and maxDistance: 600, 10 and 400,
     GameObject *bulletGO = new GameObject();
-    Bullet *bullet = new Bullet(*bulletGO,angle,256,10,400,
+    Bullet *bullet = new Bullet(*bulletGO,angle,600,10,400,
                                 "Recursos/img/penguinbullet.png",4,0.33,false);
 
     float Cos = cos(angle * (M_PI/180));
